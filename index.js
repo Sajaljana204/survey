@@ -372,69 +372,69 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
-  const textInputField = document.getElementById('ename');
-  const textInputContainer = document.getElementById('ename-field');
-  const genderDiv = document.getElementById('gender-div');
-  const ageDiv = document.getElementById('age-div');
-  const incomeDiv = document.getElementById('income-div');
-  const employmentDiv = document.getElementById('employment-div');
-  const educationDiv = document.getElementById('education-div');
-  const cityDiv = document.getElementById('city-div');
+  const textInputField = document.getElementById("ename");
+  const textInputContainer = document.getElementById("ename-field");
+  const genderDiv = document.getElementById("gender-div");
+  const ageDiv = document.getElementById("age-div");
+  const incomeDiv = document.getElementById("income-div");
+  const employmentDiv = document.getElementById("employment-div");
+  const educationDiv = document.getElementById("education-div");
+  const cityDiv = document.getElementById("city-div");
 
   // Validate text input
-  if (textInputField.value.trim() === '') {
-    textInputContainer.style.border = '1px solid red';
+  if (textInputField.value.trim() === "") {
+    textInputContainer.style.border = "1px solid red";
     isValid = false;
   } else {
-    textInputContainer.style.border = 'none';
+    textInputContainer.style.border = "none";
   }
 
   // Validate gender div
   if (!isRadioChecked(genderDiv)) {
-    genderDiv.style.border = '1px solid red';
+    genderDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    genderDiv.style.border = 'none';
+    genderDiv.style.border = "none";
   }
 
   // Validate age div
   if (!isRadioChecked(ageDiv)) {
-    ageDiv.style.border = '1px solid red';
+    ageDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    ageDiv.style.border = 'none';
+    ageDiv.style.border = "none";
   }
 
   // Validate income div
   if (!isRadioChecked(incomeDiv)) {
-    incomeDiv.style.border = '1px solid red';
+    incomeDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    incomeDiv.style.border = 'none';
+    incomeDiv.style.border = "none";
   }
 
   // Validate employment div
   if (!isRadioChecked(employmentDiv)) {
-    employmentDiv.style.border = '1px solid red';
+    employmentDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    employmentDiv.style.border = 'none';
+    employmentDiv.style.border = "none";
   }
 
   // Validate education div
   if (!isRadioChecked(educationDiv)) {
-    educationDiv.style.border = '1px solid red';
+    educationDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    educationDiv.style.border = 'none';
+    educationDiv.style.border = "none";
   }
 
   // Validate city div
   if (!isRadioChecked(cityDiv)) {
-    cityDiv.style.border = '1px solid red';
+    cityDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    cityDiv.style.border = 'none';
+    cityDiv.style.border = "none";
   }
 
   if (isValid) {
@@ -442,7 +442,6 @@ document.getElementById("next1").addEventListener("click", function () {
   } else {
     alert("Please fill all fields correctly.");
   }
-  
 });
 
 function isRadioChecked(div) {
@@ -455,24 +454,25 @@ function isRadioChecked(div) {
   return false;
 }
 //this fuction is for the remove boarder of radio button
-document.querySelectorAll('.gender-category input[type="radio"]').forEach(radioButton => {
-  radioButton.addEventListener('click', function() {
-    const div = this.closest('.gender-category');
-    div.style.border = 'none'; // Remove red border
+document
+  .querySelectorAll('.gender-category input[type="radio"]')
+  .forEach((radioButton) => {
+    radioButton.addEventListener("click", function () {
+      const div = this.closest(".gender-category");
+      div.style.border = "none"; // Remove red border
+    });
   });
-});
 
 //this function is the remove the boarder of text field
-document.getElementById('ename').addEventListener('input', function() {
-  const textInputContainer = document.getElementById('ename-field');
-  
-  if (this.value.trim() !== '') {
-    textInputContainer.style.border = 'none'; // Remove border
+document.getElementById("ename").addEventListener("input", function () {
+  const textInputContainer = document.getElementById("ename-field");
+
+  if (this.value.trim() !== "") {
+    textInputContainer.style.border = "none"; // Remove border
   } else {
-    textInputContainer.style.border = '1px solid red'; // Add border if empty
+    textInputContainer.style.border = "1px solid red"; // Add border if empty
   }
 });
-
 
 function resetFieldColors() {
   document.querySelectorAll('input[type="text"]').forEach((input) => {
@@ -546,49 +546,49 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  const travelWorkDiv = document.getElementById('travel-work-div');
-  const travelPartnerDiv = document.getElementById('travel-partner-div');
-  const travelPurposeDiv = document.getElementById('travel-purpose-div');
-  const travel11Div = document.getElementById('travel-11-div');
-  const secureDiv = document.getElementById('secure-div');
- 
+  const travelWorkDiv = document.getElementById("travel-work-div");
+  const travelPartnerDiv = document.getElementById("travel-partner-div");
+  const travelPurposeDiv = document.getElementById("travel-purpose-div");
+  const travel11Div = document.getElementById("travel-11-div");
+  const secureDiv = document.getElementById("secure-div");
+
   // Validate travel work div
   if (!isRadioChecked(travelWorkDiv)) {
-    travelWorkDiv.style.border = '1px solid red';
+    travelWorkDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    travelWorkDiv.style.border = 'none';
+    travelWorkDiv.style.border = "none";
   }
 
   // Validate travel partner div
   if (!isRadioChecked(travelPartnerDiv)) {
-    travelPartnerDiv.style.border = '1px solid red';
+    travelPartnerDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    travelPartnerDiv.style.border = 'none';
+    travelPartnerDiv.style.border = "none";
   }
 
   // Validate travel purpose div
   if (!isRadioChecked(travelPurposeDiv)) {
-    travelPurposeDiv.style.border = '1px solid red';
+    travelPurposeDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    travelPurposeDiv.style.border = 'none';
+    travelPurposeDiv.style.border = "none";
   }
 
   // Validate travel 11 div
   if (!isRadioChecked(travel11Div)) {
-    travel11Div.style.border = '1px solid red';
+    travel11Div.style.border = "1px solid red";
     isValid = false;
   } else {
-    travel11Div.style.border = 'none';
+    travel11Div.style.border = "none";
   }
 
   if (!isRadioGroupChecked(secureDiv)) {
-    secureDiv.style.border = '1px solid red';
+    secureDiv.style.border = "1px solid red";
     isValid = false;
   } else {
-    secureDiv.style.border = 'none';
+    secureDiv.style.border = "none";
   }
 
   if (isValid) {
@@ -1902,3 +1902,5 @@ function getUserLocation() {
 }
 
 getUserLocation();
+
+// this is done
