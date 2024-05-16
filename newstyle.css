@@ -620,9 +620,6 @@ button:hover {
   margin-bottom: 2%;
 }
 
-#ename-field.error {
-  border-color: red;
-}
 .origin {
   display: flex;
   background-color: #5bdbae;
@@ -721,8 +718,6 @@ button:hover {
   height: 42px;
   max-width: 8px 0;
 }
-
-
 
 .input-field input:is(:focus, :valid) {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
@@ -2173,19 +2168,87 @@ input[type="number"] {
 .question34 {
   border: 3px solid rgb(195, 213, 228);
   background-color: rgb(192, 216, 237);
-}
-.question34sub {
-  display: flex;
+  padding-bottom: 2%;
+  padding-top: 2%;
 }
 
-.question34span {
-  width: 40%;
-}
-.matrix-category {
+#matrix-category {
   display: flex;
-  flex: 0 0 62%;
+  margin-top: 2%;
+  margin-left: 1%;
 }
 
 .question34span {
   width: 44%;
+}
+#matrix-category input {
+  margin-left: 5%;
+}
+
+#question34sub1lavel {
+  margin-left: 3%;
+  width: 3%;
+}
+#question34sub2lavel {
+  padding-top: 1.9%;
+  margin-left: 4%;
+  width: 3%;
+}
+
+#question34sub3lavel {
+  padding-top: 1.9%;
+  margin-left: 5%;
+  width: 3%;
+}
+#question34sub4lavel {
+  padding-top: 1.9%;
+  margin-left: 3%;
+  width: 3%;
+}
+#question34sub5lavel {
+  margin-left: 4%;
+  width: 3%;
+}
+/* qustion 13 design is done here  */
+.matrixorigintransport-category {
+  display: flex;
+  margin-top: 2%;
+  margin-left: 1%;
+}
+.matrixorigintransport-category input {
+  margin-left: 7%;
+}
+.question13span {
+  /* background-color: #78dfd5; */
+}
+.question13division {
+  border: 3px solid rgb(195, 213, 228);
+  background-color: rgb(192, 216, 237);
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+#question13spanlavel1 {
+  margin-left: 52%;
+  width: 3%;
+}
+
+#question13spanlavel2 {
+  margin-left: 9%;
+  width: 3%;
+}
+
+#question13spanlavel3 {
+  margin-left: 7%;
+  width: 3%;
+}
+
+#question13spanlavel4 {
+  margin-left: 8%;
+  width: 3%;
+}
+
+#question13spanlavel5 {
+  margin-left: 8%;
+  width: 3%;
 }
