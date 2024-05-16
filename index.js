@@ -1903,4 +1903,17 @@ function getUserLocation() {
 
 getUserLocation();
 
-// this is done
+function toggleotherpurpose() {
+  document.getElementById("travel-11-div").style.display = "none";
+}
+function togglenootherpurpose() {
+  document.getElementById("travel-11-div").style.display = "block";
+}
+
+function togglenoworkorscool() {
+  document.getElementById("travel-partner-div").style.display = "none";
+}
+
+function toggleworkorscool() {
+  document.getElementById("travel-partner-div").style.display = "block";
+}
