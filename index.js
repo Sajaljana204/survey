@@ -586,12 +586,7 @@ document.getElementById("next2").addEventListener("click", function () {
     travel11Div.style.border = "none";
   }
 
-  if (!isRadioGroupChecked(secureDiv)) {
-    secureDiv.style.border = "1px solid red";
-    isValid = false;
-  } else {
-    secureDiv.style.border = "none";
-  }
+ 
 
   if (isValid) {
     saveAndNext();
@@ -600,16 +595,7 @@ document.getElementById("next2").addEventListener("click", function () {
   }
 });
 
-// Function to check if any radio button is checked in a group
-function isRadioGroupChecked(group) {
-  const radioButtons = group.querySelectorAll('input[type="radio"]');
-  for (let i = 0; i < radioButtons.length; i++) {
-    if (radioButtons[i].checked) {
-      return true;
-    }
-  }
-  return false;
-}
+
 
 document.getElementById("back2").addEventListener("click", function () {
   getBackLastDeletedId();
