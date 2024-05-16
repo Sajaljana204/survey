@@ -90,6 +90,8 @@ function saveAndNext() {
   if (validateRadioGroupIncard(imageId) !== "space") {
     currentIndex = currentIndex + 1;
     displayImage();
+  } else {
+    alert("Please choose atleast any one of them ");
   }
 }
 
