@@ -62,8 +62,10 @@
         <div class="details personal">
           <span class="project-title">Survey for TUTEM project</span>
           <div class="fieldsid" id="ename-field">
-            <div class="input-field" >
-              <span class="gender-title _Ename">Enumerator's Name<span class="required">*</span></span>
+            <div class="input-field">
+              <span class="gender-title _Ename"
+                >Enumerator's Name<span class="required">*</span></span
+              >
               <input
                 type="text"
                 name="ename"
@@ -76,7 +78,9 @@
           <span class="section-title">Section A: Socio-demographics</span>
           <div class="content">
             <div class="gender-category" id="gender-div">
-              <span class="gender-title GenderColor">1. Gender<span class="required">*</span></span>
+              <span class="gender-title GenderColor"
+                >1. Gender<span class="required">*</span></span
+              >
               <div>
                 <input type="radio" name="gender" value="Male" required />
                 <label for="gender">Male</label>
@@ -261,29 +265,76 @@
             ><br />
 
             <div class="gender-category" id="travel-work-div">
-              <span class="gender-title">9. In a week, how often do you travel to work/school using public transport?</span>
+              <span class="gender-title"
+                >9. In a week, how often do you travel to work/school using
+                public transport?</span
+              >
+
               <div>
-                <input type="radio" name="travel_work" value="1" required />
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="1"
+                  required
+                  onclick="togglenoworkorscool()"
+                />
+                <label for=""
+                  >I don't use public transport for travel to work/scool</label
+                >
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="2"
+                  required
+                  onclick="toggleworkorscool()"
+                />
                 <label for="">Once a week or less</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_work" value="2" required />
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="3"
+                  required
+                  onclick="toggleworkorscool()"
+                />
                 <label for="">2-3 times</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_work" value="3" required />
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="4"
+                  required
+                  onclick="toggleworkorscool()"
+                />
                 <label for="">4-5 times</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_work" value="4" required />
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="5"
+                  required
+                  onclick="toggleworkorscool()"
+                />
                 <label for="">5-6 times</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_work" value="5" required />
+                <input
+                  type="radio"
+                  name="travel_work"
+                  value="6"
+                  required
+                  onclick="toggleworkorscool()"
+                />
                 <label for="">more than 6 times</label>
               </div>
             </div>
@@ -329,23 +380,61 @@
               <span class="gender-title"
                 >11. What other purpose do you use public transport?</span
               >
+
               <div>
-                <input type="radio" name="travel_purpose" value="1" required />
+                <input
+                  type="radio"
+                  name="travel_purpose"
+                  value="1"
+                  required
+                  onclick="toggleotherpurpose()"
+                />
+                <label for=""
+                  >I don't use public transport for other purpose</label
+                >
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="travel_purpose"
+                  value="2"
+                  required
+                  onclick="togglenootherpurpose()"
+                />
                 <label for="">Groceries</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_purpose" value="2" required />
+                <input
+                  type="radio"
+                  name="travel_purpose"
+                  value="3"
+                  required
+                  onclick="togglenootherpurpose()"
+                />
                 <label for="">Entertainment</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_purpose" value="3" required />
+                <input
+                  type="radio"
+                  name="travel_purpose"
+                  value="4"
+                  required
+                  onclick="togglenootherpurpose()"
+                />
                 <label for="">Shopping</label>
               </div>
 
               <div>
-                <input type="radio" name="travel_purpose" value="4" required />
+                <input
+                  type="radio"
+                  name="travel_purpose"
+                  value="5"
+                  required
+                  onclick="togglenootherpurpose()"
+                />
                 <label for="">Visiting family/friends</label>
               </div>
               <div>
@@ -1007,267 +1096,175 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >13. Presence of police patrolling van 24X7</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q13i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q13i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q13i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q13i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q13i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q13s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q13s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q13s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q13s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q13s" value="5" />
-                <label for="">5</label>
+              <br />
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of police patrolling van 24X7</span
+                  >
+                  <input type="radio" name="Q13s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q13s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q13s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q13s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q13s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of signalized zebra crossings</span
+                  >
+                  <input type="radio" name="Q14s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q14s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q14s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q14s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q14s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span">Presence of CCTV cameras</span>
+                  <input type="radio" name="Q15s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q15s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q15s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q15s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q15s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >16. Presence to well-lit streets during night</span
+                  >
+                  <input type="radio" name="Q16s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q16s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q16s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q16s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q16s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of crowd(non-empty streets)</span
+                  >
+                  <input type="radio" name="Q17s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q17s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q17s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q17s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q17s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of clear(obstruction free) footpath</span
+                  >
+                  <input type="radio" name="Q18s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q18s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q18s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q18s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q18s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of high speed vehicular traffic</span
+                  >
+                  <input type="radio" name="Q19s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q19s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q19s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q19s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q19s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of barrier between pedestrain/bicycle and
+                    motorized traffic</span
+                  >
+                  <input type="radio" name="Q20s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q20s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q20s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q20s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q20s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"
+                    >Presence of clear line of sight(no secluded comers)</span
+                  >
+                  <input type="radio" name="Q21s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q21s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q21s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q21s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q21s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
               </div>
-              <span class="gender-title"
-                >14. Presence of signalized zebra crossings</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q14i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q14i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q14i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q14i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q14i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q14s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q14s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q14s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q14s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q14s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title">15. Presence of CCTV cameras</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q15i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q15i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q15i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q15i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q15i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q15s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q15s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q15s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q15s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q15s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >16. Presence to well-lit streets during night</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q16i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q16i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q16i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q16i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q16i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q16s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q16s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q16s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q16s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q16s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >17. Presence of crowd(non-empty streets)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q17i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q17i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q17i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q17i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q17i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q17s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q17s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q17s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q17s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q17s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >18. Presence of clear(obstruction free) footpath</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q18i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q18i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q18i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q18i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q18i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q18s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q18s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q18s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q18s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q18s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >19. Presence of high speed vehicular traffic</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q19i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q19i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q19i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q19i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q19i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q19s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q19s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q19s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q19s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q19s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >20. Presence of barrier between pedestrain/bicycle and
-                motorized traffic</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q20i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q20i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q20i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q20i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q20i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q20s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q20s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q20s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q20s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q20s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >21. Presence of clear line of sight(no secluded comers)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q21i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q21i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q21i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q21i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q21i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q21s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q21s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q21s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q21s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q21s" value="5" />
-                <label for="">5</label>
-              </div>
+
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while using
                 walking/bicycling to/from transit stop</span
@@ -1301,213 +1298,145 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >22. Availability of frequent shuttle/cab/minibus
-                services(shared occupancy)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q22i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q22i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q22i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q22i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q22i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q22s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q22s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q22s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q22s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q22s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >23. Availability of GPS tracking in shuttle/cab/minibus</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q23i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q23i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q23i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q23i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q23i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q23s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q23s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q23s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q23s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q23s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >24. Availability of frequent ola/uber/rapido cabs(single
-                occupancy)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q24i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q24i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q24i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q24i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q24i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q24s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q24s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q24s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q24s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q24s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >25. Availability of auto/cab driver details and
-                verification</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q25i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q25i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q25i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q25i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q25i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q25s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q25s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q25s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q25s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q25s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >26. Availability of clean (hygienic) paratransit vehicle</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q26i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q26i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q26i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q26i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q26i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q26s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q26s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q26s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q26s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q26s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >27. Availability of female paratransit drivers</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q27i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q27i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q27i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q27i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q27i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q27s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q27s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q27s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q27s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q27s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >28. Presence of trafic police booth</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q28i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q28i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q28i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q28i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q28i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q28s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q28s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q28s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q28s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q28s" value="5" />
-                <label for="">5</label>
+              <br />
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
               </div>
 
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of frequent shuttle/cab/minibus
+                    services(shared occupancy)</span
+                  >
+                  <input type="radio" name="Q22s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q22s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q22s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q22s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q22s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of GPS tracking in shuttle/cab/minibus</span
+                  >
+                  <input type="radio" name="Q23s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q23s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q23s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q23s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q23s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of frequent ola/uber/rapido cabs(single
+                    occupancy)</span
+                  >
+                  <input type="radio" name="Q24s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q24s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q24s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q24s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q24s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of auto/cab driver details and
+                    verification</span
+                  >
+                  <input type="radio" name="Q25s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q25s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q25s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q25s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q25s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of clean (hygienic) paratransit vehicle</span
+                  >
+                  <input type="radio" name="Q26s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q26s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q26s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q26s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q26s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of female paratransit drivers</span
+                  >
+                  <input type="radio" name="Q27s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q27s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q27s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q27s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q27s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of trafic police booth</span
+                  >
+                  <input type="radio" name="Q28s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q28s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q28s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q28s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q28s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+              </div>
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while using paratransit
                 to/from transit stop</span
@@ -1541,151 +1470,109 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >29. Presence of secure parking stop</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q29i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q29i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q29i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q29i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q29i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q29s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q29s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q29s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q29s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q29s" value="5" />
-                <label for="">5</label>
+              <br />
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
               </div>
-              <span class="gender-title"
-                >30. Presence of commuters(non-empty streets)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q30i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q30i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q30i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q30i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q30i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q30s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q30s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q30s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q30s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q30s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >31. Presence of police patrolling van 24X7</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q31i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q31i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q31i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q31i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q31i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q31s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q31s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q31s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q31s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q31s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >32. Availability of roads without hazards(e.g. potholes,
-                etc.)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q32i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q32i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q32i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q32i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q32i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q32s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q32s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q32s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q32s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q32s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >33. Availability of well-lit streets during night</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="Q33i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="Q33i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="Q33i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="Q33i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="Q33i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="Q33s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="Q33s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="Q33s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="Q33s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="Q33s" value="5" />
-                <label for="">5</label>
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of secure parking stop</span
+                  >
+                  <input type="radio" name="Q29s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q29s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q29s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q29s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q29s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of commuters(non-empty streets)</span
+                  >
+                  <input type="radio" name="Q30s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q30s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q30s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q30s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q30s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of police patrolling van 24X7</span
+                  >
+                  <input type="radio" name="Q31s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q31s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q31s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q31s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q31s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of roads without hazards(e.g. potholes,
+                    etc.)</span
+                  >
+                  <input type="radio" name="Q32s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q32s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q32s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q32s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q32s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of well-lit streets during night</span
+                  >
+                  <input type="radio" name="Q33s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="Q33s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="Q33s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="Q33s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="Q33s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
               </div>
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while using personal
@@ -1722,266 +1609,175 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >13. Presence of police patrolling van 24X7</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ13i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ13i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ13i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ13i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ13i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ13s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ13s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ13s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ13s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ13s" value="5" />
-                <label for="">5</label>
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
               </div>
-              <span class="gender-title"
-                >14. Presence of signalized zebra crossings</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ14i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ14i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ14i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ14i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ14i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ14s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ14s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ14s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ14s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ14s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title">15. Presence of CCTV cameras</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ15i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ15i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ15i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ15i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ15i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ15s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ15s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ15s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ15s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ15s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >16. Presence to well-lit streets during night</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ16i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ16i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ16i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ16i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ16i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ16s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ16s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ16s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ16s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ16s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >17. Presence of crowd(non-empty streets)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ17i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ17i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ17i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ17i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ17i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ17s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ17s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ17s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ17s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ17s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >18. Presence of clear(obstruction free) footpath</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ18i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ18i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ18i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ18i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ18i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ18s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ18s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ18s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ18s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ18s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >19. Presence of high speed vehicular traffic</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ19i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ19i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ19i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ19i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ19i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ19s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ19s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ19s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ19s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ19s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >20. Presence of barrier between pedestrain/bicycle and
-                motorized traffic</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ20i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ20i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ20i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ20i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ20i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ20s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ20s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ20s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ20s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ20s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >21. Presence of clear line of sight(no secluded comers)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ21i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ21i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ21i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ21i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ21i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ21s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ21s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ21s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ21s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ21s" value="5" />
-                <label for="">5</label>
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >13. Presence of police patrolling van 24X7</span
+                  >
+                  <input type="radio" name="fQ13s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ13s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ13s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ13s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ13s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >14. Presence of signalized zebra crossings</span
+                  >
+                  <input type="radio" name="fQ14s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ14s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ14s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ14s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ14s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title">15. Presence of CCTV cameras</span>
+                  <input type="radio" name="fQ15s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ15s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ15s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ15s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ15s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >16. Presence to well-lit streets during night</span
+                  >
+                  <input type="radio" name="fQ16s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ16s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ16s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ16s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ16s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >17. Presence of crowd(non-empty streets)</span
+                  >
+                  <input type="radio" name="fQ17s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ17s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ17s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ17s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ17s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >18. Presence of clear(obstruction free) footpath</span
+                  >
+                  <input type="radio" name="fQ18s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ18s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ18s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ18s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ18s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >19. Presence of high speed vehicular traffic</span
+                  >
+                  <input type="radio" name="fQ19s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ19s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ19s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ19s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ19s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >20. Presence of barrier between pedestrain/bicycle and
+                    motorized traffic</span
+                  >
+                  <input type="radio" name="fQ20s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ20s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ20s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ20s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ20s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >21. Presence of clear line of sight(no secluded
+                    comers)</span
+                  >
+                  <input type="radio" name="fQ21s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ21s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ21s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ21s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ21s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
               </div>
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while walking/bicycling
@@ -2016,211 +1812,143 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >22. Availability of frequent shuttle/cab/minibus
-                services(shared occupancy)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ22i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ22i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ22i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ22i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ22i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ22s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ22s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ22s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ22s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ22s" value="5" />
-                <label for="">5</label>
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
               </div>
-              <span class="gender-title"
-                >23. Availability of GPS tracking in shuttle/cab/minibus</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ23i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ23i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ23i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ23i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ23i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ23s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ23s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ23s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ23s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ23s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >24. Availability of frequent ola/uber/rapido cabs(single
-                occupancy)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ24i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ24i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ24i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ24i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ24i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ24s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ24s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ24s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ24s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ24s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >25. Availability of auto/cab driver details and
-                verification</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ25i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ25i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ25i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ25i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ25i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ25s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ25s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ25s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ25s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ25s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >26. Availability of clean (hygienic) paratransit vehicle</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ26i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ26i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ26i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ26i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ26i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ26s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ26s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ26s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ26s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ26s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >27. Availability of female paratransit drivers</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ27i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ27i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ27i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ27i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ27i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ27s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ27s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ27s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ27s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ27s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >28. Presence of trafic police booth</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ28i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ28i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ28i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ28i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ28i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ28s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ28s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ28s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ28s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ28s" value="5" />
-                <label for="">5</label>
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of frequent shuttle/cab/minibus
+                    services(shared occupancy)</span
+                  >
+                  <input type="radio" name="fQ22s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ22s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ22s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ22s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ22s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of GPS tracking in shuttle/cab/minibus</span
+                  >
+                  <input type="radio" name="fQ23s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ23s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ23s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ23s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ23s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of frequent ola/uber/rapido cabs(single
+                    occupancy)</span
+                  >
+                  <input type="radio" name="fQ24s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ24s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ24s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ24s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ24s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of auto/cab driver details and
+                    verification</span
+                  >
+                  <input type="radio" name="fQ25s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ25s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ25s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ25s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ25s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of clean (hygienic) paratransit vehicle</span
+                  >
+                  <input type="radio" name="fQ26s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ26s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ26s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ26s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ26s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of female paratransit drivers</span
+                  >
+                  <input type="radio" name="fQ27s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ27s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ27s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ27s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ27s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of trafic police booth</span
+                  >
+                  <input type="radio" name="fQ28s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ28s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ28s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ28s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ28s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
               </div>
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while using paratransit
@@ -2255,153 +1983,109 @@
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
               ><br />
-              <span class="gender-title"
-                >29. Presence of secure parking stop</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ29i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ29i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ29i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ29i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ29i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ29s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ29s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ29s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ29s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ29s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >30. Presence of commuters(non-empty streets)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ30i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ30i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ30i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ30i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ30i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ30s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ30s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ30s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ30s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ30s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >31. Presence of police patrolling van 24X7</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ31i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ31i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ31i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ31i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ31i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ31s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ31s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ31s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ31s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ31s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >32. Availability of roads without hazards(e.g. potholes,
-                etc.)</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ32i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ32i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ32i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ32i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ32i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ32s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ32s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ32s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ32s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ32s" value="5" />
-                <label for="">5</label>
-              </div>
-              <span class="gender-title"
-                >33. Availability of well-lit streets during night</span
-              ><br />
-              <!-- <span class="gender-title">a. Importance</span>
-                    <div class="gender-category">
-                        <input type="radio" name="fQ33i" value="1">
-                        <label for="">1</label>
-                        <input type="radio" name="fQ33i" value="2">
-                        <label for="">2</label>
-                        <input type="radio" name="fQ33i" value="3">
-                        <label for="">3</label>
-                        <input type="radio" name="fQ33i" value="4">
-                        <label for="">4</label>
-                        <input type="radio" name="fQ33i" value="5">
-                        <label for="">5</label>
-                    </div> -->
-              <!-- <span class="gender-title">b. Satisfaction</span> -->
-              <div class="gender-category">
-                <input type="radio" name="fQ33s" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="fQ33s" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="fQ33s" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="fQ33s" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="fQ33s" value="5" />
-                <label for="">5</label>
+
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="question13span"></span>
+                  <!-- <input type="radio" name="Q13s" value="1" /> -->
+                  <label id="question13spanlavel1">1</label>
+                  <!-- <input type="radio" name="Q13s" value="2" /> -->
+                  <label id="question13spanlavel2">2</label>
+                  <!-- <input type="radio" name="Q13s" value="3" /> -->
+                  <label id="question13spanlavel3">3</label>
+                  <!-- <input type="radio" name="Q13s" value="4" /> -->
+                  <label id="question13spanlavel4">4</label>
+                  <!-- <input type="radio" name="Q13s" value="5" /> -->
+                  <label id="question13spanlavel5">5</label>
+                </div>
               </div>
 
+              <div class="question13division">
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of secure parking stop</span
+                  >
+                  <input type="radio" name="fQ29s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ29s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ29s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ29s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ29s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of commuters(non-empty streets)</span
+                  >
+                  <input type="radio" name="fQ30s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ30s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ30s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ30s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ30s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Presence of police patrolling van 24X7</span
+                  >
+                  <input type="radio" name="fQ31s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ31s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ31s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ31s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ31s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of roads without hazards(e.g. potholes,
+                    etc.)</span
+                  >
+                  <input type="radio" name="fQ32s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ32s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ32s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ32s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ32s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+                <br />
+
+                <div class="matrixorigintransport-category">
+                  <span class="gender-title"
+                    >Availability of well-lit streets during night</span
+                  >
+                  <input type="radio" name="fQ33s" value="1" />
+                  <!-- <label for="">1</label> -->
+                  <input type="radio" name="fQ33s" value="2" />
+                  <!-- <label for="">2</label> -->
+                  <input type="radio" name="fQ33s" value="3" />
+                  <!-- <label for="">3</label> -->
+                  <input type="radio" name="fQ33s" value="4" />
+                  <!-- <label for="">4</label> -->
+                  <input type="radio" name="fQ33s" value="5" />
+                  <!-- <label for="">5</label> -->
+                </div>
+              </div>
               <span class="gender-title"
                 >Overall, How Safe/Secure do you feel while using personal
                 vehicle to/from transit stop</span
@@ -2424,117 +2108,122 @@
         <br />
         <!--start from 34-->
         <div class="security">
-          <span class="gender-title" >How safe/secure do you feel while travelling at night versus daytime(1-very unsafe to 3-same to 5-very safe)</span><br />
-          w
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >34. By personal vehicle(alone)?</span
-                >
-                <input type="radio" name="Q34" value="1" required />
-                <!-- <label for="">1</label> -->
-                <input type="radio" name="Q34" value="2" required />
-                <!-- <label for="">2</label> -->
-                <input type="radio" name="Q34" value="3" required />
-                <!-- <label for="">3</label> -->
-                <input type="radio" name="Q34" value="4" required />
-                <!-- <label for="">4</label> -->
-                <input type="radio" name="Q34" value="5" required />
-                <!-- <label for="">5</label> -->
-              </div>
+          <span class="gender-title"
+            >How safe/secure do you feel while travelling at night versus
+            daytime(1-very unsafe to 3-same to 5-very safe)</span
+          ><br />
+          <div class="question34" id="secure-div">
+            <div id="matrix-category">
+              <span class="question34span"></span>
+              <!-- <input type="radio" name="Q34" value="1" required /> -->
+              <label id="question34sub1lavel">Very unsafe</label>
+              <!-- <input type="radio" name="Q34" value="2" required /> -->
+              <label id="question34sub2lavel">Unsafe</label>
+              <!-- <input type="radio" name="Q34" value="3" required /> -->
+              <label id="question34sub3lavel">Same </label>
+              <!-- <input type="radio" name="Q34" value="4" required /> -->
+              <label id="question34sub4lavel">Safe</label>
+              <!-- <input type="radio" name="Q34" value="5" required /> -->
+              <label id="question34sub5lavel">Very safe</label>
             </div>
 
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >35. By personal vehicle(with friend/drop off)</span
-                >
-                <input type="radio" name="Q35" value="1" required />
-                <!-- <label for="">1</label> -->
-                <input type="radio" name="Q35" value="2" required />
-                <!-- <label for="">2</label> -->
-                <input type="radio" name="Q35" value="3" required />
-                <!-- <label for="">3</label> -->
-                <input type="radio" name="Q35" value="4" required />
-                <!-- <label for="">4</label> -->
-                <input type="radio" name="Q35" value="5" required />
-                <!-- <label for="">5</label> -->
-              </div>
+            <div id="matrix-category">
+              <span class="question34span">By personal vehicle(alone)?</span>
+
+              <input type="radio" name="Q34" value="1" required />
+              <!-- <label for="">1</label> -->
+
+              <input type="radio" name="Q34" value="2" required />
+              <!-- <label for="">2</label> -->
+              <input type="radio" name="Q34" value="3" required />
+              <!-- <label for="">3</label> -->
+              <input type="radio" name="Q34" value="4" required />
+              <!-- <label for="">4</label> -->
+              <input type="radio" name="Q34" value="5" required />
+              <!-- <label for="">5</label> -->
             </div>
 
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >36. By shuttle/cab/minibus(shared)?</span
-                >
-                <input type="radio" name="Q36" value="1" required />
-                <!-- <label for="">1</label> -->
-                <input type="radio" name="Q36" value="2" required />
-                <!-- <label for="">2</label> -->
-                <input type="radio" name="Q36" value="3" required />
-                <!-- <label for="">3</label> -->
-                <input type="radio" name="Q36" value="4" required />
-                <!-- <label for="">4</label> -->
-                <input type="radio" name="Q36" value="5" required />
-                <!-- <label for="">5</label> -->
-              </div>
+            <div id="matrix-category">
+              <span class="question34span"
+                >By personal vehicle(with friend/drop off)</span
+              >
+              <input type="radio" name="Q35" value="1" required />
+              <!-- <label for="">1</label> -->
+              <input type="radio" name="Q35" value="2" required />
+              <!-- <label for="">2</label> -->
+              <input type="radio" name="Q35" value="3" required />
+              <!-- <label for="">3</label> -->
+              <input type="radio" name="Q35" value="4" required />
+              <!-- <label for="">4</label> -->
+              <input type="radio" name="Q35" value="5" required />
+              <!-- <label for="">5</label> -->
             </div>
 
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >37. By ola/uber/rapido(single occupancy)</span
-                >
-                <input type="radio" name="Q37" value="1" required />
-                <!-- <label for="">1</label> -->
-                <input type="radio" name="Q37" value="2" required />
-                <!-- <label for="">2</label> -->
-                <input type="radio" name="Q37" value="3" required />
-                <!-- <label for="">3</label> -->
-                <input type="radio" name="Q37" value="4" required />
-                <!-- <label for="">4</label> -->
-                <input type="radio" name="Q37" value="5" required />
-                <!-- <label for="">5</label> -->
-              </div>
+            <div id="matrix-category">
+              <span class="question34span"
+                >By shuttle/cab/minibus(shared)?</span
+              >
+              <input type="radio" name="Q36" value="1" required />
+              <!-- <label for="">1</label> -->
+              <input type="radio" name="Q36" value="2" required />
+              <!-- <label for="">2</label> -->
+              <input type="radio" name="Q36" value="3" required />
+              <!-- <label for="">3</label> -->
+              <input type="radio" name="Q36" value="4" required />
+              <!-- <label for="">4</label> -->
+              <input type="radio" name="Q36" value="5" required />
+              <!-- <label for="">5</label> -->
             </div>
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >38. Walking or bicycling(along)</span
-                >
-                <input type="radio" name="Q38" value="1" required />
-                <!-- <label for="">1</label> -->
-                <input type="radio" name="Q38" value="2" required />
-                <!-- <label for="">2</label> -->
-                <input type="radio" name="Q38" value="3" required />
-                <!-- <label for="">3</label> -->
-                <input type="radio" name="Q38" value="4" required />
-                <!-- <label for="">4</label> -->
-                <input type="radio" name="Q38" value="5" required />
-                <!-- <label for="">5</label> -->
-              </div>
+
+            <div id="matrix-category">
+              <span class="question34span"
+                >By ola/uber/rapido(single occupancy)</span
+              >
+              <input type="radio" name="Q37" value="1" required />
+              <!-- <label for="">1</label> -->
+              <input type="radio" name="Q37" value="2" required />
+              <!-- <label for="">2</label> -->
+              <input type="radio" name="Q37" value="3" required />
+              <!-- <label for="">3</label> -->
+              <input type="radio" name="Q37" value="4" required />
+              <!-- <label for="">4</label> -->
+              <input type="radio" name="Q37" value="5" required />
+              <!-- <label for="">5</label> -->
             </div>
-            <div class="question34sub">
-              <div class="matrix-category">
-                <span class="question34span"
-                  >39. Walking/cycling (in a group)</span
-                >
-                <input type="radio" name="Q39" value="1" required />
 
-                <input type="radio" name="Q39" value="2" required />
+            <div id="matrix-category">
+              <span class="question34span">Walking or bicycling(along)</span>
+              <input type="radio" name="Q38" value="1" required />
+              <!-- <label for="">1</label> -->
+              <input type="radio" name="Q38" value="2" required />
+              <!-- <label for="">2</label> -->
+              <input type="radio" name="Q38" value="3" required />
+              <!-- <label for="">3</label> -->
+              <input type="radio" name="Q38" value="4" required />
+              <!-- <label for="">4</label> -->
+              <input type="radio" name="Q38" value="5" required />
+              <!-- <label for="">5</label> -->
+            </div>
 
-                <input type="radio" name="Q39" value="3" required />
+            <div id="matrix-category">
+              <span class="question34span">Walking/cycling (in a group)</span>
+              <input type="radio" name="Q39" value="1" required />
 
-                <input type="radio" name="Q39" value="4" required />
+              <input type="radio" name="Q39" value="2" required />
 
-                <input type="radio" name="Q39" value="5" required />
-              </div>
+              <input type="radio" name="Q39" value="3" required />
+
+              <input type="radio" name="Q39" value="4" required />
+
+              <input type="radio" name="Q39" value="5" required />
             </div>
           </div>
-          <span class="gender-title"
-            >40. Have you been a victim of crime while accessing transit?</span
-          >
+
           <div class="gender-category">
+            <span class="gender-title"
+              >40. Have you been a victim of crime while accessing
+              transit?</span
+            >
             <input
               type="radio"
               name="Q40"
@@ -2553,35 +2242,58 @@
             <label for="">No</label>
           </div>
           <div id="crime_options" style="display: none">
-            <span class="gender-title"
-              >40(a). If Yes, what type of crime were you involved in?</span
-            >
             <div class="gender-category">
-              <input type="radio" name="Q40a" value="1" />
-              <label for="">Stranger following you</label>
-              <input type="radio" name="Q40a" value="2" />
-              <label for="">eve teasing</label>
-              <input type="radio" name="Q40a" value="3" />
-              <label for="">petty theft</label>
-              <input type="radio" name="Q40a" value="4" />
-              <label for="">armed theft</label>
-              <input type="radio" name="Q40a" value="5" />
-              <label for="">bodily injuries</label>
+              <span class="gender-title"
+                >a. If Yes, what type of crime were you involved in?</span
+              >
+              <br />
+              <div>
+                <input type="radio" name="Q40a" value="1" />
+                <label for="">Stranger following you</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40a" value="2" />
+                <label for="">eve teasing</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40a" value="3" />
+                <label for="">petty theft</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40a" value="4" />
+                <label for="">armed theft</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40a" value="5" />
+                <label for="">bodily injuries</label>
+              </div>
             </div>
-            <span class="gender-title"
-              >40(b). If Yes, where did the crime occour?</span
-            >
+
             <div class="gender-category">
-              <input type="radio" name="Q40b" value="1" />
-              <label for="">close to home</label>
-              <input type="radio" name="Q40b" value="2" />
-              <label for="">while walking to stop</label>
-              <input type="radio" name="Q40b" value="3" />
-              <label for="">while on paratransit</label>
-              <input type="radio" name="Q40b" value="4" />
-              <label for="">at parking lot</label>
-              <input type="radio" name="Q40b" value="5" />
-              <label for="">at transit stop</label>
+              <span class="gender-title"
+                >b. If Yes, where did the crime occour?</span
+              >
+              <br />
+              <div>
+                <input type="radio" name="Q40b" value="1" />
+                <label for="">close to home</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40b" value="2" />
+                <label for="">while walking to stop</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40b" value="3" />
+                <label for="">while on paratransit</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40b" value="4" />
+                <label for="">at parking lot</label>
+              </div>
+              <div>
+                <input type="radio" name="Q40b" value="5" />
+                <label for="">at transit stop</label>
+              </div>
             </div>
           </div>
           <div class="buttons">
@@ -2645,78 +2357,98 @@
               2-Rarely, 3-Sometime, 4-Very Often, 5-Always)?</span
             >
             <br />
-            <span class="gender-title">41. Navigation (Google Maps)</span>
-            <div class="gender-category">
-              <input type="radio" name="Q41" value="1" />
-              <label for="">1</label>
-              <input type="radio" name="Q41" value="2" />
-              <label for="">2</label>
-              <input type="radio" name="Q41" value="3" />
-              <label for="">3</label>
-              <input type="radio" name="Q41" value="4" />
-              <label for="">4</label>
-              <input type="radio" name="Q41" value="5" />
-              <label for="">5</label>
-            </div>
-            <span class="gender-title"
-              >42. UPI (Google Pay, PhonePe, Paytm, BHIM, etc.)</span
-            >
-            <div class="gender-category">
-              <input type="radio" name="Q42" value="1" />
-              <label for="">1</label>
-              <input type="radio" name="Q42" value="2" />
-              <label for="">2</label>
-              <input type="radio" name="Q42" value="3" />
-              <label for="">3</label>
-              <input type="radio" name="Q42" value="4" />
-              <label for="">4</label>
-              <input type="radio" name="Q42" value="5" />
-              <label for="">5</label>
-            </div>
-            <span class="gender-title"
-              >43. Online shopping (Amazon, Flipkart, etc.)</span
-            >
-            <div class="gender-category">
-              <input type="radio" name="Q43" value="1" />
-              <label for="">1</label>
-              <input type="radio" name="Q43" value="2" />
-              <label for="">2</label>
-              <input type="radio" name="Q43" value="3" />
-              <label for="">3</label>
-              <input type="radio" name="Q43" value="4" />
-              <label for="">4</label>
-              <input type="radio" name="Q43" value="5" />
-              <label for="">5</label>
-            </div>
-            <span class="gender-title"
-              >44. Ticket booking (IRCTC, Cleartrip, MakeMyTrip, etc.)</span
-            >
-            <div class="gender-category">
-              <input type="radio" name="Q44" value="1" />
-              <label for="">1</label>
-              <input type="radio" name="Q44" value="2" />
-              <label for="">2</label>
-              <input type="radio" name="Q44" value="3" />
-              <label for="">3</label>
-              <input type="radio" name="Q44" value="4" />
-              <label for="">4</label>
-              <input type="radio" name="Q44" value="5" />
-              <label for="">5</label>
-            </div>
-            <span class="gender-title"
-              >45. Cab/Auto booking (Ola, Uber, Rapido, etc.)</span
-            >
-            <div class="gender-category">
-              <input type="radio" name="Q45" value="1" />
-              <label for="">1</label>
-              <input type="radio" name="Q45" value="2" />
-              <label for="">2</label>
-              <input type="radio" name="Q45" value="3" />
-              <label for="">3</label>
-              <input type="radio" name="Q45" value="4" />
-              <label for="">4</label>
-              <input type="radio" name="Q45" value="5" />
-              <label for="">5</label>
+            <div class="question34">
+              <div id="matrix-category">
+                <span class="question34span"></span>
+                <!-- <input type="radio" name="Q34" value="1" required /> -->
+                <label id="question34sub1lavel">Very unsafe</label>
+                <!-- <input type="radio" name="Q34" value="2" required /> -->
+                <label id="question34sub2lavel">Unsafe</label>
+                <!-- <input type="radio" name="Q34" value="3" required /> -->
+                <label id="question34sub3lavel">Same </label>
+                <!-- <input type="radio" name="Q34" value="4" required /> -->
+                <label id="question34sub4lavel">Safe</label>
+                <!-- <input type="radio" name="Q34" value="5" required /> -->
+                <label id="question34sub5lavel">Very safe</label>
+              </div>
+
+              <div id="matrix-category">
+                <span class="question34span">Navigation (Google Maps)</span>
+                <input type="radio" name="Q41" value="1" />
+                <!-- <label for="">1</label> -->
+                <input type="radio" name="Q41" value="2" />
+                <!-- <label for="">2</label> -->
+                <input type="radio" name="Q41" value="3" />
+                <!-- <label for="">3</label> -->
+                <input type="radio" name="Q41" value="4" />
+                <!-- <label for="">4</label> -->
+                <input type="radio" name="Q41" value="5" />
+                <!-- <label for="">5</label> -->
+              </div>
+
+              <div id="matrix-category">
+                <span class="question34span"
+                  >UPI (Google Pay, PhonePe, Paytm, BHIM, etc.)</span
+                >
+                <input type="radio" name="Q42" value="1" />
+                <!-- <label for="">1</label> -->
+                <input type="radio" name="Q42" value="2" />
+                <!-- <label for="">2</label> -->
+                <input type="radio" name="Q42" value="3" />
+                <!-- <label for="">3</label> -->
+                <input type="radio" name="Q42" value="4" />
+                <!-- <label for="">4</label> -->
+                <input type="radio" name="Q42" value="5" />
+                <!-- <label for="">5</label> -->
+              </div>
+
+              <div id="matrix-category">
+                <span class="question34span"
+                  >Online shopping (Amazon, Flipkart, etc.)</span
+                >
+                <input type="radio" name="Q43" value="1" />
+                <!-- <label for="">1</label> -->
+                <input type="radio" name="Q43" value="2" />
+                <!-- <label for="">2</label> -->
+                <input type="radio" name="Q43" value="3" />
+                <!-- <label for="">3</label> -->
+                <input type="radio" name="Q43" value="4" />
+                <!-- <label for="">4</label> -->
+                <input type="radio" name="Q43" value="5" />
+                <!-- <label for="">5</label> -->
+              </div>
+
+              <div id="matrix-category">
+                <span class="question34span"
+                  >Ticket booking (IRCTC, Cleartrip, MakeMyTrip, etc.)</span
+                >
+                <input type="radio" name="Q44" value="1" />
+                <!-- <label for="">1</label> -->
+                <input type="radio" name="Q44" value="2" />
+                <!-- <label for="">2</label> -->
+                <input type="radio" name="Q44" value="3" />
+                <!-- <label for="">3</label> -->
+                <input type="radio" name="Q44" value="4" />
+                <!-- <label for="">4</label> -->
+                <input type="radio" name="Q44" value="5" />
+                <!-- <label for="">5</label> -->
+              </div>
+
+              <div id="matrix-category">
+                <span class="question34span"
+                  >Cab/Auto booking (Ola, Uber, Rapido, etc.)</span
+                >
+                <input type="radio" name="Q45" value="1" />
+                <!-- <label for="">1</label> -->
+                <input type="radio" name="Q45" value="2" />
+                <!-- <label for="">2</label> -->
+                <input type="radio" name="Q45" value="3" />
+                <!-- <label for="">3</label> -->
+                <input type="radio" name="Q45" value="4" />
+                <!-- <label for="">4</label> -->
+                <input type="radio" name="Q45" value="5" />
+                <!-- <label for="">5</label> -->
+              </div>
             </div>
           </div>
         </div>
@@ -13998,7 +13730,6 @@
       </div>
       <!-- m2 is  started from here  -->
     </section>
-    <!-- thsis is forn trail  -->
   </body>
   <script src="index.js"></script>
 </html>
