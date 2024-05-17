@@ -172,7 +172,7 @@
                   value="above 10lakhs"
                   required
                 />
-                <label for="income">above 10 lakhs</label>
+                <label for="income">Above 10 lakhs</label>
               </div>
             </div>
 
@@ -268,7 +268,7 @@
         <div class="details ID">
           <div class="gender-category" id="city-div">
             <span class="gender-title _City"
-              >8. Resident of city<span class="required">*</span></span
+              >8. Residents of the city<span class="required">*</span></span
             >
             <div>
               <input type="radio" name="city" value="Yes" required />
@@ -293,8 +293,8 @@
           <div class="content">
             <span class="section-title">Section B: Travel</span>
             <span class="gender-title"
-              >This section consists of questions related to your travel (eg.)
-              travel mode, travel purpose and waiting time, etc.</span
+              >This section consists of questions related to your travel e.g.
+              (travel mode, travel purpose, waiting time) etc.</span
             ><br />
 
             <div class="gender-category" id="travel-work-div">
@@ -312,7 +312,8 @@
                   onclick="togglenoworkorscool()"
                 />
                 <label for=""
-                  >I don't use public transport for travel to work/scool</label
+                  >I don't use public transport for travel to work or
+                  scool</label
                 >
               </div>
 
@@ -368,7 +369,7 @@
                   required
                   onclick="toggleworkorscool()"
                 />
-                <label for="">more than 6 times a week</label>
+                <label for="">More than 6 times a week</label>
               </div>
             </div>
 
@@ -553,7 +554,67 @@
                   name="origin_area"
                   required
                   value=""
+                  list="originarea"
                 />
+                <datalist id="originarea">
+                  <option value="Rasoolpura"></option>
+                  <option value="MGBS"></option>
+                  <option value="Nagole"></option>
+                  <option value="Uppal"></option>
+                  <option value="Stadium"></option>
+                  <option value="NGRI"></option>
+                  <option value="Habsiguda"></option>
+                  <option value="Tarnaka"></option>
+                  <option value="Mettuguda"></option>
+                  <option value="Secunderabad East"></option>
+                  <option value="Parade Ground"></option>
+                  <option value="Paradise"></option>
+                  <option value="Prakash Nagar"></option>
+                  <option value="Begumpet"></option>
+                  <option value="Ameerpet"></option>
+                  <option value="Madhura Nagar"></option>
+                  <option value="Yusufguda"></option>
+                  <option value="Road No. 5 Jubilee Hills"></option>
+                  <option value="Jubilee Check Post"></option>
+                  <option value="Peddamma Gudi"></option>
+                  <option value="Madhapur"></option>
+                  <option value="Durgam Cheruvu"></option>
+                  <option value="HITEC City"></option>
+                  <option value="Raidurg"></option>
+                  <option value="Miyapur"></option>
+                  <option value="JNTU College"></option>
+                  <option value="KPHB"></option>
+                  <option value="Kukatpally"></option>
+                  <option value="Balanagar"></option>
+                  <option value="Moosapet"></option>
+                  <option value="Bharat Nagar"></option>
+                  <option value="Erragadda"></option>
+                  <option value="ESI Hospital"></option>
+                  <option value="S R Nagar"></option>
+                  <option value="Punjagutta"></option>
+                  <option value="Irrum Manzil"></option>
+                  <option value="Khairatabad"></option>
+                  <option value="Lakdikapul"></option>
+                  <option value="Assembly"></option>
+                  <option value="Nampally"></option>
+                  <option value="Gandhi Bhavan"></option>
+                  <option value="Osmania Medical College"></option>
+                  <option value="Malakpet"></option>
+                  <option value="New Market"></option>
+                  <option value="Moosarambagh"></option>
+                  <option value="Dilshuknagar"></option>
+                  <option value="Chaitanyapuri"></option>
+                  <option value="Victoria Memorial"></option>
+                  <option value="LB Nagar"></option>
+                  <option value="JBS Parade Ground"></option>
+                  <option value="Secunderabad West"></option>
+                  <option value="Gandhi Hospital"></option>
+                  <option value="Musheerabad"></option>
+                  <option value="RTC X Roads"></option>
+                  <option value="Chikkadpally"></option>
+                  <option value="Narayanaguda"></option>
+                  <option value="Sultan Bazar"></option>
+                </datalist>
               </div>
             </div>
 
@@ -582,9 +643,30 @@
 
           <div class="after-left-column">
             <div class="text-container">
-              <p>Travel Time</p>
+              <p>Access Travel Time</p>
+
+              <p>(in min)</p>
               <div class="input_boxx">
-                <input type="number" name="duration" required />
+                <input
+                  type="number"
+                  name="duration"
+                  required
+                  list="accesstraveltime1"
+                />
+                <datalist id="accesstraveltime1">
+                  <option value="5"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20"></option>
+                  <option value="25"></option>
+                  <option value="30"></option>
+                  <option value="35"></option>
+                  <option value="40"></option>
+                  <option value="45"></option>
+                  <option value="50"></option>
+                  <option value="55"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
             <div class="mode-choice">
@@ -812,7 +894,26 @@
             <img src="bus_stop.png" alt="Your Image" />
             <div class="text-container">
               <div class="input_boxx">
-                <input type="number" name="waitingTime" required />
+                <input
+                  type="number"
+                  name="waitingTime"
+                  required
+                  list="waitingtime2"
+                />
+                <datalist id="waitingtime2">
+                  <option value="5"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20"></option>
+                  <option value="25"></option>
+                  <option value="30"></option>
+                  <option value="35"></option>
+                  <option value="40"></option>
+                  <option value="45"></option>
+                  <option value="50"></option>
+                  <option value="55"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
           </div>
@@ -841,7 +942,26 @@
             <div class="text-container">
               <p>Travel Time</p>
               <div class="input_boxx">
-                <input type="number" name="durationd" required />
+                <input
+                  type="number"
+                  name="durationd"
+                  required
+                  list="accesstraveltimemilemode"
+                />
+                <datalist id="accesstraveltimemilemode">
+                  <option value="5"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20"></option>
+                  <option value="25"></option>
+                  <option value="30"></option>
+                  <option value="35"></option>
+                  <option value="40"></option>
+                  <option value="45"></option>
+                  <option value="50"></option>
+                  <option value="55"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
           </div>
@@ -850,16 +970,56 @@
             <img src="bus_stop.png" alt="Your Image" />
             <div class="text-container">
               <div class="input_boxx">
-                <input type="number" name="waitingTimeE" required />
+                <input
+                  type="number"
+                  name="waitingTimeE"
+                  required
+                  list="waitingtime1"
+                />
+                <datalist id="waitingtime1">
+                  <option value="5"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20"></option>
+                  <option value="25"></option>
+                  <option value="30"></option>
+                  <option value="35"></option>
+                  <option value="40"></option>
+                  <option value="45"></option>
+                  <option value="50"></option>
+                  <option value="55"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
           </div>
           <!--six column-->
           <div class="after-left-column">
             <div class="text-container">
-              <p>Travel Time</p>
+              <p>Access Travel Time</p>
+
+              <p>(in min)</p>
               <div class="input_boxx">
-                <input type="number" name="durationf" value="" />
+                <input
+                  type="number"
+                  name="durationf"
+                  value=""
+                  list="accesstraveltime2"
+                />
+                <datalist id="accesstraveltime2">
+                  <option value="5"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20"></option>
+                  <option value="25"></option>
+                  <option value="30"></option>
+                  <option value="35"></option>
+                  <option value="40"></option>
+                  <option value="45"></option>
+                  <option value="50"></option>
+                  <option value="55"></option>
+                  <option value="60"></option>
+                </datalist>
               </div>
             </div>
             <div class="mode-choice">
@@ -1094,7 +1254,67 @@
                   name="destination_area"
                   required
                   value=""
+                  list="destanation"
                 />
+                <datalist id="destanation">
+                  <option value="Rasoolpura"></option>
+                  <option value="MGBS"></option>
+                  <option value="Nagole"></option>
+                  <option value="Uppal"></option>
+                  <option value="Stadium"></option>
+                  <option value="NGRI"></option>
+                  <option value="Habsiguda"></option>
+                  <option value="Tarnaka"></option>
+                  <option value="Mettuguda"></option>
+                  <option value="Secunderabad East"></option>
+                  <option value="Parade Ground"></option>
+                  <option value="Paradise"></option>
+                  <option value="Prakash Nagar"></option>
+                  <option value="Begumpet"></option>
+                  <option value="Ameerpet"></option>
+                  <option value="Madhura Nagar"></option>
+                  <option value="Yusufguda"></option>
+                  <option value="Road No. 5 Jubilee Hills"></option>
+                  <option value="Jubilee Check Post"></option>
+                  <option value="Peddamma Gudi"></option>
+                  <option value="Madhapur"></option>
+                  <option value="Durgam Cheruvu"></option>
+                  <option value="HITEC City"></option>
+                  <option value="Raidurg"></option>
+                  <option value="Miyapur"></option>
+                  <option value="JNTU College"></option>
+                  <option value="KPHB"></option>
+                  <option value="Kukatpally"></option>
+                  <option value="Balanagar"></option>
+                  <option value="Moosapet"></option>
+                  <option value="Bharat Nagar"></option>
+                  <option value="Erragadda"></option>
+                  <option value="ESI Hospital"></option>
+                  <option value="S R Nagar"></option>
+                  <option value="Punjagutta"></option>
+                  <option value="Irrum Manzil"></option>
+                  <option value="Khairatabad"></option>
+                  <option value="Lakdikapul"></option>
+                  <option value="Assembly"></option>
+                  <option value="Nampally"></option>
+                  <option value="Gandhi Bhavan"></option>
+                  <option value="Osmania Medical College"></option>
+                  <option value="Malakpet"></option>
+                  <option value="New Market"></option>
+                  <option value="Moosarambagh"></option>
+                  <option value="Dilshuknagar"></option>
+                  <option value="Chaitanyapuri"></option>
+                  <option value="Victoria Memorial"></option>
+                  <option value="LB Nagar"></option>
+                  <option value="JBS Parade Ground"></option>
+                  <option value="Secunderabad West"></option>
+                  <option value="Gandhi Hospital"></option>
+                  <option value="Musheerabad"></option>
+                  <option value="RTC X Roads"></option>
+                  <option value="Chikkadpally"></option>
+                  <option value="Narayanaguda"></option>
+                  <option value="Sultan Bazar"></option>
+                </datalist>
               </div>
             </div>
 
@@ -1306,21 +1526,23 @@
                 </div>
               </div>
 
-              <span class="gender-title"
-                >Overall, How Safe/Secure do you feel while using
-                walking/bicycling to/from transit stop</span
-              ><br />
-              <div class="gender-category">
-                <input type="radio" name="overall-Fb-nmt" value="1" />
-                <label for="">1</label>
-                <input type="radio" name="overall-Fb-nmt" value="2" />
-                <label for="">2</label>
-                <input type="radio" name="overall-Fb-nmt" value="3" />
-                <label for="">3</label>
-                <input type="radio" name="overall-Fb-nmt" value="4" />
-                <label for="">4</label>
-                <input type="radio" name="overall-Fb-nmt" value="5" />
-                <label for="">5</label>
+              <div class="Overallbox">
+                <span class="gender-title"
+                  >Overall, How Safe/Secure do you feel while using
+                  walking/bicycling to/from transit stop</span
+                >
+                <div class="gender-category">
+                  <input type="radio" name="overall-Fb-nmt" value="1" />
+                  <label for="">1</label>
+                  <input type="radio" name="overall-Fb-nmt" value="2" />
+                  <label for="">2</label>
+                  <input type="radio" name="overall-Fb-nmt" value="3" />
+                  <label for="">3</label>
+                  <input type="radio" name="overall-Fb-nmt" value="4" />
+                  <label for="">4</label>
+                  <input type="radio" name="overall-Fb-nmt" value="5" />
+                  <label for="">5</label>
+                </div>
               </div>
             </div>
             <!--End nmt mode-->
@@ -2152,7 +2374,7 @@
           <br />
           <div class="question34" id="secure-div">
             <span class="gender-title"
-              >How safe/secure do you feel while travelling at night versus
+              >13. How safe/secure do you feel while travelling at night versus
               daytime (1-very unsafe to 3-same to 5-very safe)<span
                 class="required"
                 >*</span
@@ -2173,7 +2395,7 @@
             </div>
 
             <div id="matrix-category">
-              <span class="question34span">By personal vehicle (alone)?</span>
+              <span class="question34span">By personal vehicle (alone)</span>
 
               <input type="radio" name="Q34" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2206,7 +2428,7 @@
 
             <div id="matrix-category">
               <span class="question34span"
-                >By shuttle/cab/minibus (shared)?</span
+                >By shuttle/cab/minibus (shared)</span
               >
               <input type="radio" name="Q36" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2222,7 +2444,7 @@
 
             <div id="matrix-category">
               <span class="question34span"
-                >By Ola/Uber/Rapido(single occupancy)</span
+                >By Ola/Uber/Rapido (single occupancy)</span
               >
               <input type="radio" name="Q37" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2266,7 +2488,7 @@
 
           <div class="gender-category" id="Q40">
             <span class="gender-title"
-              >40. Have you been a victim of crime while accessing transit?<span
+              >14. Have you been a victim of crime while accessing transit?<span
                 class="required"
                 >*</span
               ></span
@@ -2289,8 +2511,14 @@
             <label for="">No</label>
           </div>
           <div id="crime_options" style="display: none">
+<<<<<<< HEAD
             <div class="gender-category" id="Q40a">
               <span class="gender-title">40(a). If Yes, what type of crime were you involved in?<span
+=======
+            <div class="gender-category">
+              <span class="gender-title"
+                >14(a). If Yes, what type of crime were you involved in?<span
+>>>>>>> 5422351275ad9f129d113deb46546c51c74d3655
                   class="required"
                   >*</span
                 ></span
@@ -2302,48 +2530,54 @@
               </div>
               <div>
                 <input type="radio" name="Q40a" value="2" />
-                <label for="">eve teasing</label>
+                <label for="">Eve teasing</label>
               </div>
               <div>
                 <input type="radio" name="Q40a" value="3" />
-                <label for="">petty theft</label>
+                <label for="">Petty theft</label>
               </div>
               <div>
                 <input type="radio" name="Q40a" value="4" />
-                <label for="">armed theft</label>
+                <label for="">Armed theft</label>
               </div>
               <div>
                 <input type="radio" name="Q40a" value="5" />
-                <label for="">bodily injuries</label>
+                <label for="">Bodily injuries</label>
               </div>
             </div>
 
+<<<<<<< HEAD
             <div class="gender-category" id="Q40b">
               <span class="gender-title" 
                 >40(b). If Yes, where did the crime occour<span class="required"
+=======
+            <div class="gender-category">
+              <span class="gender-title"
+                >14(b). If Yes, where did the crime occour<span class="required"
+>>>>>>> 5422351275ad9f129d113deb46546c51c74d3655
                   >*</span
                 ></span
               >
               <br />
               <div>
                 <input type="radio" name="Q40b" value="1" />
-                <label for="">close to home</label>
+                <label for="">Close to home</label>
               </div>
               <div>
                 <input type="radio" name="Q40b" value="2" />
-                <label for="">while walking to stop</label>
+                <label for="">While walking to stop</label>
               </div>
               <div>
                 <input type="radio" name="Q40b" value="3" />
-                <label for="">while on paratransit</label>
+                <label for="">While on paratransit</label>
               </div>
               <div>
                 <input type="radio" name="Q40b" value="4" />
-                <label for="">at parking lot</label>
+                <label for="">At parking lot</label>
               </div>
               <div>
                 <input type="radio" name="Q40b" value="5" />
-                <label for="">at transit stop</label>
+                <label for="">At transit stop</label>
               </div>
             </div>
           </div>
@@ -2365,7 +2599,7 @@
 
         <div class="gender-category">
           <span class="gender-title"
-            >Do you have a smartphone?<span class="required">*</span></span
+            >15. Do you have a smartphone?<span class="required">*</span></span
           >
           <input
             type="radio"
@@ -2388,10 +2622,8 @@
           <div class="Yes_smartPhone">
             <div class="gender-category">
               <span class="gender-title"
-                >Do you usually have a data package on your smartphone?<span
-                  class="required"
-                  >*</span
-                ></span
+                >15(a). Do you usually have a data package on your
+                smartphone?<span class="required">*</span></span
               >
               <input
                 type="radio"
@@ -2413,7 +2645,7 @@
             <br />
             <div class="question34">
               <span class="gender-title"
-                >How often do you use any of the following apps (1-Never,
+                >15(b). How often do you use any of the following apps (1-Never,
                 2-Rarely, 3-Sometime, 4-Very Often, 5-Always)?<span
                   class="required"
                   >*</span
