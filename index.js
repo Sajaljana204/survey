@@ -553,6 +553,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
   const travel11Div = document.getElementById("travel-11-div");
   const secureDiv = document.getElementById("secure-div");
+  const for_b = document.getElementById("nmt");
 
   // Validate travel work div
   if (!isRadioChecked(travelWorkDiv)) {
@@ -586,7 +587,90 @@ document.getElementById("next2").addEventListener("click", function () {
     travel11Div.style.border = "none";
   }
 
- 
+  const walkingOrBicycleQuestions = [
+    "Q13s",
+    "Q14s",
+    "Q15s",
+    "Q16s",
+    "Q17s",
+    "Q18s",
+    "Q19s",
+    "Q20s",
+    "Q21s",
+    "overall-Fb-nmt",
+  ];
+  const autoRelatedQuestions = [
+    "Q22s",
+    "Q23s",
+    "Q24s",
+    "Q25s",
+    "Q26s",
+    "Q27s",
+    "Q28s",
+    "overall-Fb-para",
+  ];
+  const personalVehicleQuestions = [
+    "Q29s",
+    "Q30s",
+    "Q31s",
+    "Q32s",
+    "Q33s",
+    "overall-Fb-personal",
+  ];
+
+  // Validate based on selected transportation mode
+  if (columnB === "walk" || columnB === "bicycle") {
+    for (var i = 0; i < walkingOrBicycleQuestions.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${walkingOrBicycleQuestions[i]}"]:checked`
+        )
+      ) {
+        for_b.style.border = "1px solid red";
+        isValid = false;
+      }
+    }
+  } else if (
+    columnB === "auto" ||
+    columnB === "auto_app" ||
+    columnB === "cab" ||
+    columnB === "cab(app)" ||
+    columnB === "2-Wheeler(app)"
+  ) {
+    for (var i = 0; i < autoRelatedQuestions.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${autoRelatedQuestions[i]}"]:checked`
+        )
+      ) {
+        document
+          .querySelectorAll(`input[name="${autoRelatedQuestions[i]}"]`)
+          .forEach((input) => {
+            input.parentElement.style.color = "red";
+          });
+        isValid = false;
+      }
+    }
+  } else if (
+    columnB === "personal_car" ||
+    columnB === "personal_2-wheeler" ||
+    columnB === "drop-off"
+  ) {
+    for (var i = 0; i < personalVehicleQuestions.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${personalVehicleQuestions[i]}"]:checked`
+        )
+      ) {
+        document
+          .querySelectorAll(`input[name="${personalVehicleQuestions[i]}"]`)
+          .forEach((input) => {
+            input.parentElement.style.color = "red";
+          });
+        isValid = false;
+      }
+    }
+  }
 
   if (isValid) {
     saveAndNext();
