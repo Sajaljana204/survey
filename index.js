@@ -620,8 +620,32 @@ document.getElementById("next2").addEventListener("click", function () {
       document
         .querySelectorAll(`input[name="${fieldName}"]`)
         .forEach((input) => {
-          input.parentElement.style.color = "red"; // Assuming the parent element should indicate the error
+          input.closest("label").style.color = "red"; // Assuming the parent element should indicate the error
         });
+    }
+  });
+
+  const textFields = [
+    { name: "originType", minLength: 1 },
+    { name: "origin_area", minLength: 1 },
+    { name: "origin_pin", minLength: 1 },
+    { name: "startingTime", minLength: 1 },
+    { name: "duration", minLength: 1 },
+    { name: "waitingTime", minLength: 1 },
+    { name: "waitingTimeE", minLength: 1 },
+    { name: "durationf", minLength: 1 },
+    { name: "destinationType", minLength: 1 },
+    { name: "destination_area", minLength: 1 },
+    { name: "destination_pin", minLength: 1 },
+    { name: "endTime", minLength: 1 },
+    { name: "durationd", minLength: 1 },
+  ];
+
+  textFields.forEach((field) => {
+    const inputElement = document.querySelector(`input[name="${field.name}"]`);
+    if (inputElement.value.trim().length < field.minLength) {
+      isValid = false;
+      inputElement.style.border = "2px solid red"; // Apply error styling
     }
   });
 
