@@ -374,6 +374,7 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
+  saveAndNext();
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -553,7 +554,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
   const travel11Div = document.getElementById("travel-11-div");
-  const secureDiv = document.getElementById("secure-div");
+  
   const for_b = document.getElementById("nmt");
   const paratransit = document.getElementById("paratransit");
   const personal = document.getElementById("personal");
@@ -566,13 +567,7 @@ document.getElementById("next2").addEventListener("click", function () {
     travelWorkDiv.style.border = "none";
   }
 
-  // Validate travel partner div
-  if (!isRadioChecked(travelPartnerDiv)) {
-    travelPartnerDiv.style.border = "1px solid red";
-    isValid = false;
-  } else {
-    travelPartnerDiv.style.border = "none";
-  }
+  
 
   // Validate travel purpose div
   if (!isRadioChecked(travelPurposeDiv)) {
@@ -589,6 +584,23 @@ document.getElementById("next2").addEventListener("click", function () {
   } else {
     travel11Div.style.border = "none";
   }
+
+  let istravel_work = document.querySelector('input[name="travel_work"]:checked')
+  ? document.querySelector('input[name="travel_work"]:checked').value
+  : "";
+  
+  if (istravel_work !== "1") {
+    console.log(istravel_work);
+      if (
+        !document.querySelector(`input[name="travel_partner"]:checked`)
+      ) {
+        travelPartnerDiv.style.border = "1px solid red";
+        isValid = false;
+        
+      
+    }
+  }
+
 
   const walkingOrBicycleQuestions = [
     "Q13s",
@@ -692,6 +704,38 @@ if (columnB === "walk" || columnB === "bicycle") {
     isValid = validateRadioButtons(fpersonal, personalVehicleQuestionsF) && isValid;
   }
 
+  const secureDiv = document.getElementById("secure-div");
+  const secure = [
+    "Q34",
+    "Q35",
+    "Q36",
+    "Q37",
+    "Q38",
+    "Q39",
+  ];
+  isValid = validateRadioButtons(secureDiv, secure) && isValid;
+
+  // Validate Q40 and its dependencies
+  const q40 = document.querySelector('input[name="Q40"]:checked');
+  const Q40=document.getElementById('Q40');
+  if (!q40) {
+    isValid = false;
+    Q40.style.border="1px solid red";
+  } else if (q40.value === "1") {
+    // Check if Q40 is 1
+    ["Q40a", "Q40b"].forEach((fieldName) => {
+      if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
+        isValid = false;
+        if(fieldName ==="Q40a"){
+          const Q40a=document.getElementById("Q40a");
+          Q40a.style.border="1px solid red";
+        }else{
+          const Q40b=document.getElementById("Q40b");
+          Q40b.style.border="1px solid red";
+        }
+      }
+    });
+  }
   if (isValid) {
     saveAndNext();
   } else {
