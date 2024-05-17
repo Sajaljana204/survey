@@ -554,6 +554,8 @@ document.getElementById("next2").addEventListener("click", function () {
   const travel11Div = document.getElementById("travel-11-div");
   const secureDiv = document.getElementById("secure-div");
   const for_b = document.getElementById("nmt");
+  const paratransit = document.getElementById("paratransit");
+  const personal = document.getElementById("personal");
 
   // Validate travel work div
   if (!isRadioChecked(travelWorkDiv)) {
@@ -643,11 +645,7 @@ document.getElementById("next2").addEventListener("click", function () {
           `input[name="${autoRelatedQuestions[i]}"]:checked`
         )
       ) {
-        document
-          .querySelectorAll(`input[name="${autoRelatedQuestions[i]}"]`)
-          .forEach((input) => {
-            input.parentElement.style.color = "red";
-          });
+        paratransit.style.border = "1px solid red";
         isValid = false;
       }
     }
@@ -662,11 +660,7 @@ document.getElementById("next2").addEventListener("click", function () {
           `input[name="${personalVehicleQuestions[i]}"]:checked`
         )
       ) {
-        document
-          .querySelectorAll(`input[name="${personalVehicleQuestions[i]}"]`)
-          .forEach((input) => {
-            input.parentElement.style.color = "red";
-          });
+        personal.style.border = "1px solid red";
         isValid = false;
       }
     }
