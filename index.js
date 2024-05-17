@@ -665,6 +665,85 @@ document.getElementById("next2").addEventListener("click", function () {
       }
     }
   }
+  const fnmt = document.getElementById("fnmt");
+  const fparatransit = document.getElementById("fparatransit");
+  const fpersonal = document.getElementById("fpersonal");
+  const walkBicycleQuestionsF = [
+    "fQ13s",
+    "fQ14s",
+    "fQ15s",
+    "fQ16s",
+    "fQ17s",
+    "fQ18s",
+    "fQ19s",
+    "fQ20s",
+    "fQ21s",
+    "overall-Ff-nmt",
+  ];
+  const autoRelatedQuestionsF = [
+    "fQ22s",
+    "fQ23s",
+    "fQ24s",
+    "fQ25s",
+    "fQ26s",
+    "fQ27s",
+    "fQ28s",
+    "overall-Ff-para",
+  ];
+  const personalVehicleQuestionsF = [
+    "fQ29s",
+    "fQ30s",
+    "fQ31s",
+    "fQ32s",
+    "fQ33s",
+    "overall-Ff-personal",
+  ];
+
+  // Validate based on selected final transportation mode
+  if (columnF === "walk" || columnF === "bicycle") {
+    for (var i = 0; i < walkBicycleQuestionsF.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${walkBicycleQuestionsF[i]}"]:checked`
+        )
+      ) {
+        fnmt.style.border = "1px solid red";
+        isValid = false;
+      }
+    }
+  } else if (
+    columnF === "auto" ||
+    columnF === "auto_app" ||
+    columnF === "cab" ||
+    columnF === "cab(app)" ||
+    columnF === "2-wheeler(app)"
+  ) {
+    for (var i = 0; i < autoRelatedQuestionsF.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${autoRelatedQuestionsF[i]}"]:checked`
+        )
+      ) {
+        fparatransit.style.border = "1px solid red";
+        isValid = false;
+      }
+    }
+  } else if (
+    columnF === "personal_car" ||
+    columnF === "personal_2-wheeler" ||
+    columnF === "drop-off"
+  ) {
+    for (var i = 0; i < personalVehicleQuestionsF.length; i++) {
+      if (
+        !document.querySelector(
+          `input[name="${personalVehicleQuestionsF[i]}"]:checked`
+        )
+      ) {
+        fpersonal.style.border="1px solid red";
+        isValid = false;
+      }
+    }
+  }
 
   if (isValid) {
     saveAndNext();
