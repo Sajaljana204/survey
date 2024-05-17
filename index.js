@@ -625,6 +625,17 @@ document.getElementById("next2").addEventListener("click", function () {
     }
   });
 
+  const modeChoice = ["modeChoiceBtn", "modeChoiceBtnf"];
+  for (var i = 0; i < modeChoice.length; i++) {
+    if (
+      document.getElementById(modeChoice[i]).getAttribute("data-value") === null
+    ) {
+      const btn = document.getElementById(modeChoice[i]);
+      btn.style.border = "2px solid red";
+      isValid = false;
+    }
+  }
+
   const textFields = [
     { name: "originType", minLength: 1 },
     { name: "origin_area", minLength: 1 },
@@ -646,8 +657,36 @@ document.getElementById("next2").addEventListener("click", function () {
     if (inputElement.value.trim().length < field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
+    }else {
+      inputElement.style.border = ""; // Remove error styling
     }
   });
+//It automatically change the colour ot text input button of image section
+  const inputElements = document.querySelectorAll('input[type="text"]');
+    inputElements.forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.value.trim().length >= 1) {
+          this.style.border = "";
+        }
+      });
+    });
+
+    const inputElementsnum = document.querySelectorAll('input[type="number"]');
+    inputElementsnum.forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.value.trim().length >= 1) {
+          this.style.border = "";
+        }
+      });
+    });
+    const inputElementsnumtime = document.querySelectorAll('input[type="time"]');
+    inputElementsnumtime.forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.value.trim().length >= 1) {
+          this.style.border = "";
+        }
+      });
+    });
 
 
   const walkingOrBicycleQuestions = [
