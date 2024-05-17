@@ -1000,7 +1000,6 @@
     margin-left: 7%;
   }
   .question13span {
-    background-color: #78dfd5;
   }
   .question13division {
     border: 3px solid rgb(195, 213, 228);
@@ -1009,7 +1008,7 @@
     padding-top: 2%;
   }
 
-  #question13spanlavel1 {
+  /* #question13spanlavel1 {
     margin-left: 50%;
     width: 3%;
   }
@@ -1032,5 +1031,5 @@
   #question13spanlavel5 {
     margin-left: 9%;
     width: 3%;
-  }
+  } */
 }
