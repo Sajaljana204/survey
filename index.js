@@ -708,21 +708,21 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // Validate Q40 and its dependencies
   const q40 = document.querySelector('input[name="Q40"]:checked');
-  const Q40 = document.getElementById("Q40");
+  const Q40=document.getElementById('Q40_div');
   if (!q40) {
     isValid = false;
-    Q40.style.border = "1px solid red";
+    Q40.style.border="1px solid red";
   } else if (q40.value === "1") {
     // Check if Q40 is 1
     ["Q40a", "Q40b"].forEach((fieldName) => {
       if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
         isValid = false;
-        if (fieldName === "Q40a") {
-          const Q40a = document.getElementById("Q40a");
-          Q40a.style.border = "1px solid red";
-        } else {
-          const Q40b = document.getElementById("Q40b");
-          Q40b.style.border = "1px solid red";
+        if(fieldName ==="Q40a"){
+          const Q40a=document.getElementById("Q40a");
+          Q40a.style.border="1px solid red";
+        }else{
+          const Q40b=document.getElementById("Q40b");
+          Q40b.style.border="1px solid red";
         }
       }
     });
