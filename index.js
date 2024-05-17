@@ -455,19 +455,7 @@ function isRadioChecked(div) {
   }
   return false;
 }
-function validateRadioButtons(div, questions) {
-  let isValid = true;
-  for (let i = 0; i < questions.length; i++) {
-    if (!document.querySelector(`input[name="${questions[i]}"]:checked`)) {
-      div.style.border = "1px solid red";
-      isValid = false;
-    }
-  }
-  if (isValid) {
-    div.style.border = "1px solid red";
-  }
-  return isValid;
-}
+
 //this fuction is for the remove boarder of radio button
 document
   .querySelectorAll('.gender-category input[type="radio"]')
@@ -687,16 +675,7 @@ if (columnB === "walk" || columnB === "bicycle") {
 
   // Validate based on selected final transportation mode
   if (columnF === "walk" || columnF === "bicycle") {
-    for (var i = 0; i < walkBicycleQuestionsF.length; i++) {
-      if (
-        !document.querySelector(
-          `input[name="${walkBicycleQuestionsF[i]}"]:checked`
-        )
-      ) {
-        fnmt.style.border = "1px solid red";
-        isValid = false;
-      }
-    }
+    isValid = validateRadioButtons(fnmt, walkBicycleQuestionsF) && isValid;
   } else if (
     columnF === "auto" ||
     columnF === "auto_app" ||
@@ -704,31 +683,13 @@ if (columnB === "walk" || columnB === "bicycle") {
     columnF === "cab(app)" ||
     columnF === "2-wheeler(app)"
   ) {
-    for (var i = 0; i < autoRelatedQuestionsF.length; i++) {
-      if (
-        !document.querySelector(
-          `input[name="${autoRelatedQuestionsF[i]}"]:checked`
-        )
-      ) {
-        fparatransit.style.border = "1px solid red";
-        isValid = false;
-      }
-    }
+    isValid = validateRadioButtons(fparatransit, autoRelatedQuestionsF) && isValid;
   } else if (
     columnF === "personal_car" ||
     columnF === "personal_2-wheeler" ||
     columnF === "drop-off"
   ) {
-    for (var i = 0; i < personalVehicleQuestionsF.length; i++) {
-      if (
-        !document.querySelector(
-          `input[name="${personalVehicleQuestionsF[i]}"]:checked`
-        )
-      ) {
-        fpersonal.style.border="1px solid red";
-        isValid = false;
-      }
-    }
+    isValid = validateRadioButtons(fpersonal, personalVehicleQuestionsF) && isValid;
   }
 
   if (isValid) {
@@ -737,6 +698,21 @@ if (columnB === "walk" || columnB === "bicycle") {
     alert("Please fill all required fields correctly.");
   }
 });
+
+function validateRadioButtons(div, questions) {
+  let isValid = true;
+  for (let i = 0; i < questions.length; i++) {
+    if (!document.querySelector(`input[name="${questions[i]}"]:checked`)) {
+      isValid = false;
+    }
+  }
+  if (!isValid) {
+    div.style.border = "1px solid red";
+  }else{
+    div.style.border = "1px solid black";
+  }
+  return isValid;
+}
 
 
 
