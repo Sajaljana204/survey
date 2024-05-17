@@ -996,8 +996,13 @@
     margin-top: 2%;
     margin-left: 1%;
   }
+  .matrixorigintransport-category span {
+    font-weight: 200;
+    width: 43%;
+    background-color: #9a2c35;
+  }
   .matrixorigintransport-category input {
-    margin-left: 7%;
+    margin-left: 4%;
   }
   .question13span {
   }
@@ -1008,28 +1013,28 @@
     padding-top: 2%;
   }
 
-  /* #question13spanlavel1 {
-    margin-left: 50%;
+  #question13spanlavel1 {
+    margin-left: 4%;
     width: 3%;
   }
 
   #question13spanlavel2 {
-    margin-left: 9%;
+    margin-left: 6%;
     width: 3%;
   }
 
   #question13spanlavel3 {
-    margin-left: 8%;
+    margin-left: 5.5%;
     width: 3%;
   }
 
   #question13spanlavel4 {
-    margin-left: 8%;
+    margin-left: 5.5%;
     width: 3%;
   }
 
   #question13spanlavel5 {
-    margin-left: 9%;
+    margin-left: 5.5%;
     width: 3%;
-  } */
+  }
 }
