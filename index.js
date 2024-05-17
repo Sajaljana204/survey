@@ -596,6 +596,36 @@ document.getElementById("next2").addEventListener("click", function () {
     }
   }
 
+  let istravel_purpose = document.querySelector(
+    'input[name="travel_purpose"]:checked'
+  )
+    ? document.querySelector('input[name="travel_purpose"]:checked').value
+    : "";
+
+  if (istravel_purpose !== "1") {
+    if (!document.querySelector(`input[name="travel_11"]:checked`)) {
+      travelPartnerDiv.style.border = "1px solid red";
+      isValid = false;
+    }
+  }
+  const fieldsToCheck = [
+    "cToe",
+  ];
+
+  // Check if radio buttons are selected
+  fieldsToCheck.forEach((fieldName) => {
+    if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
+      isValid = false;
+      // Apply error styling or message for radio button groups
+      document
+        .querySelectorAll(`input[name="${fieldName}"]`)
+        .forEach((input) => {
+          input.parentElement.style.color = "red"; // Assuming the parent element should indicate the error
+        });
+    }
+  });
+
+
   const walkingOrBicycleQuestions = [
     "Q13s",
     "Q14s",
