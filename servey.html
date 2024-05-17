@@ -217,8 +217,20 @@
                 <label for="employment">Student</label>
               </div>
               <div>
-                <input type="radio" name="employment" value="Other" required />
+                <input
+                  type="radio"
+                  name="employment"
+                  value="Other"
+                  required
+                  onclick="otheremp()"
+                />
                 <label for="employment">Other</label>
+                <input
+                  type="text"
+                  name="employment"
+                  id="otherEmployment"
+                  class="hidden"
+                />
               </div>
             </div>
 
@@ -474,16 +486,16 @@
                 />
                 <label for="">Visiting family/friends</label>
               </div>
-              <div>
-                <input
-                  type="radio"
-                  name="travel_purpose"
-                  value="5"
-                  id="OtherPurpose"
-                  required
-                />
-                <label for="">Others</label>
-              </div>
+
+              <input
+                type="radio"
+                name="travel_purpose"
+                value="5"
+                id="OtherPurpose"
+                required
+              />
+              <label for="">Others</label>
+
               <input
                 type="text"
                 name="OtherTravelPurpose"

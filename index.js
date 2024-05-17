@@ -2057,3 +2057,6 @@ function togglenoworkorscool() {
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
 }
+function otheremp() {
+  document.getElementById("otherEmployment").style.display = "block";
+}
