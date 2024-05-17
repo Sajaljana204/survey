@@ -2256,6 +2256,7 @@ input[type="number"] {
 .Overallbox {
   margin-top: 2%;
   background-color: #d46edf;
+  border: 3px solid rgb(9, 195, 126);
 }
 
 .Overallbox span {
@@ -2264,4 +2265,5 @@ input[type="number"] {
 
 .Overallbox .gender-category {
   background-color: #d46edf;
+  border: none;
 }
