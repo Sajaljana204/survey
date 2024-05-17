@@ -553,7 +553,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
   const travel11Div = document.getElementById("travel-11-div");
-  
+
   const for_b = document.getElementById("nmt");
   const paratransit = document.getElementById("paratransit");
   const personal = document.getElementById("personal");
@@ -565,8 +565,6 @@ document.getElementById("next2").addEventListener("click", function () {
   } else {
     travelWorkDiv.style.border = "none";
   }
-
-  
 
   // Validate travel purpose div
   if (!isRadioChecked(travelPurposeDiv)) {
@@ -584,22 +582,19 @@ document.getElementById("next2").addEventListener("click", function () {
     travel11Div.style.border = "none";
   }
 
-  let istravel_work = document.querySelector('input[name="travel_work"]:checked')
-  ? document.querySelector('input[name="travel_work"]:checked').value
-  : "";
-  
+  let istravel_work = document.querySelector(
+    'input[name="travel_work"]:checked'
+  )
+    ? document.querySelector('input[name="travel_work"]:checked').value
+    : "";
+
   if (istravel_work !== "1") {
     console.log(istravel_work);
-      if (
-        !document.querySelector(`input[name="travel_partner"]:checked`)
-      ) {
-        travelPartnerDiv.style.border = "1px solid red";
-        isValid = false;
-        
-      
+    if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
+      travelPartnerDiv.style.border = "1px solid red";
+      isValid = false;
     }
   }
-
 
   const walkingOrBicycleQuestions = [
     "Q13s",
@@ -632,24 +627,26 @@ document.getElementById("next2").addEventListener("click", function () {
     "overall-Fb-personal",
   ];
 
-// Validate based on selected transportation mode
-if (columnB === "walk" || columnB === "bicycle") {
-  isValid = validateRadioButtons(for_b, walkingOrBicycleQuestions) && isValid;
-} else if (
-  columnB === "auto" ||
-  columnB === "auto_app" ||
-  columnB === "cab" ||
-  columnB === "cab(app)" ||
-  columnB === "2-Wheeler(app)"
-) {
-  isValid = validateRadioButtons(paratransit, autoRelatedQuestions) && isValid;
-} else if (
-  columnB === "personal_car" ||
-  columnB === "personal_2-wheeler" ||
-  columnB === "drop-off"
-) {
-  isValid = validateRadioButtons(personal, personalVehicleQuestions) && isValid;
-}
+  // Validate based on selected transportation mode
+  if (columnB === "walk" || columnB === "bicycle") {
+    isValid = validateRadioButtons(for_b, walkingOrBicycleQuestions) && isValid;
+  } else if (
+    columnB === "auto" ||
+    columnB === "auto_app" ||
+    columnB === "cab" ||
+    columnB === "cab(app)" ||
+    columnB === "2-Wheeler(app)"
+  ) {
+    isValid =
+      validateRadioButtons(paratransit, autoRelatedQuestions) && isValid;
+  } else if (
+    columnB === "personal_car" ||
+    columnB === "personal_2-wheeler" ||
+    columnB === "drop-off"
+  ) {
+    isValid =
+      validateRadioButtons(personal, personalVehicleQuestions) && isValid;
+  }
   const fnmt = document.getElementById("fnmt");
   const fparatransit = document.getElementById("fparatransit");
   const fpersonal = document.getElementById("fpersonal");
@@ -694,43 +691,38 @@ if (columnB === "walk" || columnB === "bicycle") {
     columnF === "cab(app)" ||
     columnF === "2-wheeler(app)"
   ) {
-    isValid = validateRadioButtons(fparatransit, autoRelatedQuestionsF) && isValid;
+    isValid =
+      validateRadioButtons(fparatransit, autoRelatedQuestionsF) && isValid;
   } else if (
     columnF === "personal_car" ||
     columnF === "personal_2-wheeler" ||
     columnF === "drop-off"
   ) {
-    isValid = validateRadioButtons(fpersonal, personalVehicleQuestionsF) && isValid;
+    isValid =
+      validateRadioButtons(fpersonal, personalVehicleQuestionsF) && isValid;
   }
 
   const secureDiv = document.getElementById("secure-div");
-  const secure = [
-    "Q34",
-    "Q35",
-    "Q36",
-    "Q37",
-    "Q38",
-    "Q39",
-  ];
+  const secure = ["Q34", "Q35", "Q36", "Q37", "Q38", "Q39"];
   isValid = validateRadioButtons(secureDiv, secure) && isValid;
 
   // Validate Q40 and its dependencies
   const q40 = document.querySelector('input[name="Q40"]:checked');
-  const Q40=document.getElementById('Q40');
+  const Q40 = document.getElementById("Q40");
   if (!q40) {
     isValid = false;
-    Q40.style.border="1px solid red";
+    Q40.style.border = "1px solid red";
   } else if (q40.value === "1") {
     // Check if Q40 is 1
     ["Q40a", "Q40b"].forEach((fieldName) => {
       if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
         isValid = false;
-        if(fieldName ==="Q40a"){
-          const Q40a=document.getElementById("Q40a");
-          Q40a.style.border="1px solid red";
-        }else{
-          const Q40b=document.getElementById("Q40b");
-          Q40b.style.border="1px solid red";
+        if (fieldName === "Q40a") {
+          const Q40a = document.getElementById("Q40a");
+          Q40a.style.border = "1px solid red";
+        } else {
+          const Q40b = document.getElementById("Q40b");
+          Q40b.style.border = "1px solid red";
         }
       }
     });
@@ -751,13 +743,11 @@ function validateRadioButtons(div, questions) {
   }
   if (!isValid) {
     div.style.border = "1px solid red";
-  }else{
+  } else {
     div.style.border = "1px solid black";
   }
   return isValid;
 }
-
-
 
 document.getElementById("back2").addEventListener("click", function () {
   getBackLastDeletedId();
