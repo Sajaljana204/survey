@@ -2170,6 +2170,7 @@ input[type="number"] {
   background-color: rgb(192, 216, 237);
   padding-bottom: 2%;
   padding-top: 2%;
+  border-radius: 12px;
 }
 
 #matrix-category {
