@@ -374,7 +374,7 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
- 
+  saveAndNext();
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -550,7 +550,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  let isValidNumber=false;
+  saveAndNext();
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
@@ -949,12 +949,7 @@ document.getElementById("next3").addEventListener("click", function () {
     }
   }
 
-  if (!isRadioChecked(dataPackageDiv)) {
-    dataPackageDiv.style.border = "2px solid red";
-    isValid = false;
-  } else {
-    dataPackageDiv.style.border = "none";
-  }
+ 
 
   if (isSmartPhone === "1") {
     for (var i = 0; i < fieldsToCheck.length; i++) {
@@ -966,6 +961,12 @@ document.getElementById("next3").addEventListener("click", function () {
       } else {
         Question34.style.border = "none";
       }
+    }
+    if (!isRadioChecked(dataPackageDiv)) {
+      dataPackageDiv.style.border = "2px solid red";
+      isValid = false;
+    } else {
+      dataPackageDiv.style.border = "none";
     }
   }
 
