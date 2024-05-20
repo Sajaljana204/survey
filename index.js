@@ -374,11 +374,8 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
-<<<<<<< HEAD
 
-=======
   saveAndNext();
->>>>>>> 02d734502efab44a92a0c9425238e159afa72ced
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -554,11 +551,11 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-<<<<<<< HEAD
+
   let isValidNumber = false;
-=======
+
   saveAndNext();
->>>>>>> 02d734502efab44a92a0c9425238e159afa72ced
+
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
@@ -956,8 +953,6 @@ document.getElementById("next3").addEventListener("click", function () {
       isValid = false;
     }
   }
-
- 
 
   if (isSmartPhone === "1") {
     for (var i = 0; i < fieldsToCheck.length; i++) {
