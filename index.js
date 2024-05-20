@@ -374,7 +374,7 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
-  saveAndNext();
+ 
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -386,7 +386,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate text input
   if (textInputField.value.trim() === "") {
-    textInputContainer.style.border = "1px solid red";
+    textInputContainer.style.border = "2px solid red";
     isValid = false;
   } else {
     textInputContainer.style.border = "none";
@@ -394,7 +394,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate gender div
   if (!isRadioChecked(genderDiv)) {
-    genderDiv.style.border = "1px solid red";
+    genderDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     genderDiv.style.border = "none";
@@ -402,7 +402,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate age div
   if (!isRadioChecked(ageDiv)) {
-    ageDiv.style.border = "1px solid red";
+    ageDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     ageDiv.style.border = "none";
@@ -410,7 +410,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate income div
   if (!isRadioChecked(incomeDiv)) {
-    incomeDiv.style.border = "1px solid red";
+    incomeDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     incomeDiv.style.border = "none";
@@ -418,7 +418,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate employment div
   if (!isRadioChecked(employmentDiv)) {
-    employmentDiv.style.border = "1px solid red";
+    employmentDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     employmentDiv.style.border = "none";
@@ -426,7 +426,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate education div
   if (!isRadioChecked(educationDiv)) {
-    educationDiv.style.border = "1px solid red";
+    educationDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     educationDiv.style.border = "none";
@@ -434,7 +434,7 @@ document.getElementById("next1").addEventListener("click", function () {
 
   // Validate city div
   if (!isRadioChecked(cityDiv)) {
-    cityDiv.style.border = "1px solid red";
+    cityDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     cityDiv.style.border = "none";
@@ -474,7 +474,7 @@ document.getElementById("ename").addEventListener("input", function () {
   if (this.value.trim() !== "") {
     textInputContainer.style.border = "none"; // Remove border
   } else {
-    textInputContainer.style.border = "1px solid red"; // Add border if empty
+    textInputContainer.style.border = "2px solid red"; // Add border if empty
   }
 });
 
@@ -550,7 +550,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  saveAndNext();
+  let isValidNumber=false;
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
@@ -562,7 +562,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // Validate travel work div
   if (!isRadioChecked(travelWorkDiv)) {
-    travelWorkDiv.style.border = "1px solid red";
+    travelWorkDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     travelWorkDiv.style.border = "none";
@@ -570,7 +570,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // Validate travel purpose div
   if (!isRadioChecked(travelPurposeDiv)) {
-    travelPurposeDiv.style.border = "1px solid red";
+    travelPurposeDiv.style.border = "2px solid red";
     isValid = false;
   } else {
     travelPurposeDiv.style.border = "none";
@@ -578,7 +578,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // Validate travel 11 div
   if (!isRadioChecked(travel11Div)) {
-    travel11Div.style.border = "1px solid red";
+    travel11Div.style.border = "2px solid red";
     isValid = false;
   } else {
     travel11Div.style.border = "none";
@@ -593,7 +593,7 @@ document.getElementById("next2").addEventListener("click", function () {
   if (istravel_work !== "1") {
     console.log(istravel_work);
     if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
-      travelPartnerDiv.style.border = "1px solid red";
+      travelPartnerDiv.style.border = "2px solid red";
       isValid = false;
     }
   }
@@ -606,7 +606,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   if (istravel_purpose !== "1") {
     if (!document.querySelector(`input[name="travel_11"]:checked`)) {
-      travelPartnerDiv.style.border = "1px solid red";
+      travelPartnerDiv.style.border = "2px solid red";
       isValid = false;
     }
   }
@@ -639,7 +639,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const textFields = [
     { name: "originType", minLength: 1 },
     { name: "origin_area", minLength: 1 },
-    { name: "origin_pin", minLength: 1 },
+    { name: "origin_pin", minLength: 6 },
     { name: "startingTime", minLength: 1 },
     { name: "duration", minLength: 1 },
     { name: "waitingTime", minLength: 1 },
@@ -647,7 +647,7 @@ document.getElementById("next2").addEventListener("click", function () {
     { name: "durationf", minLength: 1 },
     { name: "destinationType", minLength: 1 },
     { name: "destination_area", minLength: 1 },
-    { name: "destination_pin", minLength: 1 },
+    { name: "destination_pin", minLength: 6 },
     { name: "endTime", minLength: 1 },
     { name: "durationd", minLength: 1 },
   ];
@@ -657,6 +657,11 @@ document.getElementById("next2").addEventListener("click", function () {
     if (inputElement.value.trim().length < field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
+      if(field.name === "origin_pin"){
+        alert("Enter a 6-digit number in the Origin Pincode.");
+      }else if(field.name==="destination_pin"){
+        alert("Enter a 6-digit number in the Destination Pincode.");
+      }
     } else {
       inputElement.style.border = ""; // Remove error styling
     }
@@ -803,7 +808,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const Q40 = document.getElementById("Q40_div");
   if (!q40) {
     isValid = false;
-    Q40.style.border = "1px solid red";
+    Q40.style.border = "2px solid red";
   } else if (q40.value === "1") {
     // Check if Q40 is 1
     ["Q40a", "Q40b"].forEach((fieldName) => {
@@ -811,10 +816,10 @@ document.getElementById("next2").addEventListener("click", function () {
         isValid = false;
         if (fieldName === "Q40a") {
           const Q40a = document.getElementById("Q40a");
-          Q40a.style.border = "1px solid red";
+          Q40a.style.border = "2px solid red";
         } else {
           const Q40b = document.getElementById("Q40b");
-          Q40b.style.border = "1px solid red";
+          Q40b.style.border = "2px solid red";
         }
       }
     });
@@ -834,9 +839,9 @@ function validateRadioButtons(div, questions) {
     }
   }
   if (!isValid) {
-    div.style.border = "1px solid red";
+    div.style.border = "2px solid red";
   } else {
-    div.style.border = "1px solid black";
+    div.style.border = "2px solid black";
   }
   return isValid;
 }
