@@ -935,16 +935,16 @@ document.getElementById("next3").addEventListener("click", function () {
     : "";
   const fieldsToCheck = ["Q41", "Q42", "Q43", "Q44", "Q45"];
   const fieldsTocheckForCsection = ["smartPhone"];
-  const smartPhoneId=document.getElementById("smartPhone");
-  const Question34=document.getElementById("question34");
-  const dataPackageDiv=document.getElementById("data_package_div");
+  const smartPhoneId = document.getElementById("smartPhone");
+  const Question34 = document.getElementById("question34");
+  const dataPackageDiv = document.getElementById("data_package_div");
   for (var i = 0; i < fieldsTocheckForCsection.length; i++) {
     if (
       !document.querySelector(
         `input[name="${fieldsTocheckForCsection[i]}"]:checked`
       )
     ) {
-      smartPhoneId.style.border="2px solid red";
+      smartPhoneId.style.border = "2px solid red";
       isValid = false;
     }
   }
@@ -961,9 +961,9 @@ document.getElementById("next3").addEventListener("click", function () {
       if (
         !document.querySelector(`input[name="${fieldsToCheck[i]}"]:checked`)
       ) {
-        Question34.style.border="2px solid red";
+        Question34.style.border = "2px solid red";
         isValid = false;
-      }else{
+      } else {
         Question34.style.border = "none";
       }
     }
@@ -1210,6 +1210,12 @@ function getUserLocation() {
             'input[name="travel_11"]:checked'
           )
             ? document.querySelector('input[name="travel_11"]:checked').value
+            : "";
+
+          const whith_whom = document.querySelector(
+            'input[name=" whith_whom"]:checked'
+          )
+            ? document.querySelector('input[name=" whith_whom"]:checked').value
             : "";
           //This is for image section
           const originType = document.querySelector(
@@ -1946,6 +1952,7 @@ function getUserLocation() {
             TravelPurpose:
               travel_purpose === "5" ? otherPurposeText : travel_purpose,
             Travel11: travel_11,
+            Withwhom: whith_whom,
             /*This is for image*/
             OriginType: originType,
             StartingTime: startingTime,
@@ -2163,4 +2170,7 @@ function otheremp() {
 }
 function onclickGenderNotSpecified() {
   document.getElementById("GenderNotSpecified").style.display = "block";
+}
+function onclickwhithwhom() {
+  document.getElementById("whithwhom").style.display = "block";
 }

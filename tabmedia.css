@@ -1041,4 +1041,7 @@
   .Overallbox label {
     padding-right: 1.8%;
   }
+  .project-title {
+    margin-bottom: 3%;
+  }
 }
