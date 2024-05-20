@@ -560,6 +560,7 @@ document.getElementById("next2").addEventListener("click", function () {
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
   const travel11Div = document.getElementById("travel-11-div");
+  const travel11bdiv = document.getElementById("travel-11b-div");
 
   const for_b = document.getElementById("nmt");
   const paratransit = document.getElementById("paratransit");
@@ -581,21 +582,6 @@ document.getElementById("next2").addEventListener("click", function () {
     travelPurposeDiv.style.border = "none";
   }
 
-  // Validate travel work div
-  if (!isRadioChecked(travelWorkDiv)) {
-    travelWorkDiv.style.border = "2px solid red";
-    isValid = false;
-  } else {
-    travelWorkDiv.style.border = "none";
-  }
-
-  // Validate travel purpose div
-  if (!isRadioChecked(travelPurposeDiv)) {
-    travelPurposeDiv.style.border = "2px solid red";
-    isValid = false;
-  } else {
-    travelPurposeDiv.style.border = "none";
-  }
 
   let istravel_work = document.querySelector(
     'input[name="travel_work"]:checked'
