@@ -608,9 +608,7 @@ document.getElementById("next2").addEventListener("click", function () {
       isValid = false;
     }
   }
-  const fieldsToCheck = [
-    "cToe",
-  ];
+  const fieldsToCheck = ["cToe"];
 
   // Check if radio buttons are selected
   fieldsToCheck.forEach((fieldName) => {
@@ -657,37 +655,36 @@ document.getElementById("next2").addEventListener("click", function () {
     if (inputElement.value.trim().length < field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
-    }else {
+    } else {
       inputElement.style.border = ""; // Remove error styling
     }
   });
-//It automatically change the colour ot text input button of image section
+  //It automatically change the colour ot text input button of image section
   const inputElements = document.querySelectorAll('input[type="text"]');
-    inputElements.forEach(input => {
-      input.addEventListener('input', function() {
-        if (this.value.trim().length >= 1) {
-          this.style.border = "";
-        }
-      });
+  inputElements.forEach((input) => {
+    input.addEventListener("input", function () {
+      if (this.value.trim().length >= 1) {
+        this.style.border = "";
+      }
     });
+  });
 
-    const inputElementsnum = document.querySelectorAll('input[type="number"]');
-    inputElementsnum.forEach(input => {
-      input.addEventListener('input', function() {
-        if (this.value.trim().length >= 1) {
-          this.style.border = "";
-        }
-      });
+  const inputElementsnum = document.querySelectorAll('input[type="number"]');
+  inputElementsnum.forEach((input) => {
+    input.addEventListener("input", function () {
+      if (this.value.trim().length >= 1) {
+        this.style.border = "";
+      }
     });
-    const inputElementsnumtime = document.querySelectorAll('input[type="time"]');
-    inputElementsnumtime.forEach(input => {
-      input.addEventListener('input', function() {
-        if (this.value.trim().length >= 1) {
-          this.style.border = "";
-        }
-      });
+  });
+  const inputElementsnumtime = document.querySelectorAll('input[type="time"]');
+  inputElementsnumtime.forEach((input) => {
+    input.addEventListener("input", function () {
+      if (this.value.trim().length >= 1) {
+        this.style.border = "";
+      }
     });
-
+  });
 
   const walkingOrBicycleQuestions = [
     "Q13s",
@@ -801,21 +798,21 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // Validate Q40 and its dependencies
   const q40 = document.querySelector('input[name="Q40"]:checked');
-  const Q40=document.getElementById('Q40_div');
+  const Q40 = document.getElementById("Q40_div");
   if (!q40) {
     isValid = false;
-    Q40.style.border="1px solid red";
+    Q40.style.border = "1px solid red";
   } else if (q40.value === "1") {
     // Check if Q40 is 1
     ["Q40a", "Q40b"].forEach((fieldName) => {
       if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
         isValid = false;
-        if(fieldName ==="Q40a"){
-          const Q40a=document.getElementById("Q40a");
-          Q40a.style.border="1px solid red";
-        }else{
-          const Q40b=document.getElementById("Q40b");
-          Q40b.style.border="1px solid red";
+        if (fieldName === "Q40a") {
+          const Q40a = document.getElementById("Q40a");
+          Q40a.style.border = "1px solid red";
+        } else {
+          const Q40b = document.getElementById("Q40b");
+          Q40b.style.border = "1px solid red";
         }
       }
     });
@@ -2152,4 +2149,7 @@ function toggleworkorscool() {
 }
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
+}
+function onclickGenderNotSpecified() {
+  document.getElementById("GenderNotSpecified").style.display = "block";
 }
