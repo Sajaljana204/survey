@@ -51,7 +51,9 @@
     <section class="mainsection">
       <div id="lastsubmission" class="hidden">
         <div id="submitbtn">
+          <h1>*****Thank you*****</h1>
           <h1>Do you want to submit the form?</h1>
+
           <button class="user-button" id="submit" onclick="submit()">
             Submit
           </button>
@@ -499,6 +501,7 @@
                 name="travel_purpose"
                 value="5"
                 id="OtherPurpose"
+                onclick="togglenootherpurpose()"
                 required
               />
               <label for="">Others</label>
@@ -542,7 +545,7 @@
 
             <!-- new 11b i sadded here  -->
 
-            <div class="gender-category" id="travel-11-div">
+            <div class="gender-category" id="travel-11b-div">
               <span class="gender-title"
                 >11(b). Whom do you use public transport stop for other purpose?
                 <span class="required">*</span></span
@@ -583,7 +586,7 @@
           </div>
         </div>
         <span class="gender-title"
-          >11. For your current trip please fill/tick the relevent boxes<span
+          >12. For your current trip please fill/tick the relevent boxes<span
             class="required"
             >*</span
           ></span
@@ -1407,7 +1410,8 @@
           <div class="for_b">
             <!--This is for nmt mode-->
             <div id="nmt" class="hidden question-section">
-              <span class="gender-title"><u>ORIGIN TO TRANSIT STOP</u></span
+              <span class="gender-title"
+                ><u>13(A). ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR WALKING/BICYCLE</span
@@ -1610,7 +1614,8 @@
             <!--Only paratransit modes-->
 
             <div id="paratransit" class="hidden question-section">
-              <span class="gender-title"><u>ORIGIN TO TRANSIT STOP</u></span
+              <span class="gender-title"
+                ><u>13(A).ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR PARATRANSIT VEHICLE
@@ -1784,7 +1789,8 @@
             <!--pesonal mode-->
 
             <div id="personal" class="hidden question-section">
-              <span class="gender-title"><u>ORIGIN TO TRANSIT STOP</u></span
+              <span class="gender-title"
+                ><u>13(A).ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ENROUTE TO / FROM TRANSIT STOP-FOR PERSONAL VEHICLE
@@ -1926,7 +1932,7 @@
             <!--This is for nmt mode-->
             <div id="fnmt" class="f_hidden question-section">
               <span class="gender-title"
-                ><u>TRANSIT STOP TO DESTINATION</u></span
+                ><u>13(B). TRANSIT STOP TO DESTINATION</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR WALKING</span
@@ -2130,7 +2136,7 @@
             <!--Only paratransit modes-->
             <div id="fparatransit" class="f_hidden question-section">
               <span class="gender-title"
-                ><u>TRANSIT STOP TO DESTINATION</u></span
+                ><u>13(B). TRANSIT STOP TO DESTINATION</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR PARATRANSIT VEHICLE
@@ -2303,7 +2309,7 @@
 
             <div id="fpersonal" class="f_hidden question-section">
               <span class="gender-title"
-                ><u>TRANSIT STOP TO DESTINATION</u></span
+                ><u>13(B). TRANSIT STOP TO DESTINATION</u></span
               ><br />
               <span class="gender-title"
                 >ENROUTE TO / FROM TRANSIT STOP-FOR PERSONAL VEHICLE
@@ -2444,11 +2450,8 @@
           <br />
           <div class="question34" id="secure-div">
             <span class="gender-title"
-              >13. How safe/secure do you feel while travelling at night versus
-              daytime (1-very unsafe to 3-same to 5-very safe)<span
-                class="required"
-                >*</span
-              ></span
+              >14. How safe/secure do you feel while travelling at night versus
+              daytime<span class="required">*</span></span
             >
             <div id="matrix-category">
               <span class="question34span"></span>
@@ -2558,7 +2561,7 @@
 
           <div class="gender-category" id="Q40_div">
             <span class="gender-title"
-              >14. Have you been a victim of crime while accessing transit?<span
+              >15. Have you been a victim of crime while accessing transit?<span
                 class="required"
                 >*</span
               ></span
@@ -2583,7 +2586,7 @@
           <div id="crime_options" style="display: none">
             <div class="gender-category" id="Q40a">
               <span class="gender-title"
-                >14(a). If Yes, what type of crime were you involved in?<span
+                >15(a). If Yes, what type of crime were you involved in?<span
                   class="required"
                   >*</span
                 ></span
@@ -2613,7 +2616,7 @@
 
             <div class="gender-category" id="Q40b">
               <span class="gender-title"
-                >14(b). If Yes, where did the crime occour<span class="required"
+                >15(b). If Yes, where did the crime occour<span class="required"
                   >*</span
                 ></span
               >
@@ -2658,7 +2661,7 @@
 
         <div class="gender-category" id="smartPhone">
           <span class="gender-title"
-            >15. Do you have a smartphone?<span class="required">*</span></span
+            >16. Do you have a smartphone?<span class="required">*</span></span
           >
           <input
             type="radio"
@@ -2681,7 +2684,7 @@
           <div class="Yes_smartPhone">
             <div class="gender-category" id="data_package_div">
               <span class="gender-title"
-                >15(a). Do you usually have a data package on your
+                >16(a). Do you usually have a data package on your
                 smartphone?<span class="required">*</span></span
               >
               <input
@@ -2704,7 +2707,7 @@
             <br />
             <div class="question34" id="question34">
               <span class="gender-title"
-                >15(b). How often do you use any of the following apps (1-Never,
+                >16(b). How often do you use any of the following apps (1-Never,
                 2-Rarely, 3-Sometime, 4-Very Often, 5-Always)?<span
                   class="required"
                   >*</span

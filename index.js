@@ -374,7 +374,7 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
- 
+
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -550,7 +550,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  let isValidNumber=false;
+  let isValidNumber = false;
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
@@ -657,9 +657,9 @@ document.getElementById("next2").addEventListener("click", function () {
     if (inputElement.value.trim().length < field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
-      if(field.name === "origin_pin"){
+      if (field.name === "origin_pin") {
         alert("Enter a 6-digit number in the Origin Pincode.");
-      }else if(field.name==="destination_pin"){
+      } else if (field.name === "destination_pin") {
         alert("Enter a 6-digit number in the Destination Pincode.");
       }
     } else {
@@ -1213,9 +1213,9 @@ function getUserLocation() {
             : "";
 
           const whith_whom = document.querySelector(
-            'input[name=" whith_whom"]:checked'
+            'input[name="whith_whom"]:checked'
           )
-            ? document.querySelector('input[name=" whith_whom"]:checked').value
+            ? document.querySelector('input[name="whith_whom"]:checked').value
             : "";
           //This is for image section
           const originType = document.querySelector(
@@ -2160,10 +2160,12 @@ function togglenootherpurpose() {
 
 function togglenoworkorscool() {
   document.getElementById("travel-partner-div").style.display = "none";
+  document.getElementById("travel-11b-div").style.display = "block";
 }
 
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
+  document.getElementById("travel-11b-div").style.display = "none";
 }
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
