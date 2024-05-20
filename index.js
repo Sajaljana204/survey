@@ -374,6 +374,7 @@ function validateRadioGroupIncard(fieldName) {
 
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
+  saveAndNext();
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -549,6 +550,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
+  saveAndNext();
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
@@ -929,21 +931,27 @@ document.getElementById("next3").addEventListener("click", function () {
   let isSmartPhone = document.querySelector('input[name="smartPhone"]:checked')
     ? document.querySelector('input[name="smartPhone"]:checked').value
     : "";
-  const fieldsToCheck = ["data_package", "Q41", "Q42", "Q43", "Q44", "Q45"];
+  const fieldsToCheck = ["Q41", "Q42", "Q43", "Q44", "Q45"];
   const fieldsTocheckForCsection = ["smartPhone"];
+  const smartPhoneId=document.getElementById("smartPhone");
+  const Question34=document.getElementById("question34");
+  const dataPackageDiv=document.getElementById("data_package_div");
   for (var i = 0; i < fieldsTocheckForCsection.length; i++) {
     if (
       !document.querySelector(
         `input[name="${fieldsTocheckForCsection[i]}"]:checked`
       )
     ) {
-      document
-        .querySelectorAll(`input[name="${fieldsTocheckForCsection[i]}"]`)
-        .forEach((input) => {
-          input.parentElement.style.color = "red";
-        });
+      smartPhoneId.style.border="2px solid red";
       isValid = false;
     }
+  }
+
+  if (!isRadioChecked(dataPackageDiv)) {
+    dataPackageDiv.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    dataPackageDiv.style.border = "none";
   }
 
   if (isSmartPhone === "1") {
@@ -951,12 +959,10 @@ document.getElementById("next3").addEventListener("click", function () {
       if (
         !document.querySelector(`input[name="${fieldsToCheck[i]}"]:checked`)
       ) {
-        document
-          .querySelectorAll(`input[name="${fieldsToCheck[i]}"]`)
-          .forEach((input) => {
-            input.parentElement.style.color = "red";
-          });
+        Question34.style.border="2px solid red";
         isValid = false;
+      }else{
+        Question34.style.border = "none";
       }
     }
   }
