@@ -1037,4 +1037,8 @@
     margin-left: 5.5%;
     width: 3%;
   }
+
+  .Overallbox label {
+    padding-right: 1.8%;
+  }
 }
