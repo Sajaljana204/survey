@@ -581,6 +581,15 @@ document.getElementById("next2").addEventListener("click", function () {
   } else {
     travelPurposeDiv.style.border = "none";
   }
+  
+  if (!isRadioChecked(travel11bdiv)) {
+    travel11bdiv.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    travel11bdiv.style.border = "none";
+  }
+
+
 
 
   let istravel_work = document.querySelector(
