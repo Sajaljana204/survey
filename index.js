@@ -581,12 +581,20 @@ document.getElementById("next2").addEventListener("click", function () {
     travelPurposeDiv.style.border = "none";
   }
 
-  // Validate travel 11 div
-  if (!isRadioChecked(travel11Div)) {
-    travel11Div.style.border = "2px solid red";
+  // Validate travel work div
+  if (!isRadioChecked(travelWorkDiv)) {
+    travelWorkDiv.style.border = "2px solid red";
     isValid = false;
   } else {
-    travel11Div.style.border = "none";
+    travelWorkDiv.style.border = "none";
+  }
+
+  // Validate travel purpose div
+  if (!isRadioChecked(travelPurposeDiv)) {
+    travelPurposeDiv.style.border = "2px solid red";
+    isValid = false;
+  } else {
+    travelPurposeDiv.style.border = "none";
   }
 
   let istravel_work = document.querySelector(
@@ -596,7 +604,7 @@ document.getElementById("next2").addEventListener("click", function () {
     : "";
 
   if (istravel_work !== "1") {
-    console.log(istravel_work);
+    
     if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
       travelPartnerDiv.style.border = "2px solid red";
       isValid = false;
@@ -609,9 +617,11 @@ document.getElementById("next2").addEventListener("click", function () {
     ? document.querySelector('input[name="travel_purpose"]:checked').value
     : "";
 
+    
+
   if (istravel_purpose !== "1") {
     if (!document.querySelector(`input[name="travel_11"]:checked`)) {
-      travelPartnerDiv.style.border = "2px solid red";
+      travel11Div.style.border = "2px solid red";
       isValid = false;
     }
   }
