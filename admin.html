@@ -85,7 +85,7 @@
         />
         <button class="login-button" type="submit" id="submit">Login</button
         ><br />
-        <button class="login-button" id="backEntry">Back</button>
+        <button class="login-button" id="backEntry" onclick="prePage()">Back</button>
       </form>
     </div>
     <script>
@@ -110,6 +110,8 @@
       backEntry.addEventListener("click", function () {
         window.location.href = "entry.html";
       });
+
+      
 
       window.oncontextmenu = function () {
         return false; // Disable right-click context menu
