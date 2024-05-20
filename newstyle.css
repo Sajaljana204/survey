@@ -2187,6 +2187,7 @@ input[type="number"] {
 }
 
 #question34sub1lavel {
+  padding-top: 1.9%;
   margin-left: 7%;
   width: 3%;
 }
@@ -2202,12 +2203,13 @@ input[type="number"] {
   width: 3%;
 }
 #question34sub4lavel {
-  padding-top: 1.9%;
+  padding-top: 0%;
   margin-left: 7%;
   width: 3%;
 }
 #question34sub5lavel {
-  margin-left: 8%;
+  padding-top: 1.9%;
+  margin-left: 6%;
   width: 3%;
 }
 /* qustion 13 design is done here  */
@@ -2267,4 +2269,3 @@ input[type="number"] {
   background-color: #d46edf;
   border: none;
 }
-
