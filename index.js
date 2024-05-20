@@ -375,7 +375,7 @@ function validateRadioGroupIncard(fieldName) {
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
 
-  saveAndNext();
+  // saveAndNext();
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -554,7 +554,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   let isValidNumber = false;
 
-  saveAndNext();
+  // saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
