@@ -999,7 +999,7 @@
   .matrixorigintransport-category span {
     font-weight: 100;
     width: 47%;
-    background-color: #9a2c35;
+    /* background-color: #9a2c35; */
   }
   .matrixorigintransport-category input {
     margin-left: 3%;
