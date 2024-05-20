@@ -855,7 +855,7 @@ function validateRadioButtons(div, questions) {
   if (!isValid) {
     div.style.border = "2px solid red";
   } else {
-    div.style.border = "2px solid black";
+    div.style.border = "1px solid black";
   }
   return isValid;
 }
