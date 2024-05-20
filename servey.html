@@ -563,9 +563,21 @@
                 <input type="radio" name="whith_whom" value="4" required />
                 <label for="">With family </label>
               </div>
-              <div>
-                <input type="radio" name="whith_whom" value="5" required />
+              <div style="display: flex">
+                <input
+                  type="radio"
+                  name="whith_whom"
+                  value="5"
+                  required
+                  onclick="onclickwhithwhom()"
+                />
                 <label for="">Others</label>
+                <input
+                  type="text"
+                  name="whith_whom"
+                  id="whithwhom"
+                  class="hidden"
+                />
               </div>
             </div>
           </div>
