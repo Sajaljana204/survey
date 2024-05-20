@@ -582,12 +582,6 @@ document.getElementById("next2").addEventListener("click", function () {
     travelPurposeDiv.style.border = "none";
   }
   
-  if (!isRadioChecked(travel11bdiv)) {
-    travel11bdiv.style.border = "2px solid red";
-    isValid = false;
-  } else {
-    travel11bdiv.style.border = "none";
-  }
 
 
 
@@ -612,14 +606,24 @@ document.getElementById("next2").addEventListener("click", function () {
     ? document.querySelector('input[name="travel_purpose"]:checked').value
     : "";
 
-    
-
   if (istravel_purpose !== "1") {
     if (!document.querySelector(`input[name="travel_11"]:checked`)) {
       travel11Div.style.border = "2px solid red";
       isValid = false;
     }
   }
+
+ 
+
+  if (istravel_work === "1") {
+    if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
+      travel11bdiv.style.border = "2px solid red";
+      isValid = false;
+    }
+  }
+
+
+
   const fieldsToCheck = ["cToe"];
 
   // Check if radio buttons are selected
