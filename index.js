@@ -145,7 +145,7 @@ function updatePageNumbers(id, count) {
   const containerM1 = container.querySelector(".container");
   const pagenoElement = containerM1.querySelector(".pageno");
   // Append text to the existing content
-  pagenoElement.textContent = "Page no : " + pageno + " of" + " 11";
+  pagenoElement.textContent = "Page no : " + pageno + " of" + " 12";
 }
 
 function validateRadioGroupIncard(fieldName) {

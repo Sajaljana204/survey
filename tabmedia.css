@@ -966,27 +966,48 @@
   }
 
   #question34sub1lavel {
-    margin-left: 7%;
+    margin-left: 8%;
     width: 3%;
   }
   #question34sub2lavel {
-    padding-top: 2%;
-    margin-left: 6%;
+    margin-left: 7.8%;
     width: 3%;
   }
 
   #question34sub3lavel {
-    padding-top: 2%;
-    margin-left: 8%;
-    width: 3%;
-  }
-  #question34sub4lavel {
-    padding-top: 2%;
     margin-left: 7%;
     width: 3%;
   }
+  #question34sub4lavel {
+    margin-left: 7.5%;
+    width: 3%;
+  }
   #question34sub5lavel {
+    margin-left: 7.6%;
+    width: 3%;
+  }
+
+  /* // this for 11 no of question  */
+
+  #question11sub1lavel {
     margin-left: 8%;
+    width: 3%;
+  }
+  #question11sub2lavel {
+    margin-left: 7.6%;
+    width: 3%;
+  }
+
+  #question11sub3lavel {
+    margin-left: 7.5%;
+    width: 3%;
+  }
+  #question11sub4lavel {
+    margin-left: 7.3%;
+    width: 3%;
+  }
+  #question11sub5lavel {
+    margin-left: 7.5%;
     width: 3%;
   }
 
