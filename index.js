@@ -626,12 +626,7 @@ document.getElementById("next2").addEventListener("click", function () {
     }
   }
 
-  // if (istravel_work === "1") {
-  //   if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
-  //     travel11bdiv.style.border = "2px solid red";
-  //     isValid = false;
-  //   }
-  // }
+
 
   const fieldsToCheck = ["cToe"];
 
@@ -640,11 +635,10 @@ document.getElementById("next2").addEventListener("click", function () {
     if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
       isValid = false;
       // Apply error styling or message for radio button groups
-      document
-        .querySelectorAll(`input[name="${fieldName}"]`)
-        .forEach((input) => {
-          input.closest("label").style.color = "red"; // Assuming the parent element should indicate the error
-        });
+      const mainmilemode = document.getElementById("mainmilemode");
+      mainmilemode.style.border="2px solid red";
+    }else{
+      mainmilemode.style.border="2px solid rgb(54, 153, 202)";
     }
   });
 
