@@ -2018,6 +2018,22 @@ p {
   margin-left: 45%;
 }
 
+#spSurveyStarted {
+  margin-top: 19%;
+  margin-left: 4%;
+  text-align: center;
+  width: 53%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slightly transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 #lastsubmission {
   margin-top: 19%;
   margin-left: 4%;

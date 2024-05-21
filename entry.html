@@ -129,12 +129,15 @@
   </head>
   <body>
     <div class="container">
-      <h1>Do you want to participate in the survey?</h1>
-      <button class="back" id="backButton" style="display: none;">Back</button>
+      <h1>
+        Do you use public transport and do you want to participate in the
+        survey?
+      </h1>
+      <button class="back" id="backButton" style="display: none">Back</button>
       <button class="user-button" id="yesButton">Yes</button>
       <button class="admin-button" id="noButton">No</button>
-    </div><label id="entryadminButton">Admin Login</label>
-
+    </div>
+    <label id="entryadminButton">Admin Login</label>
 
     <!-- Popup HTML -->
     <div id="popup">
@@ -145,7 +148,12 @@
     </div>
 
     <script>
-      var formArray = ["formfirst", "formsecond", "formthird"];
+      var formArray = [
+        "formfirst",
+        "formsecond",
+        "formthird",
+        "spSurveyStarted",
+      ];
       var modechoice0 = ["m1", "m2", "m3", "m4"];
       var modechoice1 = ["m21", "m22", "m23", "m24"];
       var modechoice2 = ["m31", "m32", "m33", "m34"];

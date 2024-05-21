@@ -49,6 +49,23 @@
     </div> -->
 
     <section class="mainsection">
+      <div id="spSurveyStarted" class="hidden">
+        <h2>SP Survey getting started</h2>
+        <div class="container">
+          <!-- <h6>Choose an Activitym:</h6> -->
+
+          <button id="prepaid" type="button" onclick="getBackLastDeletedId()">
+            Back
+          </button>
+          <button id="saveAndNextm2" type="button" onclick="saveAndNext()">
+            Next</button
+          ><br /><label class="pageno"></label>
+          <!-- <button id="nextButton" type="button" onclick="showRandomImage()">
+              Next->
+            </button> -->
+        </div>
+      </div>
+
       <div id="lastsubmission" class="hidden">
         <div id="submitbtn">
           <h1>*****Thank you*****</h1>
@@ -107,18 +124,17 @@
                 <input
                   type="radio"
                   name="gender"
-                  value="A sex not listed here ( please specify)"
+                  value="Gender not listed here ( please specify)"
                   onclick="onclickGenderNotSpecified()"
                   required
                 />
-                <label for="gender"
-                  >A sex not listed here ( please specify)</label
-                >
+                <label for="gender">Gender not listed here</label>
                 <input
                   type="text"
                   name="gender"
                   id="GenderNotSpecified"
                   class="hidden"
+                  placeholder="Please specify"
                 />
               </div>
 
@@ -160,7 +176,9 @@
 
             <div class="gender-category" id="income-div">
               <span class="gender-title _Income"
-                >3. Your Annual Income<span class="required">*</span></span
+                >3. Your Annual Income (INR)<span class="required"
+                  >*</span
+                ></span
               >
               <div>
                 <input type="radio" name="income" value="0-2.5lakhs" required />
@@ -238,6 +256,7 @@
                   type="text"
                   name="employment"
                   id="otherEmployment"
+                  placeholder="Please specify"
                   class="hidden"
                 />
               </div>
@@ -289,7 +308,7 @@
         <div class="details ID">
           <div class="gender-category" id="city-div">
             <span class="gender-title _City"
-              >8. Residents of the city<span class="required">*</span></span
+              >6. Residents of the city<span class="required">*</span></span
             >
             <div>
               <input type="radio" name="city" value="Yes" required />
@@ -314,13 +333,13 @@
           <div class="content">
             <span class="section-title">Section B: Travel</span>
             <span class="gender-title"
-              >This section consists of questions related to your travel e.g.
-              (travel mode, travel purpose, waiting time) etc.</span
+              >This section consists of questions related to your travel (e.g.
+              travel mode, travel purpose and waiting time)</span
             ><br />
 
             <div class="gender-category" id="travel-work-div">
               <span class="gender-title"
-                >9. In a week, how often do you travel to work/school using
+                >7. In a week, how often do you travel to work or school using
                 public transport?<span class="required">*</span></span
               >
 
@@ -394,9 +413,13 @@
               </div>
             </div>
 
-            <div class="gender-category" id="travel-partner-div">
+            <div
+              class="gender-category"
+              id="travel-partner-div"
+              style="display: none"
+            >
               <span class="gender-title"
-                >10. With whom do you usually travel to public transport
+                >7(a). With whom do you usually travel to public transport
                 stop?<span class="required">*</span></span
               >
               <div>
@@ -428,13 +451,50 @@
                 name="otherTravelPartner"
                 id="OtherTravelPartner"
                 class="hidden"
+                placeholder="Please specify"
               />
             </div>
 
-            <div class="gender-category" id="travel-purpose-div">
+            <!-- ///////////////////////////// -->
+            <div class="gender-category" id="travel_purpose_yes_no-div">
               <span class="gender-title"
-                >11. What other purpose do you use public transport?<span
+                >8. Do you use public transport for other purpose(s)<span
                   class="required"
+                  >*</span
+                ></span
+              >
+
+              <div>
+                <input
+                  type="radio"
+                  name="travel_purpose_yes_no"
+                  value="1"
+                  onclick="onclickOpen11a()"
+                  required
+                />
+                <label for="">Yes</label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="travel_purpose_yes_no"
+                  value="0"
+                  onclick="onclickClose11a()"
+                  required
+                />
+                <label for="">No</label>
+              </div>
+            </div>
+
+            <!-- /////////////////// -->
+            <div
+              class="gender-category"
+              id="travel-purpose-div"
+              style="display: none"
+            >
+              <span class="gender-title"
+                >8(a). I use public transport for:<span class="required"
                   >*</span
                 ></span
               >
@@ -511,12 +571,17 @@
                 name="OtherTravelPurpose"
                 id="OtherTravelPurpose"
                 class="hidden"
+                placeholder="Please specify"
               />
             </div>
 
-            <div class="gender-category" id="travel-11-div">
+            <div
+              class="gender-category"
+              id="travel-11-div"
+              style="display: none"
+            >
               <span class="gender-title"
-                >11(a). How frequently do you use public transport for the
+                >8(b). How frequently do you use public transport for the
                 purpose mentioned in above question?<span class="required"
                   >*</span
                 ></span
@@ -545,9 +610,13 @@
 
             <!-- new 11b i sadded here  -->
 
-            <div class="gender-category" id="travel-11b-div">
+            <div
+              class="gender-category"
+              id="travel-11b-div"
+              style="display: none"
+            >
               <span class="gender-title"
-                >11(b). Whom do you use public transport stop for other purpose?
+                >8(c). Whom do you use public transport stop for other purpose?
                 <span class="required">*</span></span
               >
               <div>
@@ -580,13 +649,14 @@
                   name="whith_whom"
                   id="whithwhom"
                   class="hidden"
+                  placeholder="Please specify"
                 />
               </div>
             </div>
           </div>
         </div>
         <span class="gender-title"
-          >12. For your current trip please fill/tick the relevent boxes<span
+          >9. For your current trip please fill/tick the relevent boxes<span
             class="required"
             >*</span
           ></span
@@ -1411,12 +1481,12 @@
             <!--This is for nmt mode-->
             <div id="nmt" class="hidden question-section">
               <span class="gender-title"
-                ><u>13(A). ORIGIN TO TRANSIT STOP</u></span
+                ><u>10(a). ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR WALKING/BICYCLE</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
@@ -1575,7 +1645,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Presence of clear line of sight (no secluded comers)</span
+                    >Presence of clear line of sight (no secluded corners)</span
                   >
                   <input type="radio" name="Q21s" value="1" />
                   <!-- <label for="">1</label> -->
@@ -1592,8 +1662,8 @@
 
               <div class="Overallbox">
                 <span class="gender-title"
-                  >Overall, how safe/secure do you feel while using
-                  walking/bicycling to/from transit stop</span
+                  >Overall, how safe/secure do you feel while walking/bicycling
+                  to/from transit stop</span
                 >
                 <div class="gender-category">
                   <input type="radio" name="overall-Fb-nmt" value="1" />
@@ -1615,13 +1685,13 @@
 
             <div id="paratransit" class="hidden question-section">
               <span class="gender-title"
-                ><u>13(A).ORIGIN TO TRANSIT STOP</u></span
+                ><u>10(a).ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR PARATRANSIT VEHICLE
                 RIDERS</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
@@ -1646,7 +1716,7 @@
               <div class="question13division">
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of frequent shuttle/cab/minibus services
+                    >Availability of frequent shuttle, cab or minibus services
                     (shared occupancy)</span
                   >
                   <input type="radio" name="Q22s" value="1" />
@@ -1664,7 +1734,8 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of GPS tracking in shuttle/cab/minibus</span
+                    >Availability of GPS tracking in shuttle, cab or
+                    minibus</span
                   >
                   <input type="radio" name="Q23s" value="1" />
                   <!-- <label for="">1</label> -->
@@ -1681,7 +1752,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of frequent Ola/Uber/Rapido cabs (single
+                    >Availability of frequent Ola, Uber, Rapido cabs (single
                     occupancy)</span
                   >
                   <input type="radio" name="Q24s" value="1" />
@@ -1699,7 +1770,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of auto/cab driver details and
+                    >Availability of auto or cab driver details and
                     verification</span
                   >
                   <input type="radio" name="Q25s" value="1" />
@@ -1790,13 +1861,13 @@
 
             <div id="personal" class="hidden question-section">
               <span class="gender-title"
-                ><u>13(A).ORIGIN TO TRANSIT STOP</u></span
+                ><u>10(a).ORIGIN TO TRANSIT STOP</u></span
               ><br />
               <span class="gender-title"
                 >ENROUTE TO / FROM TRANSIT STOP-FOR PERSONAL VEHICLE
                 RIDERS</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
@@ -1937,7 +2008,7 @@
               <span class="gender-title"
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR WALKING/BICYCLE</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
@@ -2097,7 +2168,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Presence of clear line of sight (no secluded comers)</span
+                    >Presence of clear line of sight (no secluded corners)</span
                   >
                   <input type="radio" name="fQ21s" value="1" />
                   <!-- <label for="">1</label> -->
@@ -2141,7 +2212,7 @@
                 >ALONG ROUTE TO/FROM TRANSIT STOP-FOR PARATRANSIT VEHICLE
                 RIDERS</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required"
                 >(1-not very satisfied to 5-very satisfied)</span
@@ -2165,7 +2236,7 @@
               <div class="question13division">
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of frequent shuttle/cab/minibus services
+                    >Availability of frequent shuttle cab or minibus services
                     (shared occupancy)</span
                   >
                   <input type="radio" name="fQ22s" value="1" />
@@ -2183,7 +2254,8 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of GPS tracking in shuttle/cab/minibus</span
+                    >Availability of GPS tracking in shuttle, cab or
+                    minibus</span
                   >
                   <input type="radio" name="fQ23s" value="1" />
                   <!-- <label for="">1</label> -->
@@ -2200,7 +2272,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of frequent ola/uber/rapido cabs (single
+                    >Availability of frequent ola, uber or rapido cabs (single
                     occupancy)</span
                   >
                   <input type="radio" name="fQ24s" value="1" />
@@ -2218,7 +2290,7 @@
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
-                    >Availability of auto/cab driver details and
+                    >Availability of auto or cab driver details and
                     verification</span
                   >
                   <input type="radio" name="fQ25s" value="1" />
@@ -2314,7 +2386,7 @@
                 >ENROUTE TO / FROM TRANSIT STOP-FOR PERSONAL VEHICLE
                 RIDERS</span
               ><br />
-              <span class="gender-title">Rate your satisfaction lavel</span
+              <span class="gender-title">Rate your satisfaction level</span
               ><br />
               <span class="required">
                 (1-not very satisfied to 5-very satisfied)</span
@@ -2467,7 +2539,7 @@
             </div>
 
             <div id="matrix-category">
-              <span class="question34span">By personal vehicle (alone)</span>
+              <span class="question34span">Alone in personal vehicle</span>
 
               <input type="radio" name="Q34" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2484,7 +2556,7 @@
 
             <div id="matrix-category">
               <span class="question34span"
-                >By personal vehicle (with friend/drop off)</span
+                >With friend or drop off in personal vehicle</span
               >
               <input type="radio" name="Q35" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2500,7 +2572,7 @@
 
             <div id="matrix-category">
               <span class="question34span"
-                >By shuttle/cab/minibus (shared)</span
+                >By shared shuttle,cab or minibus</span
               >
               <input type="radio" name="Q36" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2515,9 +2587,7 @@
             </div>
 
             <div id="matrix-category">
-              <span class="question34span"
-                >By Ola/Uber/Rapido (single occupancy)</span
-              >
+              <span class="question34span">Alone in Ola, Uber or Rapido</span>
               <input type="radio" name="Q37" value="1" required />
               <!-- <label for="">1</label> -->
               <input type="radio" name="Q37" value="2" required />
@@ -2545,7 +2615,7 @@
             </div>
 
             <div id="matrix-category">
-              <span class="question34span">Walking/cycling in a group</span>
+              <span class="question34span">Walking or cycling in a group</span>
               <input type="radio" name="Q39" value="1" required />
 
               <input type="radio" name="Q39" value="2" required />
@@ -2585,7 +2655,7 @@
           <div id="crime_options" style="display: none">
             <div class="gender-category" id="Q40a">
               <span class="gender-title"
-                >15(a). If Yes, what type of crime were you involved in?<span
+                >15(a). What type of crime were you involved in?<span
                   class="required"
                   >*</span
                 ></span

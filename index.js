@@ -31,7 +31,7 @@ function startservey() {
       retrievedArray
   );
   connectedArr = [...retrievedArray];
-  for (let i = 3; i < 11; i++) {
+  for (let i = 3; i < 12; i++) {
     updatePageNumbers(connectedArr[i], i);
   }
   displayImage();
@@ -68,6 +68,10 @@ function displayImage() {
     cardValid = true;
     document.getElementById(imageId).style.display = "block";
   } else if (imageId === "lastsubmission") {
+    document.getElementById(imageId).style.display = "block";
+    cardValid = true;
+    deleteName.push(imageId);
+  } else if (imageId === "spSurveyStarted") {
     document.getElementById(imageId).style.display = "block";
     cardValid = true;
     deleteName.push(imageId);
@@ -165,6 +169,10 @@ function validateRadioGroupIncard(fieldName) {
       ? document.querySelector(activityName).value
       : "nospace";
   } else if (fieldName === "lastsubmission") {
+    r61walk = document.querySelector(activityName)
+      ? document.querySelector(activityName).value
+      : "nospace";
+  } else if (fieldName === "spSurveyStarted") {
     r61walk = document.querySelector(activityName)
       ? document.querySelector(activityName).value
       : "nospace";
@@ -2167,3 +2175,16 @@ function onclickwhithwhom() {
 }
 
 //hi
+
+// 11 th   yes no   questions
+function onclickOpen11a() {
+  document.getElementById("travel-purpose-div").style.display = "block";
+  // document.getElementById("travel-11-div").style.display = "block";
+  // document.getElementById("travel-11b-div").style.display = "block";
+}
+
+function onclickClose11a() {
+  document.getElementById("travel-purpose-div").style.display = "none";
+  // document.getElementById("travel-11-div").style.display = "none";
+  // document.getElementById("travel-11b-div").style.display = "none";
+}
