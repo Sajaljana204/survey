@@ -2165,12 +2165,12 @@ function togglenootherpurpose() {
 
 function togglenoworkorscool() {
   document.getElementById("travel-partner-div").style.display = "none";
-  document.getElementById("travel-11b-div").style.display = "block";
+  // document.getElementById("travel-11b-div").style.display = "block";
 }
 
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
-  document.getElementById("travel-11b-div").style.display = "none";
+  // document.getElementById("travel-11b-div").style.display = "none";
 }
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
@@ -2187,12 +2187,12 @@ function onclickwhithwhom() {
 // 11 th   yes no   questions
 function onclickOpen11a() {
   document.getElementById("travel-purpose-div").style.display = "block";
-  // document.getElementById("travel-11-div").style.display = "block";
-  // document.getElementById("travel-11b-div").style.display = "block";
+  document.getElementById("travel-11-div").style.display = "block";
+  document.getElementById("travel-11b-div").style.display = "block";
 }
 
 function onclickClose11a() {
   document.getElementById("travel-purpose-div").style.display = "none";
-  // document.getElementById("travel-11-div").style.display = "none";
-  // document.getElementById("travel-11b-div").style.display = "none";
+  document.getElementById("travel-11-div").style.display = "none";
+  document.getElementById("travel-11b-div").style.display = "none";
 }
