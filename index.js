@@ -562,12 +562,14 @@ document.getElementById("next2").addEventListener("click", function () {
 
   let isValidNumber = false;
 
-  // saveAndNext();
+  saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
-  const travelPurposeYesNoDiv = document.getElementById("travel_purpose_yes_no-div");
+  const travelPurposeYesNoDiv = document.getElementById(
+    "travel_purpose_yes_no-div"
+  );
   const travel11Div = document.getElementById("travel-11-div");
   const travel11bdiv = document.getElementById("travel-11b-div");
 
@@ -597,26 +599,25 @@ document.getElementById("next2").addEventListener("click", function () {
     ? document.querySelector('input[name="travel_work"]:checked').value
     : "";
 
-  if(istravel_work!=""){
+  if (istravel_work != "") {
     if (istravel_work !== "1") {
       if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
         travelPartnerDiv.style.border = "2px solid red";
         isValid = false;
       }
-    }else{
-    
+    } else {
       if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
-            travel11bdiv.style.border = "2px solid red";  
-            isValid = false;
-          }
+        travel11bdiv.style.border = "2px solid red";
+        isValid = false;
+      }
     }
   }
-  
 
   let istravel_purpose = document.querySelector(
     'input[name="travel_purpose_yes_no"]:checked'
   )
-    ? document.querySelector('input[name="travel_purpose_yes_no"]:checked').value
+    ? document.querySelector('input[name="travel_purpose_yes_no"]:checked')
+        .value
     : "";
 
   if (istravel_purpose === "1") {
@@ -626,8 +627,6 @@ document.getElementById("next2").addEventListener("click", function () {
     }
   }
 
-
-
   const fieldsToCheck = ["cToe"];
 
   // Check if radio buttons are selected
@@ -636,9 +635,9 @@ document.getElementById("next2").addEventListener("click", function () {
       isValid = false;
       // Apply error styling or message for radio button groups
       const mainmilemode = document.getElementById("mainmilemode");
-      mainmilemode.style.border="2px solid red";
-    }else{
-      mainmilemode.style.border="2px solid rgb(54, 153, 202)";
+      mainmilemode.style.border = "2px solid red";
+    } else {
+      mainmilemode.style.border = "2px solid rgb(54, 153, 202)";
     }
   });
 
