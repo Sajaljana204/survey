@@ -2028,7 +2028,7 @@ p {
   margin-top: 19%;
   margin-left: 4%;
   text-align: center;
-  width: 53%;
+  width: 73%;
   background-color: rgba(
     255,
     255,
@@ -2049,6 +2049,10 @@ p {
 
 #spSurveyStarted button {
   background-color: #9a2c35;
+}
+#spSurveyStarted .pageno {
+  text-align: center;
+  margin-left: 0%;
 }
 
 #lastsubmission {
