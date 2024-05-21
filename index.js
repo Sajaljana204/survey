@@ -560,9 +560,9 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
 
-  let isValidNumber = false;
+  let isValidPinNumber = true;
 
-  saveAndNext();
+  // saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
@@ -660,7 +660,6 @@ document.getElementById("next2").addEventListener("click", function () {
   const textFields = [
     { name: "originType", minLength: 1 },
     { name: "origin_area", minLength: 1 },
-    { name: "origin_pin", minLength: 6 },
     { name: "startingTime", minLength: 1 },
     { name: "duration", minLength: 1 },
     { name: "waitingTime", minLength: 1 },
@@ -668,26 +667,33 @@ document.getElementById("next2").addEventListener("click", function () {
     { name: "durationf", minLength: 1 },
     { name: "destinationType", minLength: 1 },
     { name: "destination_area", minLength: 1 },
-    { name: "destination_pin", minLength: 6 },
     { name: "endTime", minLength: 1 },
     { name: "durationd", minLength: 1 },
   ];
 
   textFields.forEach((field) => {
     const inputElement = document.querySelector(`input[name="${field.name}"]`);
-    if (inputElement.value.trim().length != field.minLength) {
+    if (inputElement.value.trim().length < field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
-      if (field.name === "origin_pin") {
-        alert("Enter a 6-digit number in the Origin Pincode.");
-      } else if (field.name === "destination_pin") {
-        alert("Enter a 6-digit number in the Destination Pincode.");
-      }
     } else {
       inputElement.style.border = ""; // Remove error styling
     }
   });
-  //It automatically change the colour ot text input button of image section
+   
+  const pinCodeValidation=[{ name: "destination_pin", minLength: 6 },{ name: "origin_pin", minLength: 6 }];
+  pinCodeValidation.forEach((field) => {
+    const inputElement = document.querySelector(`input[name="${field.name}"]`);
+    if (inputElement.value.trim().length  !=field.minLength) {
+      isValidPinNumber=false
+      inputElement.style.border = "2px solid red"; // Apply error styling
+    } else {
+      inputElement.style.border = ""; // Remove error styling
+    }
+  });
+
+
+  //It automatically change the colour of text input button of image section
   const inputElements = document.querySelectorAll('input[type="text"]');
   inputElements.forEach((input) => {
     input.addEventListener("input", function () {
@@ -846,7 +852,12 @@ document.getElementById("next2").addEventListener("click", function () {
     });
   }
   if (isValid) {
-    saveAndNext();
+    if(isValidPinNumber){
+      saveAndNext();
+    }else{
+      alert("Please enter 6-digit number.");
+    }
+    
   } else {
     alert("Please fill all required fields correctly.");
   }
