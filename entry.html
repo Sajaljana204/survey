@@ -20,6 +20,11 @@
         align-items: center;
         height: 100vh;
       }
+      #entryadminButton {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+      }
       /* dfdkfj */
       /* tyahdvashgdvashgsavghavdhadvcasjfashgdasvgdh */
       .container {
@@ -125,10 +130,11 @@
   <body>
     <div class="container">
       <h1>Do you want to participate in the survey?</h1>
-      <button class="back" id="backButton">Back</button>
+      <button class="back" id="backButton" style="display: none;">Back</button>
       <button class="user-button" id="yesButton">Yes</button>
       <button class="admin-button" id="noButton">No</button>
-    </div>
+    </div><label id="entryadminButton">Admin Login</label>
+
 
     <!-- Popup HTML -->
     <div id="popup">
@@ -304,6 +310,9 @@
         }
         return array;
       }
+      entryadminButton.addEventListener("click", function () {
+        window.location.href = "admin.html";
+      });
     </script>
   </body>
 </html>
