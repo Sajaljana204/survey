@@ -562,11 +562,12 @@ document.getElementById("next2").addEventListener("click", function () {
 
   let isValidNumber = false;
 
-  saveAndNext();
+  // saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
   const travelPurposeDiv = document.getElementById("travel-purpose-div");
+  const travelPurposeYesNoDiv = document.getElementById("travel_purpose_yes_no-div");
   const travel11Div = document.getElementById("travel-11-div");
   const travel11bdiv = document.getElementById("travel-11b-div");
 
@@ -583,11 +584,11 @@ document.getElementById("next2").addEventListener("click", function () {
   }
 
   // Validate travel purpose div
-  if (!isRadioChecked(travelPurposeDiv)) {
-    travelPurposeDiv.style.border = "2px solid red";
+  if (!isRadioChecked(travelPurposeYesNoDiv)) {
+    travelPurposeYesNoDiv.style.border = "2px solid red";
     isValid = false;
   } else {
-    travelPurposeDiv.style.border = "none";
+    travelPurposeYesNoDiv.style.border = "none";
   }
 
   let istravel_work = document.querySelector(
@@ -596,32 +597,36 @@ document.getElementById("next2").addEventListener("click", function () {
     ? document.querySelector('input[name="travel_work"]:checked').value
     : "";
 
-  if (istravel_work !== "1") {
-    if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
-      travelPartnerDiv.style.border = "2px solid red";
-      isValid = false;
+  if(istravel_work!=""){
+    if (istravel_work !== "1") {
+      if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
+        travelPartnerDiv.style.border = "2px solid red";
+        isValid = false;
+      }
+    }else{
+    
+      if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
+            travel11bdiv.style.border = "2px solid red";  
+            isValid = false;
+          }
     }
   }
+  
 
   let istravel_purpose = document.querySelector(
-    'input[name="travel_purpose"]:checked'
+    'input[name="travel_purpose_yes_no"]:checked'
   )
-    ? document.querySelector('input[name="travel_purpose"]:checked').value
+    ? document.querySelector('input[name="travel_purpose_yes_no"]:checked').value
     : "";
 
-  if (istravel_purpose !== "1") {
-    if (!document.querySelector(`input[name="travel_11"]:checked`)) {
-      travel11Div.style.border = "2px solid red";
+  if (istravel_purpose === "1") {
+    if (!document.querySelector(`input[name="travel_purpose"]:checked`)) {
+      travelPurposeDiv.style.border = "2px solid red";
       isValid = false;
     }
   }
 
-  if (istravel_work === "1") {
-    if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
-      travel11bdiv.style.border = "2px solid red";
-      isValid = false;
-    }
-  }
+
 
   const fieldsToCheck = ["cToe"];
 
@@ -630,11 +635,10 @@ document.getElementById("next2").addEventListener("click", function () {
     if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
       isValid = false;
       // Apply error styling or message for radio button groups
-      document
-        .querySelectorAll(`input[name="${fieldName}"]`)
-        .forEach((input) => {
-          input.closest("label").style.color = "red"; // Assuming the parent element should indicate the error
-        });
+      const mainmilemode = document.getElementById("mainmilemode");
+      mainmilemode.style.border="2px solid red";
+    }else{
+      mainmilemode.style.border="2px solid rgb(54, 153, 202)";
     }
   });
 
@@ -667,7 +671,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   textFields.forEach((field) => {
     const inputElement = document.querySelector(`input[name="${field.name}"]`);
-    if (inputElement.value.trim().length < field.minLength) {
+    if (inputElement.value.trim().length != field.minLength) {
       isValid = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
       if (field.name === "origin_pin") {
