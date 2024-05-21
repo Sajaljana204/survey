@@ -562,7 +562,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   let isValidPinNumber = true;
 
-  // saveAndNext();
+  saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
@@ -680,18 +680,20 @@ document.getElementById("next2").addEventListener("click", function () {
       inputElement.style.border = ""; // Remove error styling
     }
   });
-   
-  const pinCodeValidation=[{ name: "destination_pin", minLength: 6 },{ name: "origin_pin", minLength: 6 }];
+
+  const pinCodeValidation = [
+    { name: "destination_pin", minLength: 6 },
+    { name: "origin_pin", minLength: 6 },
+  ];
   pinCodeValidation.forEach((field) => {
     const inputElement = document.querySelector(`input[name="${field.name}"]`);
-    if (inputElement.value.trim().length  !=field.minLength) {
-      isValidPinNumber=false
+    if (inputElement.value.trim().length != field.minLength) {
+      isValidPinNumber = false;
       inputElement.style.border = "2px solid red"; // Apply error styling
     } else {
       inputElement.style.border = ""; // Remove error styling
     }
   });
-
 
   //It automatically change the colour of text input button of image section
   const inputElements = document.querySelectorAll('input[type="text"]');
@@ -852,12 +854,11 @@ document.getElementById("next2").addEventListener("click", function () {
     });
   }
   if (isValid) {
-    if(isValidPinNumber){
+    if (isValidPinNumber) {
       saveAndNext();
-    }else{
+    } else {
       alert("Please enter 6-digit number.");
     }
-    
   } else {
     alert("Please fill all required fields correctly.");
   }
