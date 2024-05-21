@@ -623,6 +623,11 @@ document.getElementById("next2").addEventListener("click", function () {
     if (!document.querySelector(`input[name="travel_purpose"]:checked`)) {
       travelPurposeDiv.style.border = "2px solid red";
       isValid = false;
+    }else{
+      if(!document.querySelector(`input[name="travel_11"]:checked`)){
+        travel11Div.style.border = "2px solid red";
+        isValid = false;
+      }
     }
   }
 
