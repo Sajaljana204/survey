@@ -375,7 +375,7 @@ function validateRadioGroupIncard(fieldName) {
 document.getElementById("next1").addEventListener("click", function () {
   let isValid = true;
 
-  // saveAndNext();
+  saveAndNext();
   const textInputField = document.getElementById("ename");
   const textInputContainer = document.getElementById("ename-field");
   const genderDiv = document.getElementById("gender-div");
@@ -554,7 +554,7 @@ document.getElementById("next2").addEventListener("click", function () {
 
   let isValidNumber = false;
 
-  // saveAndNext();
+  saveAndNext();
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
@@ -581,10 +581,6 @@ document.getElementById("next2").addEventListener("click", function () {
   } else {
     travelPurposeDiv.style.border = "none";
   }
-  
-
-
-
 
   let istravel_work = document.querySelector(
     'input[name="travel_work"]:checked'
@@ -593,7 +589,6 @@ document.getElementById("next2").addEventListener("click", function () {
     : "";
 
   if (istravel_work !== "1") {
-    
     if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
       travelPartnerDiv.style.border = "2px solid red";
       isValid = false;
@@ -613,16 +608,12 @@ document.getElementById("next2").addEventListener("click", function () {
     }
   }
 
- 
-
   if (istravel_work === "1") {
     if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
       travel11bdiv.style.border = "2px solid red";
       isValid = false;
     }
   }
-
-
 
   const fieldsToCheck = ["cToe"];
 
@@ -943,6 +934,7 @@ function updateButtonValueAndStyle(buttonId, value) {
 
 // +++++++++++++++++++++++++++++++++++++next button 3+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 document.getElementById("next3").addEventListener("click", function () {
+  saveAndNext();
   let isValid = true;
   let isSmartPhone = document.querySelector('input[name="smartPhone"]:checked')
     ? document.querySelector('input[name="smartPhone"]:checked').value
@@ -1629,51 +1621,43 @@ function getUserLocation() {
 
           // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-          const m1walk = document.querySelector(
-            'input[name="activitym1"]:checked'
-          )
+          const m11 = document.querySelector('input[name="activitym1"]:checked')
             ? document.querySelector('input[name="activitym1"]:checked').value
             : "";
 
-          const m2walk = document.querySelector(
-            'input[name="activitym2"]:checked'
-          )
+          const m12 = document.querySelector('input[name="activitym2"]:checked')
             ? document.querySelector('input[name="activitym2"]:checked').value
             : "";
 
-          const m3walk = document.querySelector(
-            'input[name="activitym3"]:checked'
-          )
+          const m13 = document.querySelector('input[name="activitym3"]:checked')
             ? document.querySelector('input[name="activitym3"]:checked').value
             : "";
 
-          const m4walk = document.querySelector(
-            'input[name="activitym4"]:checked'
-          )
+          const m14 = document.querySelector('input[name="activitym4"]:checked')
             ? document.querySelector('input[name="activitym4"]:checked').value
             : "";
 
           //  M2@SUB
 
-          const m21walk = document.querySelector(
+          const m21 = document.querySelector(
             'input[name="activitym21"]:checked'
           )
             ? document.querySelector('input[name="activitym21"]:checked').value
             : "";
 
-          const m22walk = document.querySelector(
+          const m22 = document.querySelector(
             'input[name="activitym22"]:checked'
           )
             ? document.querySelector('input[name="activitym22"]:checked').value
             : "";
 
-          const m23walk = document.querySelector(
+          const m23 = document.querySelector(
             'input[name="activitym23"]:checked'
           )
             ? document.querySelector('input[name="activitym23"]:checked').value
             : "";
 
-          const m24walk = document.querySelector(
+          const m24 = document.querySelector(
             'input[name="activitym24"]:checked'
           )
             ? document.querySelector('input[name="activitym24"]:checked').value
@@ -1681,25 +1665,25 @@ function getUserLocation() {
 
           // M3@sub
 
-          const m31walk = document.querySelector(
+          const m31 = document.querySelector(
             'input[name="activitym31"]:checked'
           )
             ? document.querySelector('input[name="activitym31"]:checked').value
             : "";
 
-          const m32walk = document.querySelector(
+          const m32 = document.querySelector(
             'input[name="activitym32"]:checked'
           )
             ? document.querySelector('input[name="activitym32"]:checked').value
             : "";
 
-          const m33walk = document.querySelector(
+          const m33 = document.querySelector(
             'input[name="activitym33"]:checked'
           )
             ? document.querySelector('input[name="activitym33"]:checked').value
             : "";
 
-          const m34walk = document.querySelector(
+          const m34 = document.querySelector(
             'input[name="activitym34"]:checked'
           )
             ? document.querySelector('input[name="activitym34"]:checked').value
@@ -1707,25 +1691,25 @@ function getUserLocation() {
 
           // M4@sub
 
-          const m41walk = document.querySelector(
+          const m41 = document.querySelector(
             'input[name="activitym41"]:checked'
           )
             ? document.querySelector('input[name="activitym41"]:checked').value
             : "";
 
-          const m42walk = document.querySelector(
+          const m42 = document.querySelector(
             'input[name="activitym42"]:checked'
           )
             ? document.querySelector('input[name="activitym42"]:checked').value
             : "";
 
-          const m43walk = document.querySelector(
+          const m43 = document.querySelector(
             'input[name="activitym43"]:checked'
           )
             ? document.querySelector('input[name="activitym43"]:checked').value
             : "";
 
-          const m44walk = document.querySelector(
+          const m44 = document.querySelector(
             'input[name="activitym44"]:checked'
           )
             ? document.querySelector('input[name="activitym44"]:checked').value
@@ -1733,25 +1717,25 @@ function getUserLocation() {
 
           // M5@sub
 
-          const m51walk = document.querySelector(
+          const m51 = document.querySelector(
             'input[name="activitym51"]:checked'
           )
             ? document.querySelector('input[name="activitym51"]:checked').value
             : "";
 
-          const m52walk = document.querySelector(
+          const m52 = document.querySelector(
             'input[name="activitym52"]:checked'
           )
             ? document.querySelector('input[name="activitym52"]:checked').value
             : "";
 
-          const m53walk = document.querySelector(
+          const m53 = document.querySelector(
             'input[name="activitym53"]:checked'
           )
             ? document.querySelector('input[name="activitym53"]:checked').value
             : "";
 
-          const m54walk = document.querySelector(
+          const m54 = document.querySelector(
             'input[name="activitym54"]:checked'
           )
             ? document.querySelector('input[name="activitym54"]:checked').value
@@ -1759,25 +1743,25 @@ function getUserLocation() {
 
           // M6@sub
 
-          const m61walk = document.querySelector(
+          const m61 = document.querySelector(
             'input[name="activitym61"]:checked'
           )
             ? document.querySelector('input[name="activitym61"]:checked').value
             : "";
 
-          const m62walk = document.querySelector(
+          const m62 = document.querySelector(
             'input[name="activitym62"]:checked'
           )
             ? document.querySelector('input[name="activitym62"]:checked').value
             : "";
 
-          const m63walk = document.querySelector(
+          const m63 = document.querySelector(
             'input[name="activitym63"]:checked'
           )
             ? document.querySelector('input[name="activitym63"]:checked').value
             : "";
 
-          const m64walk = document.querySelector(
+          const m64 = document.querySelector(
             'input[name="activitym64"]:checked'
           )
             ? document.querySelector('input[name="activitym64"]:checked').value
@@ -1785,51 +1769,43 @@ function getUserLocation() {
 
           // R1@sub
 
-          const r1walk = document.querySelector(
-            'input[name="activityr1"]:checked'
-          )
+          const r11 = document.querySelector('input[name="activityr1"]:checked')
             ? document.querySelector('input[name="activityr1"]:checked').value
             : "";
 
-          const r2walk = document.querySelector(
-            'input[name="activityr2"]:checked'
-          )
+          const r12 = document.querySelector('input[name="activityr2"]:checked')
             ? document.querySelector('input[name="activityr2"]:checked').value
             : "";
 
-          const r3walk = document.querySelector(
-            'input[name="activityr3"]:checked'
-          )
+          const r13 = document.querySelector('input[name="activityr3"]:checked')
             ? document.querySelector('input[name="activityr3"]:checked').value
             : "";
 
-          const r4walk = document.querySelector(
-            'input[name="activityr4"]:checked'
-          )
+          const r14 = document.querySelector('input[name="activityr4"]:checked')
             ? document.querySelector('input[name="activityr4"]:checked').value
             : "";
 
           // R2@sub
 
-          const r21walk = document.querySelector(
+          const r21 = document.querySelector(
             'input[name="activityr21"]:checked'
           )
             ? document.querySelector('input[name="activityr21"]:checked').value
             : "";
 
-          const r22walk = document.querySelector(
+          const r22 = document.querySelector(
             'input[name="activityr22"]:checked'
           )
             ? document.querySelector('input[name="activityr22"]:checked').value
             : "";
 
-          const r23walk = document.querySelector(
+          const r23 = document.querySelector(
             'input[name="activityr23"]:checked'
           )
             ? document.querySelector('input[name="activityr23"]:checked').value
             : "";
 
-          const r24walk = document.querySelector(
+          const r24 = document.querySelector(
             'input[name="activityr24"]:checked'
           )
             ? document.querySelector('input[name="activityr24"]:checked').value
@@ -1837,25 +1813,25 @@ function getUserLocation() {
 
           // R3@sub
 
-          const r31walk = document.querySelector(
+          const r31 = document.querySelector(
             'input[name="activityr31"]:checked'
           )
             ? document.querySelector('input[name="activityr31"]:checked').value
             : "";
 
-          const r32walk = document.querySelector(
+          const r32 = document.querySelector(
             'input[name="activityr32"]:checked'
           )
             ? document.querySelector('input[name="activityr32"]:checked').value
             : "";
 
-          const r33walk = document.querySelector(
+          const r33 = document.querySelector(
             'input[name="activityr33"]:checked'
           )
             ? document.querySelector('input[name="activityr33"]:checked').value
             : "";
 
-          const r34walk = document.querySelector(
+          const r34 = document.querySelector(
             'input[name="activityr34"]:checked'
           )
             ? document.querySelector('input[name="activityr34"]:checked').value
@@ -1863,25 +1839,25 @@ function getUserLocation() {
 
           // R4@sub
 
-          const r41walk = document.querySelector(
+          const r41 = document.querySelector(
             'input[name="activityr41"]:checked'
           )
             ? document.querySelector('input[name="activityr41"]:checked').value
             : "";
 
-          const r42walk = document.querySelector(
+          const r42 = document.querySelector(
             'input[name="activityr42"]:checked'
           )
             ? document.querySelector('input[name="activityr42"]:checked').value
             : "";
 
-          const r43walk = document.querySelector(
+          const r43 = document.querySelector(
             'input[name="activityr43"]:checked'
           )
             ? document.querySelector('input[name="activityr43"]:checked').value
             : "";
 
-          const r44walk = document.querySelector(
+          const r44 = document.querySelector(
             'input[name="activityr44"]:checked'
           )
             ? document.querySelector('input[name="activityr44"]:checked').value
@@ -1889,25 +1865,25 @@ function getUserLocation() {
 
           // R5@sub
 
-          const r51walk = document.querySelector(
+          const r51 = document.querySelector(
             'input[name="activityr51"]:checked'
           )
             ? document.querySelector('input[name="activityr51"]:checked').value
             : "";
 
-          const r52walk = document.querySelector(
+          const r52 = document.querySelector(
             'input[name="activityr52"]:checked'
           )
             ? document.querySelector('input[name="activityr52"]:checked').value
             : "";
 
-          const r53walk = document.querySelector(
+          const r53 = document.querySelector(
             'input[name="activityr53"]:checked'
           )
             ? document.querySelector('input[name="activityr53"]:checked').value
             : "";
 
-          const r54walk = document.querySelector(
+          const r54 = document.querySelector(
             'input[name="activityr54"]:checked'
           )
             ? document.querySelector('input[name="activityr54"]:checked').value
@@ -1915,25 +1891,25 @@ function getUserLocation() {
 
           // R6@sub
 
-          const r61walk = document.querySelector(
+          const r61 = document.querySelector(
             'input[name="activityr61"]:checked'
           )
             ? document.querySelector('input[name="activityr61"]:checked').value
             : "";
 
-          const r62walk = document.querySelector(
+          const r62 = document.querySelector(
             'input[name="activityr62"]:checked'
           )
             ? document.querySelector('input[name="activityr62"]:checked').value
             : "";
 
-          const r63walk = document.querySelector(
+          const r63 = document.querySelector(
             'input[name="activityr63"]:checked'
           )
             ? document.querySelector('input[name="activityr63"]:checked').value
             : "";
 
-          const r64walk = document.querySelector(
+          const r64 = document.querySelector(
             'input[name="activityr64"]:checked'
           )
             ? document.querySelector('input[name="activityr64"]:checked').value
@@ -2092,54 +2068,54 @@ function getUserLocation() {
             DateTime: dateTime,
             StartdateTime: StartdateTime,
 
-            m1walk: m1walk,
-            m2walk: m2walk,
-            m3walk: m3walk,
-            m4walk: m4walk,
-            m21walk: m21walk,
-            m22walk: m22walk,
-            m23walk: m23walk,
-            m24walk: m24walk,
-            m31walk: m31walk,
-            m32walk: m32walk,
-            m33walk: m33walk,
-            m34walk: m34walk,
-            m41walk: m41walk,
-            m42walk: m42walk,
-            m43walk: m43walk,
-            m44walk: m44walk,
-            m51walk: m51walk,
-            m52walk: m51walk,
-            m53walk: m53walk,
-            m54walk: m54walk,
-            m61walk: m61walk,
-            m62walk: m62walk,
-            m63walk: m63walk,
-            m64walk: m64walk,
-            r1walk: r1walk,
-            r2walk: r2walk,
-            r3walk: r3walk,
-            r4walk: r4walk,
-            r21walk: r21walk,
-            r22walk: r22walk,
-            r23walk: r23walk,
-            r24walk: r24walk,
-            r31walk: r31walk,
-            r32walk: r32walk,
-            r33walk: r33walk,
-            r34walk: r34walk,
-            r41walk: r41walk,
-            r42walk: r42walk,
-            r43walk: r43walk,
-            r44walk: r44walk,
-            r51walk: r51walk,
-            r52walk: r52walk,
-            r53walk: r53walk,
-            r54walk: r54walk,
-            r61walk: r61walk,
-            r62walk: r62walk,
-            r63walk: r63walk,
-            r64walk: r64walk,
+            m11: m11,
+            m12: m12,
+            m13: m13,
+            m14: m14,
+            m21: m21,
+            m22: m22,
+            m23: m23,
+            m24: m24,
+            m31: m31,
+            m32: m32,
+            m33: m33,
+            m34: m34,
+            m41: m41,
+            m42: m42,
+            m43: m43,
+            m44: m44,
+            m51: m51,
+            m52: m51,
+            m53: m53,
+            m54: m54,
+            m61: m61,
+            m62: m62,
+            m63: m63,
+            m64: m64,
+            r11: r11,
+            r12: r12,
+            r13: r13,
+            r14: r14,
+            r21: r21,
+            r22: r22,
+            r23: r23,
+            r24: r24,
+            r31: r31,
+            r32: r32,
+            r33: r33,
+            r34: r34,
+            r41: r41,
+            r42: r42,
+            r43: r43,
+            r44: r44,
+            r51: r51,
+            r52: r52,
+            r53: r53,
+            r54: r54,
+            r61: r61,
+            r62: r62,
+            r63: r63,
+            r64: r64,
           };
 
           // Push the form data to local storage
@@ -2191,5 +2167,3 @@ function onclickwhithwhom() {
 }
 
 //hi
-
-
