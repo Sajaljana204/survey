@@ -140,12 +140,12 @@ function shuffleDivs(id) {
 }
 
 function updatePageNumbers(id, count) {
-  var pageno = count + 1;
+  var pageno = count;
   const container = document.getElementById(id);
   const containerM1 = container.querySelector(".container");
   const pagenoElement = containerM1.querySelector(".pageno");
   // Append text to the existing content
-  pagenoElement.textContent = "Page no : " + pageno + " of" + " 12";
+  pagenoElement.textContent = "Page no : " + pageno + " of" + " 11";
 }
 
 function validateRadioGroupIncard(fieldName) {
