@@ -26,8 +26,8 @@ $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3In
 $stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
 
 // Prepare and bind SQL statement for section_b
-$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_section_b->bind_param("sssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OR`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q9aOT, $Q9aOR, $Q9aOP, $Q9aST, $Q9aAT, $Q9aMC, $Q9aWT, $Q9bDT, $Q9bDA, $Q9bDP, $Q9bET, $Q9bAT, $Q9bMC, $Q9bWT, $Q9MMM, $Q9TT, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
 
 
 // // // Prepare and bind SQL statement for column_b
@@ -62,10 +62,9 @@ foreach ($data as $row) {
     $income = isset($row['Income']) ? $row['Income'] : '';
     $employment = isset($row['Employment']) ? $row['Employment'] : '';
     $education = isset($row['Education']) ? $row['Education'] : '';
-    // $originArea = isset($row['OriginArea']) ? $row['OriginArea'] : '';
-    // $originPin = isset($row['OriginPin']) ? $row['OriginPin'] : '';
-    // $destinationArea = isset($row['DestinationArea']) ? $row['DestinationArea'] : '';
-    // $destinationPin = isset($row['DestinationPin']) ? $row['DestinationPin'] : '';
+    
+    
+   
     $city = isset($row['City']) ? $row['City'] : '';
     $latitude = isset($row['Latitude']) ? $row['Latitude'] : '';
     $longitude = isset($row['Longitude']) ? $row['Longitude'] : '';
@@ -85,18 +84,28 @@ foreach ($data as $row) {
     $Q8a = isset($row['TravelPurpose']) ? $row['TravelPurpose'] : '';
     $Q8b = isset($row['Travel11']) ? $row['Travel11'] : '';
     $Q8c = isset($row['Withwhom']) ? $row['Withwhom'] : '';
-    // $originType = isset($row['OriginType']) ? $row['OriginType'] : '';
-    // $startingTime = isset($row['StartingTime']) ? $row['StartingTime'] : '';
-    // $duration = isset($row['Duration']) ? $row['Duration'] : '';
-    // $bOptions = isset($row['Transportation']) ? $row['Transportation'] : '';
-    // $waitingTime = isset($row['WaitingTime']) ? $row['WaitingTime'] : '';
-    // $cToE = isset($row['CToe']) ? $row['CToe'] : '';
-    // $durationD = isset($row['durationD']) ? $row['durationD'] : '';
-    // $waitingTimeE = isset($row['WaitingTimeE']) ? $row['WaitingTimeE'] : '';
-    // $durationF = isset($row['Durationf']) ? $row['Durationf'] : '';
-    // $fOptions = isset($row['Ftransportation']) ? $row['Ftransportation'] : '';
-    // $destinationType = isset($row['DestinationType']) ? $row['DestinationType'] : '';
-    // $endTime = isset($row['EndTime']) ? $row['EndTime'] : '';
+
+    $Q9aOT = isset($row['OriginType']) ? $row['OriginType'] : '';
+    $Q9aOR = isset($row['OriginArea']) ? $row['OriginArea'] : '';
+    $Q9aOP = isset($row['OriginPin']) ? $row['OriginPin'] : '';
+    $Q9aST = isset($row['StartingTime']) ? $row['StartingTime'] : '';
+
+    $Q9aAT = isset($row['Duration']) ? $row['Duration'] : '';
+    $Q9aMC= isset($row['Transportation']) ? $row['Transportation'] : '';
+
+    $Q9aWT = isset($row['WaitingTime']) ? $row['WaitingTime'] : '';
+
+    $Q9MMM = isset($row['CToe']) ? $row['CToe'] : '';
+    $Q9TT = isset($row['durationD']) ? $row['durationD'] : '';
+    $Q9bWT = isset($row['WaitingTimeE']) ? $row['WaitingTimeE'] : '';
+    $Q9bAT = isset($row['Durationf']) ? $row['Durationf'] : '';
+    $Q9bMC = isset($row['Ftransportation']) ? $row['Ftransportation'] : '';
+
+    $Q9bDT = isset($row['DestinationType']) ? $row['DestinationType'] : '';
+    $Q9bDA = isset($row['DestinationArea']) ? $row['DestinationArea'] : '';
+    $Q9bDP = isset($row['DestinationPin']) ? $row['DestinationPin'] : '';
+    $Q9bET = isset($row['EndTime']) ? $row['EndTime'] : '';
+
     $Q11_1 = isset($row['Q34']) ? $row['Q34'] : '';
     $Q11_2 = isset($row['Q35']) ? $row['Q35'] : '';
     $Q11_3 = isset($row['Q36']) ? $row['Q36'] : '';
@@ -109,7 +118,7 @@ foreach ($data as $row) {
     $stmt_section_b->execute();
 
     // // Column B
-    // // Assuming you have fields Q13i through Q33s in your JSON data and in your database table
+    // Assuming you have fields Q13i through Q33s in your JSON data and in your database table
     // $overallFbnmt = isset($row['overallFbnmt']) ? $row['overallFbnmt'] : '';
     // $overallFbpara = isset($row['overallFbpara']) ? $row['overallFbpara'] : '';
     // $overallFbpersonal = isset($row['overallFbpersonal']) ? $row['overallFbpersonal'] : '';
