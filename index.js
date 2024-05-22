@@ -1272,6 +1272,12 @@ function getUserLocation() {
             ? document.querySelector('input[name="travel_partner"]:checked')
                 .value
             : "";
+            const travel_purpose_yes_no = document.querySelector(
+              'input[name="travel_purpose_yes_no"]:checked'
+            )
+              ? document.querySelector('input[name="travel_purpose_yes_no"]:checked')
+                  .value
+              : "";
           // const travel_purpose = document.querySelector(
           //   'input[name="travel_purpose"]:checked'
           // )
@@ -2005,6 +2011,7 @@ function getUserLocation() {
             TravelWork: travel_work,
             TravelPartner:
               travel_partner === "5" ? otherTravelText : travel_partner,
+            Q8: travel_purpose_yes_no,
             // TravelPurpose:
             //   travel_purpose === "5" ? otherPurposeText : travel_purpose,
             TravelPurpose: selectedValues.join(","),

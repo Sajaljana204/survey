@@ -25,9 +25,9 @@ if (!is_array($data) || empty($data)) {
 $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3Inc, Q4Emp, Q5Edu, Q6City, Latitude, Longitude, StartSurveyTime, SPSurveyStartingtime, SurveyEndingTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
 
-// // Prepare and bind SQL statement for section_b
-// $stmt_section_b = $conn->prepare("INSERT INTO section_b (Q9, Q10, Q11, Q12, OriginType, StartingTime, Duration, `B-Options`, WaitingTime, C_to_E, durationD, WaitingTimeE, DurationF, F_options, DestinationType, EndTime, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q40a, Q40b) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-// $stmt_section_b->bind_param("sssssssssssssssssssssssss", $q9, $q10, $q11, $q12, $originType, $startingTime, $duration, $bOptions, $waitingTime, $cToE, $durationD, $waitingTimeE, $durationF, $fOptions, $destinationType, $endTime, $q34, $q35, $q36, $q37, $q38, $q39, $q40, $q40a, $q40b);
+// Prepare and bind SQL statement for section_b
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, Q7(a), Q8, Q8(a), Q8(b), Q8(c)) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("ssssss", $q9, $q10, $q11, $q12);
 
 
 // // // Prepare and bind SQL statement for column_b
@@ -79,10 +79,10 @@ foreach ($data as $row) {
     }
 
     // // Section B
-    // $q9 = isset($row['TravelWork']) ? $row['TravelWork'] : '';
-    // $q10 = isset($row['TravelPartner']) ? $row['TravelPartner'] : '';
-    // $q11 = isset($row['TravelPurpose']) ? $row['TravelPurpose'] : '';
-    // $q12 = isset($row['Travel11']) ? $row['Travel11'] : '';
+    $Q7 = isset($row['TravelWork']) ? $row['TravelWork'] : '';
+    $Q7a = isset($row['TravelPartner']) ? $row['TravelPartner'] : '';
+    $q11 = isset($row['TravelPurpose']) ? $row['TravelPurpose'] : '';
+    $q12 = isset($row['Travel11']) ? $row['Travel11'] : '';
     // $originType = isset($row['OriginType']) ? $row['OriginType'] : '';
     // $startingTime = isset($row['StartingTime']) ? $row['StartingTime'] : '';
     // $duration = isset($row['Duration']) ? $row['Duration'] : '';
