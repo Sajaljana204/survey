@@ -623,15 +623,13 @@ document.getElementById("next2").addEventListener("click", function () {
 
   if (istravel_work != "") {
     if (istravel_work !== "1") {
+
       if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
         travelPartnerDiv.style.border = "2px solid red";
         isValid = false;
       }
-    } else {
-      if (!document.querySelector(`input[name="whith_whom"]:checked`)) {
-        travel11bdiv.style.border = "2px solid red";
-        isValid = false;
-      }
+    } else{
+      travelPartnerDiv.style.border = "none";
     }
   }
 
@@ -643,15 +641,23 @@ document.getElementById("next2").addEventListener("click", function () {
     : "";
 
   if (istravel_purpose === "1") {
-    if (!document.querySelector(`input[name="travel_purpose"]:checked`)) {
-      travelPurposeDiv.style.border = "2px solid red";
-      isValid = false;
-    } else {
-      if (!document.querySelector(`input[name="travel_11"]:checked`)) {
-        travel11Div.style.border = "2px solid red";
-        isValid = false;
-      }
-    }
+
+    const fieldCheckingFortravel=['travel_purpose','travel_11','whith_whom'];
+    fieldCheckingFortravel.forEach((fieldName) => {
+      if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
+      
+       if(fieldName==="travel_11"){
+        travel11Div.style.border="2px solid red";
+       }
+       if(fieldName==="whith_whom"){
+        travel11bdiv.style.border="2px solid red";
+       }
+        if(fieldName="travel_purpose"){
+        travelPurposeDiv.style.border="2px solid red";
+       }
+      } 
+    });
+    
   }
 
   const fieldsToCheck = ["cToe"];
@@ -2201,12 +2207,11 @@ function togglenootherpurpose() {
 }
 
 function togglenoworkorscool() {
-  // document.getElementById("travel-partner-div").style.display = "none";
-}
+  document.getElementById("travel-partner-div").style.display = "none";}
 
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
-  document.getElementById("travel-11b-div").style.display = "none";
+  // document.getElementById("travel-11b-div").style.display = "none";
 }
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
