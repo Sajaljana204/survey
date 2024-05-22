@@ -6,6 +6,7 @@ var cardValid = true;
 let columnB = "";
 let columnF = "";
 let selectedValues = [];
+let spsurveystartingtime = "";
 startservey();
 
 // Function to shuffle array in place (Fisher-Yates shuffle algorithm)
@@ -146,7 +147,7 @@ function updatePageNumbers(id, count) {
   const containerM1 = container.querySelector(".container");
   const pagenoElement = containerM1.querySelector(".pageno");
   // Append text to the existing content
-  pagenoElement.textContent = "Page no : " + pageno + " of" + " 12";
+  pagenoElement.textContent = "Page no : " + pageno + " of" + " 11";
 }
 
 function validateRadioGroupIncard(fieldName) {
@@ -2118,6 +2119,7 @@ function getUserLocation() {
             Q45: Q45,
             DateTime: dateTime,
             StartdateTime: StartdateTime,
+            SPSurveyStartingtime: spsurveystartingtime,
 
             m11: m11,
             m12: m12,
@@ -2199,7 +2201,7 @@ function togglenootherpurpose() {
 }
 
 function togglenoworkorscool() {
-  document.getElementById("travel-partner-div").style.display = "none";
+  // document.getElementById("travel-partner-div").style.display = "none";
 }
 
 function toggleworkorscool() {
@@ -2230,3 +2232,12 @@ function onclickClose11a() {
   document.getElementById("travel-11-div").style.display = "none";
   document.getElementById("travel-11b-div").style.display = "none";
 }
+
+// to record location
+
+document
+  .getElementById("startSpsurvey")
+  .addEventListener("click", function (e) {
+    spsurveystartingtime = getCurrentDateTime();
+    console.log("sp survey starting date time" + spsurveystartingtime);
+  });
