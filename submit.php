@@ -26,8 +26,8 @@ $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3In
 $stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
 
 // Prepare and bind SQL statement for section_b
-$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, Q7(a), Q8, Q8(a), Q8(b), Q8(c)) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt_section_b->bind_param("ssssss", $q9, $q10, $q11, $q12);
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("ssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c);
 
 
 // // // Prepare and bind SQL statement for column_b
@@ -81,8 +81,10 @@ foreach ($data as $row) {
     // // Section B
     $Q7 = isset($row['TravelWork']) ? $row['TravelWork'] : '';
     $Q7a = isset($row['TravelPartner']) ? $row['TravelPartner'] : '';
-    $q11 = isset($row['TravelPurpose']) ? $row['TravelPurpose'] : '';
-    $q12 = isset($row['Travel11']) ? $row['Travel11'] : '';
+    $Q8 = isset($row['Q8']) ? $row['Q8'] : '';
+    $Q8a = isset($row['TravelPurpose']) ? $row['TravelPurpose'] : '';
+    $Q8b = isset($row['Travel11']) ? $row['Travel11'] : '';
+    $Q8c = isset($row['Withwhom']) ? $row['Withwhom'] : '';
     // $originType = isset($row['OriginType']) ? $row['OriginType'] : '';
     // $startingTime = isset($row['StartingTime']) ? $row['StartingTime'] : '';
     // $duration = isset($row['Duration']) ? $row['Duration'] : '';
@@ -104,7 +106,7 @@ foreach ($data as $row) {
     // $q40 = isset($row['Q40']) ? $row['Q40'] : '';
     // $q40a = isset($row['Q40a']) ? $row['Q40a'] : '';
     // $q40b = isset($row['Q40b']) ? $row['Q40b'] : '';
-    // $stmt_section_b->execute();
+    $stmt_section_b->execute();
 
     // // Column B
     // // Assuming you have fields Q13i through Q33s in your JSON data and in your database table
@@ -152,7 +154,7 @@ foreach ($data as $row) {
 
 // Close statement
 $stmt_section_a->close();
-// $stmt_section_b->close();
+$stmt_section_b->close();
 // $stmt_column_b->close();
 // $stmt_column_f->close();
 // $stmt_section_c->close();
