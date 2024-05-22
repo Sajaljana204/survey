@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "finalsurveydata"; 
+$dbname = "main_survey"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,7 +23,7 @@ if (!is_array($data) || empty($data)) {
 
 // Prepare and bind SQL statement to insert data into MySQL database
 $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3Inc, Q4Emp, Q5Edu, Q6City, Latitude, Longitude, StartSurveyTime, SPSurveyStartingtime, SurveyEndingTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EnddateTime);
+$stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
 
 // // Prepare and bind SQL statement for section_b
 // $stmt_section_b = $conn->prepare("INSERT INTO section_b (Q9, Q10, Q11, Q12, OriginType, StartingTime, Duration, `B-Options`, WaitingTime, C_to_E, durationD, WaitingTimeE, DurationF, F_options, DestinationType, EndTime, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q40a, Q40b) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -71,7 +71,7 @@ foreach ($data as $row) {
     $longitude = isset($row['Longitude']) ? $row['Longitude'] : '';
     $StartDateTime = isset($row['StartdateTime']) ? $row['StartdateTime'] : '';
     $SPSurveyStartingtime = isset($row['SPSurveyStartingtime']) ? $row['SPSurveyStartingtime'] : '';
-    $EnddateTime = isset($row['EndDateTime']) ? $row['EndDateTime'] : '';
+    $EndDateTime = isset($row['EndDateTime']) ? $row['EndDateTime'] : '';
 
     // Execute the query for 'section_a'
     if (!$stmt_section_a->execute()) {
