@@ -2133,7 +2133,7 @@ function getUserLocation() {
             Q43: Q43,
             Q44: Q44,
             Q45: Q45,
-            DateTime: dateTime,
+            EndDateTime: dateTime,
             StartdateTime: StartdateTime,
             SPSurveyStartingtime: spsurveystartingtime,
             Requestedemil: requestedemil,
