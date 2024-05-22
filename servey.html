@@ -63,7 +63,7 @@
           <button id="prepaid" type="button" onclick="getBackLastDeletedId()">
             Back
           </button>
-          <button id="saveAndNextm2" type="button" onclick="saveAndNext()">
+          <button id="startSpsurvey" type="button" onclick="saveAndNext()">
             Next</button
           ><br />
 
@@ -77,7 +77,23 @@
 
       <div id="lastsubmission" class="hidden">
         <div id="submitbtn">
-          <h1>*****Thank you*****</h1>
+          <h1>Thank you for completing the survey.</h1>
+          <h2>
+            If you need a copy of the survey, please provide your email id.
+          </h2>
+          <input
+            id="feddbackrecordEmail"
+            name="requested_Email"
+            placeholder="Please put the email"
+            style="
+              border: 1px double yellow;
+              border-radius: 3px;
+              box-shadow: #0f0e0e;
+              width: 33%;
+              margin-bottom: 3%;
+            "
+          />
+          <br />
           <!-- <h1>Do you want to submit the form?</h1> -->
 
           <button class="user-button" id="submit" onclick="submit()">
@@ -511,7 +527,7 @@
               >
               <div>
                 <input
-                  type="radio"
+                  type="checkbox"
                   name="travel_purpose"
                   value="1"
                   required
@@ -522,7 +538,7 @@
 
               <div>
                 <input
-                  type="radio"
+                  type="checkbox"
                   name="travel_purpose"
                   value="2"
                   required
@@ -533,7 +549,7 @@
 
               <div>
                 <input
-                  type="radio"
+                  type="checkbox"
                   name="travel_purpose"
                   value="3"
                   required
@@ -544,7 +560,7 @@
 
               <div>
                 <input
-                  type="radio"
+                  type="checkbox"
                   name="travel_purpose"
                   value="4"
                   required
@@ -554,7 +570,7 @@
               </div>
 
               <input
-                type="radio"
+                type="checkbox"
                 name="travel_purpose"
                 value="5"
                 id="OtherPurpose"
@@ -2519,7 +2535,10 @@
           <div class="question34" id="secure-div">
             <span class="gender-title"
               >11. How safe/secure do you feel while travelling at night versus
-              daytime<span class="required">*</span></span
+              daytime (1 – very unsafe to 3 – same to 5 – very safe)<span
+                class="required"
+                >*</span
+              ></span
             >
             <div id="matrix-category">
               <span class="question34span"></span>
@@ -2773,7 +2792,8 @@
             <br />
             <div class="question34" id="question34">
               <span class="gender-title"
-                >13(b). How often do you use any of the following apps ?<span
+                >13(b). How often do you use any of the following apps (1-Never,
+                2-Rarely, 3-Sometimes, 4-Very Often, 5-Always)?<span
                   class="required"
                   >*</span
                 ></span
