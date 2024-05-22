@@ -134,6 +134,11 @@
         color: #fff; /* Label text color */
       }
 
+      .required {
+        color: red;
+        margin-left: 3px;
+      }
+
       #emulatorName {
         width: 100%;
         padding: 10px;
@@ -206,10 +211,10 @@
           color: black;
           font-style: italic;
           font-weight: 700;
-          width: 45%;
+          width: 100%;
           align-items: center;
           justify-self: auto;
-          margin-left: 28%;
+          /* margin-left: 28%; */
           color: #333;
           box-sizing: border-box;
           background-color: rgba(255, 255, 255, 0.5);
@@ -220,21 +225,53 @@
         "
       >
         The TUTEM project team from IIT Bombay, BITS Pilani Hyderabad campus,
-        IIT Kharagpur and Location Mind is working on to improve Safety and
-        security of public transit users. In this regard the team is Collecting
-        information. Hope you will participate in the suervey and share your
-        travel related details. Please note no personal information would be
-        requested.
+        IIT Kharagpur, and Location Mind is working to improve the safety and
+        security of users who are accessing public transit stops. In this
+        regard, the team is collecting data regarding this daily travel habit
+        and perceptions of safety and security along the access route.
+        <br />
+        <br />
+        <br />
+        We invite you to participate in the survey which will take about 10-12
+        minutes.
+        <br />
+        <br />
       </h3>
-      <h1>
+      <!-- <h1>
+        <span class="required">*</span> Please note no personal information
+        would be requested.
+      </h1> -->
+      <!-- <h1>
         Do you use public transport and do you want to participate in the
         survey?
-      </h1>
+      </h1> -->
       <button class="back" id="backButton" style="display: none">Back</button>
       <button class="user-button" id="yesButton">Yes</button>
       <button class="admin-button" id="noButton">No</button>
 
-      <div class="thank-you-message"><h2>THANK YOU</h2></div>
+      <div>
+        <h2
+          style="
+            color: black;
+            font-style: italic;
+            font-weight: 700;
+            width: 95%;
+            align-items: center;
+            justify-self: auto;
+
+            color: #333;
+            box-sizing: border-box;
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            padding: 10px;
+            border-radius: 12px;
+          "
+        >
+          <span class="required">*</span> Please note no personal information
+          would be requested.<span class="required">*</span>
+        </h2>
+      </div>
+
+      <div class="thank-you-message"><h2>Survey is Starting</h2></div>
     </div>
     <label id="entryadminButton">Admin Login</label>
 

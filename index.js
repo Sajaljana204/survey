@@ -561,10 +561,9 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  selectedValues=[];
+  selectedValues = [];
   saveAndNext();
   let isValidPinNumber = true;
-
 
   // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
 
@@ -572,10 +571,9 @@ document.getElementById("next2").addEventListener("click", function () {
     'input[name="travel_purpose"]:checked'
   );
   checkboxes.forEach((checkbox) => {
-    if(checkbox.value!="5"){
+    if (checkbox.value != "5") {
       selectedValues.push(checkbox.value);
     }
-    
   });
 
   const otherPurposeCheckbox = document.getElementById("OtherPurpose");
@@ -630,12 +628,11 @@ document.getElementById("next2").addEventListener("click", function () {
 
   if (istravel_work != "") {
     if (istravel_work !== "1") {
-
       if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
         travelPartnerDiv.style.border = "2px solid red";
         isValid = false;
       }
-    } else{
+    } else {
       travelPartnerDiv.style.border = "none";
     }
   }
@@ -648,23 +645,24 @@ document.getElementById("next2").addEventListener("click", function () {
     : "";
 
   if (istravel_purpose === "1") {
-
-    const fieldCheckingFortravel=['travel_purpose','travel_11','whith_whom'];
+    const fieldCheckingFortravel = [
+      "travel_purpose",
+      "travel_11",
+      "whith_whom",
+    ];
     fieldCheckingFortravel.forEach((fieldName) => {
       if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
-      
-       if(fieldName==="travel_11"){
-        travel11Div.style.border="2px solid red";
-       }
-       if(fieldName==="whith_whom"){
-        travel11bdiv.style.border="2px solid red";
-       }
-        if(fieldName="travel_purpose"){
-        travelPurposeDiv.style.border="2px solid red";
-       }
-      } 
+        if (fieldName === "travel_11") {
+          travel11Div.style.border = "2px solid red";
+        }
+        if (fieldName === "whith_whom") {
+          travel11bdiv.style.border = "2px solid red";
+        }
+        if ((fieldName = "travel_purpose")) {
+          travelPurposeDiv.style.border = "2px solid red";
+        }
+      }
     });
-    
   }
 
   const fieldsToCheck = ["cToe"];
@@ -1222,6 +1220,11 @@ function getUserLocation() {
           window.location.href = "entry.html";
 
           // Collect form data
+
+          const requestedemil = document.querySelector(
+            'input[name="requested_Email"]'
+          ).value;
+
           const ename = document.querySelector('input[name="ename"]').value;
           // const route = document.querySelector('input[name="route"]').value;
           const gender = document.querySelector('input[name="gender"]:checked')
@@ -2133,6 +2136,7 @@ function getUserLocation() {
             DateTime: dateTime,
             StartdateTime: StartdateTime,
             SPSurveyStartingtime: spsurveystartingtime,
+            Requestedemil: requestedemil,
 
             m11: m11,
             m12: m12,
@@ -2214,20 +2218,44 @@ function togglenootherpurpose() {
 }
 
 function togglenoworkorscool() {
-  document.getElementById("travel-partner-div").style.display = "none";}
+  document.getElementById("travel-partner-div").style.display = "none";
+}
 
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
   // document.getElementById("travel-11b-div").style.display = "none";
 }
+
+// 4. Employment* and its text box on off
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
 }
+
+function noOtheremp() {
+  document.getElementById("otherEmployment").style.display = "none";
+}
+
+//___________________________________________________________________
+
+// text box of Gender not listed here
 function onclickGenderNotSpecified() {
   document.getElementById("GenderNotSpecified").style.display = "block";
 }
+
+function offtextFieldofGendernotListed() {
+  document.getElementById("GenderNotSpecified").style.display = "none";
+}
+
+// -----------------------------------------------------------
+
+//8(c). Whom do you use public transport stop for other purpose? * textt box on off
+
 function onclickwhithwhom() {
   document.getElementById("whithwhom").style.display = "block";
+}
+
+function onclickwhithnoneofthem() {
+  document.getElementById("whithwhom").style.display = "none";
 }
 
 //hi
@@ -2253,3 +2281,9 @@ document
     spsurveystartingtime = getCurrentDateTime();
     console.log("sp survey starting date time" + spsurveystartingtime);
   });
+
+// function submit() {
+//   // requestedemil = document.getElementById("feedbackRecordEmail").value;
+//   requestedemil = document.querySelector('input[name="requested_Email"]').value;
+//   console.log9("this is user given email" + requestedemil);
+// }

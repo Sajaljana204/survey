@@ -79,10 +79,12 @@
         <div id="submitbtn">
           <h1>Thank you for completing the survey.</h1>
           <h2>
-            If you need a copy of the survey, please provide your email id.
+            If you need a copy of the survey, please provide your email id and
+            our team will get in touch with you.
           </h2>
           <input
-            id="feddbackrecordEmail"
+            type="email"
+            id="feedbackRecordEmail"
             name="requested_Email"
             placeholder="Please put the email"
             style="
@@ -91,6 +93,7 @@
               box-shadow: #0f0e0e;
               width: 33%;
               margin-bottom: 3%;
+              padding: 10px;
             "
           />
           <br />
@@ -127,11 +130,23 @@
                 >1. Gender<span class="required">*</span></span
               >
               <div>
-                <input type="radio" name="gender" value="Male" required />
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  required
+                  onclick="offtextFieldofGendernotListed()"
+                />
                 <label for="gender">Male</label>
               </div>
               <div>
-                <input type="radio" name="gender" value="Female" required />
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  onclick="offtextFieldofGendernotListed()"
+                  required
+                />
                 <label for="gender">Female</label>
               </div>
 
@@ -140,6 +155,7 @@
                   type="radio"
                   name="gender"
                   value="Transgender"
+                  onclick="offtextFieldofGendernotListed()"
                   required
                 />
                 <label for="gender">Transgender</label>
@@ -171,6 +187,7 @@
                   name="gender"
                   value="Prefer not to say"
                   required
+                  onclick="offtextFieldofGendernotListed()"
                 />
                 <label for="gender">Prefer not to say</label>
               </div>
@@ -239,6 +256,7 @@
                   type="radio"
                   name="employment"
                   value="Self-employed"
+                  onclick="noOtheremp()"
                   required
                 />
                 <label for="employment">Self-employed</label>
@@ -249,6 +267,7 @@
                   name="employment"
                   value="Government"
                   required
+                  onclick="noOtheremp()"
                 />
                 <label for="employment">Government</label>
               </div>
@@ -258,6 +277,7 @@
                   name="employment"
                   value="Private"
                   required
+                  onclick="noOtheremp()"
                 />
                 <label for="employment">Private</label>
               </div>
@@ -267,6 +287,7 @@
                   name="employment"
                   value="Student"
                   required
+                  onclick="noOtheremp()"
                 />
                 <label for="employment">Student</label>
               </div>
@@ -633,19 +654,43 @@
                 <span class="required">*</span></span
               >
               <div>
-                <input type="radio" name="whith_whom" value="1" required />
+                <input
+                  type="radio"
+                  name="whith_whom"
+                  value="1"
+                  required
+                  onclick="onclickwhithnoneofthem()"
+                />
                 <label for="">Alone </label>
               </div>
               <div>
-                <input type="radio" name="whith_whom" value="2" required />
+                <input
+                  type="radio"
+                  name="whith_whom"
+                  value="2"
+                  required
+                  onclick="onclickwhithnoneofthem()"
+                />
                 <label for="">With colleagues </label>
               </div>
               <div>
-                <input type="radio" name="whith_whom" value="3" required />
+                <input
+                  type="radio"
+                  name="whith_whom"
+                  value="3"
+                  required
+                  onclick="onclickwhithnoneofthem()"
+                />
                 <label for="">With friends </label>
               </div>
               <div>
-                <input type="radio" name="whith_whom" value="4" required />
+                <input
+                  type="radio"
+                  name="whith_whom"
+                  value="4"
+                  required
+                  onclick="onclickwhithnoneofthem()"
+                />
                 <label for="">With family </label>
               </div>
               <div style="display: flex">
@@ -656,7 +701,7 @@
                   required
                   onclick="onclickwhithwhom()"
                 />
-                <label for="">Others</label>
+                <label for="" style="padding-left: 1%">Others</label>
                 <input
                   type="text"
                   name="whith_whom"
