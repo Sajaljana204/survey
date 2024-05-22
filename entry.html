@@ -15,7 +15,7 @@
         color: #fff; /* Text color */
         margin: 0;
         padding: 0;
-        display: flex;
+        display: block;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -66,6 +66,46 @@
 
       button + button {
         margin-left: 10px;
+      }
+
+      /* // logo  */
+
+      .tutemlogo img {
+        height: 222px;
+
+        width: auto;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.5s ease;
+
+        -webkit-filter: brightness(100%);
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        -ms-transition: all 1s ease;
+        transition: all 1s ease;
+      }
+
+      /* .border img {
+        transition: 0.5s ease;
+      } */
+
+      .tutemlogo img:hover {
+        box-shadow: 0 0 0 8px #ebc60e;
+        transition: 0.5s ease;
+
+        /* -webkit-transform: rotateZ(-10deg);
+        -ms-transform: rotateZ(-10deg);
+        transform: rotateZ(-10deg);
+        transition: 1s ease; */
+
+        -webkit-filter: brightness(80%);
+
+        border-radius: 20px;
+        transition: 1s ease;
       }
 
       /* Glass-like popup styling */
@@ -125,11 +165,60 @@
       #submitEmulator:hover {
         background-color: #45a049;
       }
+
+      .thank-you-message {
+        display: none;
+        margin-top: 12px;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); /* Slightly transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .thank-you-message h2 {
+        font-size: xx-large;
+        font-weight: bold;
+        font-style: italic;
+        font-synthesis: style;
+      }
+
+      .thank-you-message.show {
+        display: block;
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <h3 style="color: black; font-style: normal; font-weight: 900">
+      <div class="tutemlogo">
+        <img src="tutemlogo.jpg" alt="" />
+      </div>
+      <br />
+      <h3
+        style="
+          color: black;
+          font-style: italic;
+          font-weight: 700;
+          width: 45%;
+          align-items: center;
+          justify-self: auto;
+          margin-left: 28%;
+          color: #333;
+          box-sizing: border-box;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 10px;
+          border-radius: 12px;
+          box-shadow: #4caf50;
+          border: 2px double green;
+        "
+      >
         The TUTEM project team from IIT Bombay, BITS Pilani Hyderabad campus,
         IIT Kharagpur and Location Mind is working on to improve Safety and
         security of public transit users. In this regard the team is Collecting
@@ -144,6 +233,8 @@
       <button class="back" id="backButton" style="display: none">Back</button>
       <button class="user-button" id="yesButton">Yes</button>
       <button class="admin-button" id="noButton">No</button>
+
+      <div class="thank-you-message"><h2>THANK YOU</h2></div>
     </div>
     <label id="entryadminButton">Admin Login</label>
 
@@ -187,63 +278,73 @@
         window.location.href = "index.html";
       });
       yesButton.addEventListener("click", function () {
-        window.location.href = "servey.html";
+        const message = document.querySelector(".thank-you-message");
+        message.classList.add("show");
 
-        modechoiceArray = Math.floor(Math.random() * 6); // it will return a value from 0 to 5
-        routechoiceArray = Math.floor(Math.random() * 6);
+        setTimeout(() => {
+          message.classList.remove("show");
+        }, 3000); //
 
-        console.log("this sis the random mode id" + modechoiceArray);
-        console.log("this sis the random route id" + routechoiceArray);
-        if (modechoiceArray === 0) {
-          imageIds = shuffleArray(modechoice0);
-        }
-        if (modechoiceArray === 1) {
-          imageIds = shuffleArray(modechoice1);
-        }
-        if (modechoiceArray === 2) {
-          imageIds = shuffleArray(modechoice2);
-        }
-        if (modechoiceArray === 3) {
-          imageIds = shuffleArray(modechoice3);
-        }
-        if (modechoiceArray === 4) {
-          imageIds = shuffleArray(modechoice4);
-        }
-        if (modechoiceArray === 5) {
-          imageIds = shuffleArray(modechoice5);
-        }
+        setTimeout(() => {
+          window.location.href = "servey.html";
+          // window.location.href = "servey.html";
 
-        if (routechoiceArray === 0) {
-          routeimageIds = shuffleArray(routechoice0);
-        }
-        if (routechoiceArray === 1) {
-          routeimageIds = shuffleArray(routechoice1);
-        }
-        if (routechoiceArray === 2) {
-          routeimageIds = shuffleArray(routechoice2);
-        }
-        if (routechoiceArray === 3) {
-          routeimageIds = shuffleArray(routechoice3);
-        }
-        if (routechoiceArray === 4) {
-          routeimageIds = shuffleArray(routechoice4);
-        }
-        if (routechoiceArray === 5) {
-          routeimageIds = shuffleArray(routechoice5);
-        }
+          modechoiceArray = Math.floor(Math.random() * 6); // it will return a value from 0 to 5
+          routechoiceArray = Math.floor(Math.random() * 6);
 
-        modeORroute = Math.floor(Math.random() * 2);
+          console.log("this sis the random mode id" + modechoiceArray);
+          console.log("this sis the random route id" + routechoiceArray);
+          if (modechoiceArray === 0) {
+            imageIds = shuffleArray(modechoice0);
+          }
+          if (modechoiceArray === 1) {
+            imageIds = shuffleArray(modechoice1);
+          }
+          if (modechoiceArray === 2) {
+            imageIds = shuffleArray(modechoice2);
+          }
+          if (modechoiceArray === 3) {
+            imageIds = shuffleArray(modechoice3);
+          }
+          if (modechoiceArray === 4) {
+            imageIds = shuffleArray(modechoice4);
+          }
+          if (modechoiceArray === 5) {
+            imageIds = shuffleArray(modechoice5);
+          }
 
-        if (modeORroute === 1) {
-          connectedarray = [...formArray, ...routeimageIds, ...imageIds];
-          connectedarray.push("lastsubmission");
-        } else if (modeORroute === 0) {
-          connectedarray = [...formArray, ...imageIds, ...routeimageIds];
-          connectedarray.push("lastsubmission");
-        }
+          if (routechoiceArray === 0) {
+            routeimageIds = shuffleArray(routechoice0);
+          }
+          if (routechoiceArray === 1) {
+            routeimageIds = shuffleArray(routechoice1);
+          }
+          if (routechoiceArray === 2) {
+            routeimageIds = shuffleArray(routechoice2);
+          }
+          if (routechoiceArray === 3) {
+            routeimageIds = shuffleArray(routechoice3);
+          }
+          if (routechoiceArray === 4) {
+            routeimageIds = shuffleArray(routechoice4);
+          }
+          if (routechoiceArray === 5) {
+            routeimageIds = shuffleArray(routechoice5);
+          }
 
-        // Store the array in sessionStorage
-        sessionStorage.setItem("route", JSON.stringify(connectedarray));
+          modeORroute = Math.floor(Math.random() * 2);
+
+          if (modeORroute === 1) {
+            connectedarray = [...formArray, ...routeimageIds, ...imageIds];
+            connectedarray.push("lastsubmission");
+          } else if (modeORroute === 0) {
+            connectedarray = [...formArray, ...imageIds, ...routeimageIds];
+            connectedarray.push("lastsubmission");
+          }
+
+          // Store the array in sessionStorage
+          sessionStorage.setItem("route", JSON.stringify(connectedarray));
+        }, 3000);
       });
 
       adminButton.addEventListener("click", function () {
@@ -329,6 +430,10 @@
       entryadminButton.addEventListener("click", function () {
         window.location.href = "admin.html";
       });
+
+      document
+        .getElementById("yesButton")
+        .addEventListener("click", function (e) {});
     </script>
   </body>
 </html>
