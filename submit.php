@@ -26,8 +26,8 @@ $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3In
 $stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
 
 // Prepare and bind SQL statement for section_b
-$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt_section_b->bind_param("ssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c);
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("sssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
 
 
 // // // Prepare and bind SQL statement for column_b
@@ -97,15 +97,15 @@ foreach ($data as $row) {
     // $fOptions = isset($row['Ftransportation']) ? $row['Ftransportation'] : '';
     // $destinationType = isset($row['DestinationType']) ? $row['DestinationType'] : '';
     // $endTime = isset($row['EndTime']) ? $row['EndTime'] : '';
-    // $q34 = isset($row['Q34']) ? $row['Q34'] : '';
-    // $q35 = isset($row['Q35']) ? $row['Q35'] : '';
-    // $q36 = isset($row['Q36']) ? $row['Q36'] : '';
-    // $q37 = isset($row['Q37']) ? $row['Q37'] : '';
-    // $q38 = isset($row['Q38']) ? $row['Q38'] : '';
-    // $q39 = isset($row['Q39']) ? $row['Q39'] : '';
-    // $q40 = isset($row['Q40']) ? $row['Q40'] : '';
-    // $q40a = isset($row['Q40a']) ? $row['Q40a'] : '';
-    // $q40b = isset($row['Q40b']) ? $row['Q40b'] : '';
+    $Q11_1 = isset($row['Q34']) ? $row['Q34'] : '';
+    $Q11_2 = isset($row['Q35']) ? $row['Q35'] : '';
+    $Q11_3 = isset($row['Q36']) ? $row['Q36'] : '';
+    $Q11_4 = isset($row['Q37']) ? $row['Q37'] : '';
+    $Q11_5= isset($row['Q38']) ? $row['Q38'] : '';
+    $Q11_6 = isset($row['Q39']) ? $row['Q39'] : '';
+    $Q12 = isset($row['Q40']) ? $row['Q40'] : '';
+    $Q12a = isset($row['Q40a']) ? $row['Q40a'] : '';
+    $Q12b = isset($row['Q40b']) ? $row['Q40b'] : '';
     $stmt_section_b->execute();
 
     // // Column B
