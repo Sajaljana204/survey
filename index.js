@@ -561,16 +561,21 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-  selectedValues.pop();
+  selectedValues=[];
   saveAndNext();
   let isValidPinNumber = true;
-  //  This is only for checkbox question
+
+
+  // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
 
   const checkboxes = document.querySelectorAll(
     'input[name="travel_purpose"]:checked'
   );
   checkboxes.forEach((checkbox) => {
-    selectedValues.push(checkbox.value);
+    if(checkbox.value!="5"){
+      selectedValues.push(checkbox.value);
+    }
+    
   });
 
   const otherPurposeCheckbox = document.getElementById("OtherPurpose");
@@ -585,6 +590,8 @@ document.getElementById("next2").addEventListener("click", function () {
     isValid = false;
     alert("Please specify 'Other' purpose.");
   }
+
+  //+++++++++++++++++++++++++++++++++++++End checkbox +++++++++++++++++++++++++++++++
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
