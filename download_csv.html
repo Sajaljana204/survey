@@ -58,6 +58,7 @@
       <div class="buttons">
         <button class="button" id="noSurvey">No survey</button>
         <button class="button" id="download">Download data</button>
+        <button class="button" id="sendDataBtn">Send Data to Server</button>
         <button class="button" id="clearData">Clear Data</button>
         <button class="button" id="backadmin">Back</button>
       </div>
@@ -514,6 +515,45 @@
             location.reload();
           }
         });
+
+        document.getElementById('sendDataBtn').addEventListener('click', function() {
+      // Ask for confirmation before sending data
+        if (confirm("Are you sure you want to send the data?")) {
+            sendDataToServer();
+            //sendDataToServerResponseNo();
+        }
+      });
+
+      function sendDataToServer() {
+        const formData = JSON.parse(localStorage.getItem('formdata'));
+
+        // Check if formData exists and is not empty
+        if (formData && formData.length > 0) {
+            // Send the data to server using fetch
+            fetch('submit.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Data sent successfully');
+                    // Clear local storage after successful submission
+                    // localStorage.removeItem('formdata');
+                } else {
+                    console.error('Error sending data to server');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        } else {
+            console.log('No data to send');
+            // Optionally display a message to the user indicating no data to send
+        }
+    }
 
       window.oncontextmenu = function () {
         return false; // Disable right-click context menu
