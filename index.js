@@ -5,6 +5,7 @@ var answerArr = [];
 var cardValid = true;
 let columnB = "";
 let columnF = "";
+let selectedValues = [];
 startservey();
 
 // Function to shuffle array in place (Fisher-Yates shuffle algorithm)
@@ -95,7 +96,7 @@ function saveAndNext() {
     currentIndex = currentIndex + 1;
     displayImage();
   } else {
-    alert("Please choose atleast any one of them ");
+    alert("Please choose atleast one option ");
   }
 }
 
@@ -145,7 +146,7 @@ function updatePageNumbers(id, count) {
   const containerM1 = container.querySelector(".container");
   const pagenoElement = containerM1.querySelector(".pageno");
   // Append text to the existing content
-  pagenoElement.textContent = "Page no : " + pageno + " of" + " 11";
+  pagenoElement.textContent = "Page no : " + pageno + " of" + " 12";
 }
 
 function validateRadioGroupIncard(fieldName) {
@@ -559,10 +560,30 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
-
-  let isValidPinNumber = true;
-
+  selectedValues.pop();
   saveAndNext();
+  let isValidPinNumber = true;
+  //  This is only for checkbox question
+
+  const checkboxes = document.querySelectorAll(
+    'input[name="travel_purpose"]:checked'
+  );
+  checkboxes.forEach((checkbox) => {
+    selectedValues.push(checkbox.value);
+  });
+
+  const otherPurposeCheckbox = document.getElementById("OtherPurpose");
+  const otherPurposeInput = document.getElementById("OtherTravelPurpose");
+
+  if (otherPurposeCheckbox.checked && otherPurposeInput.value.trim() !== "") {
+    selectedValues.push(otherPurposeInput.value.trim());
+  } else if (
+    otherPurposeCheckbox.checked &&
+    otherPurposeInput.value.trim() === ""
+  ) {
+    isValid = false;
+    alert("Please specify 'Other' purpose.");
+  }
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
@@ -1185,6 +1206,7 @@ function getUserLocation() {
 
         if (userConfirmation) {
           window.location.href = "entry.html";
+
           // Collect form data
           const ename = document.querySelector('input[name="ename"]').value;
           // const route = document.querySelector('input[name="route"]').value;
@@ -1233,12 +1255,12 @@ function getUserLocation() {
             ? document.querySelector('input[name="travel_partner"]:checked')
                 .value
             : "";
-          const travel_purpose = document.querySelector(
-            'input[name="travel_purpose"]:checked'
-          )
-            ? document.querySelector('input[name="travel_purpose"]:checked')
-                .value
-            : "";
+          // const travel_purpose = document.querySelector(
+          //   'input[name="travel_purpose"]:checked'
+          // )
+          //   ? document.querySelector('input[name="travel_purpose"]:checked')
+          //       .value
+          //   : "";
           const travel_11 = document.querySelector(
             'input[name="travel_11"]:checked'
           )
@@ -1966,8 +1988,9 @@ function getUserLocation() {
             TravelWork: travel_work,
             TravelPartner:
               travel_partner === "5" ? otherTravelText : travel_partner,
-            TravelPurpose:
-              travel_purpose === "5" ? otherPurposeText : travel_purpose,
+            // TravelPurpose:
+            //   travel_purpose === "5" ? otherPurposeText : travel_purpose,
+            TravelPurpose: selectedValues.join(","),
             Travel11: travel_11,
             Withwhom: whith_whom,
             /*This is for image*/
@@ -2177,12 +2200,11 @@ function togglenootherpurpose() {
 
 function togglenoworkorscool() {
   document.getElementById("travel-partner-div").style.display = "none";
-  // document.getElementById("travel-11b-div").style.display = "block";
 }
 
 function toggleworkorscool() {
   document.getElementById("travel-partner-div").style.display = "block";
-  // document.getElementById("travel-11b-div").style.display = "none";
+  document.getElementById("travel-11b-div").style.display = "none";
 }
 function otheremp() {
   document.getElementById("otherEmployment").style.display = "block";
