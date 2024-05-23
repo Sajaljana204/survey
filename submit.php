@@ -31,12 +31,12 @@ $stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $
 
 
 // // // Prepare and bind SQL statement for column_b
-// $stmt_column_b = $conn->prepare("INSERT INTO column_b (Q13s, Q14s, Q15s, Q16s, Q17s, Q18s, Q19s, Q20s, Q21s, overallFbnmt, Q22s, Q23s, Q24s, Q25s, Q26s, Q27s, Q28s, overallFbpara, Q29s, Q30s, Q31s, Q32s, Q33s, overallFbpersonal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-// $stmt_column_b->bind_param("ssssssssssssssssssssssss", $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $overallFbnmt, $q22s, $q23s, $q24s, $q25s, $q26s, $q27s, $q28s, $overallFbpara, $q29s, $q30s, $q31s, $q32s, $q33s, $overallFbpersonal);
+$stmt_mode_choice_question = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(a_1)`, `Q10(a_2)`, `Q10(a_3)`, `Q10(a_4)`, `Q10(a_5)`, `Q10(a_6)`, `Q10(a_7)`, `Q10(a_8)`, `Q10(a_9)`, `Q10(a)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_mode_choice_question->bind_param("ssssssssss", $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $Q10aOR);
 
-// // Prepare and bind SQL statement for column_f
-// $stmt_column_f = $conn->prepare("INSERT INTO column_f (fQ13s, fQ14s, fQ15s, fQ16s, fQ17s, fQ18s, fQ19s, fQ20s, fQ21s, overallFfnmt, fQ22s, fQ23s, fQ24s, fQ25s, fQ26s, fQ27s, fQ28s, overallFfpara, fQ29s, fQ30s, fQ31s, fQ32s, fQ33s, overallFfpersonal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-// $stmt_column_f->bind_param("ssssssssssssssssssssssss", $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $overallFfnmt, $fQ22s, $fQ23s, $fQ24s, $fQ25s, $fQ26s, $fQ27s, $fQ28s, $overallFfpara, $fQ29s, $fQ30s, $fQ31s, $fQ32s, $fQ33s,$overallFfpersonal);
+// // Prepare and bind SQL statement for column_f it insert into mode_choice_question
+$stmt_column_f = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_column_f->bind_param("ssssssssss", $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
 
 
 // // Prepare and bind SQL statement for section_c
@@ -118,24 +118,20 @@ foreach ($data as $row) {
     $stmt_section_b->execute();
 
     // // Column B
-    // Assuming you have fields Q13i through Q33s in your JSON data and in your database table
-    // $overallFbnmt = isset($row['overallFbnmt']) ? $row['overallFbnmt'] : '';
-    // $overallFbpara = isset($row['overallFbpara']) ? $row['overallFbpara'] : '';
-    // $overallFbpersonal = isset($row['overallFbpersonal']) ? $row['overallFbpersonal'] : '';
-    // for ($i = 13; $i <= 33; $i++) {
-    //     ${"q$i" . "s"} = isset($row["Q{$i}s"]) ? $row["Q{$i}s"] : '';
-    // }
-    // $stmt_column_b->execute();
+    //Assuming you have fields Q13i through Q33s in your JSON data and in your database table
+    $Q10aOR= isset($row['overallFbRating']) ? $row['overallFbRating'] : '';
+    for ($i = 13; $i <= 33; $i++) {
+        ${"q$i" . "s"} = isset($row["Q{$i}s"]) ? $row["Q{$i}s"] : '';
+    }
+    $stmt_mode_choice_question->execute();
 
     // // Column F
-    // // Assuming you have fields fQ13i through fQ33s in your JSON data and in your database table
-    // $overallFfnmt = isset($row['overallFfnmt']) ? $row['overallFfnmt'] : '';
-    // $overallFfpara = isset($row['overallFfpara']) ? $row['overallFfpara'] : '';
-    // $overallFfpersonal = isset($row['overallFfpersonal']) ? $row['overallFfpersonal'] : '';
-    // for ($i = 13; $i <= 33; $i++) {
-    //     ${"fQ$i" . "s"} = isset($row["fQ{$i}s"]) ? $row["fQ{$i}s"] : '';
-    // }
-    // $stmt_column_f->execute();
+    // Assuming you have fields fQ13i through fQ33s in your JSON data and in your database table
+    $Q10bOR = isset($row['overallFfRating']) ? $row['overallFfRating'] : '';
+    for ($i = 13; $i <= 33; $i++) {
+        ${"fQ$i" . "s"} = isset($row["fQ{$i}s"]) ? $row["fQ{$i}s"] : '';
+    }
+    $stmt_column_f->execute();
 
     // // Section C
     // // Assuming you have fields Smart_Phone through o7s in your JSON data and in your database table
@@ -164,8 +160,8 @@ foreach ($data as $row) {
 // Close statement
 $stmt_section_a->close();
 $stmt_section_b->close();
-// $stmt_column_b->close();
-// $stmt_column_f->close();
+$stmt_mode_choice_question->close();
+$stmt_column_f->close();
 // $stmt_section_c->close();
 // $stmt_section_mode->close();
 
