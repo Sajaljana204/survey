@@ -520,7 +520,7 @@
       // Ask for confirmation before sending data
         if (confirm("Are you sure you want to send the data?")) {
             sendDataToServer();
-            //sendDataToServerResponseNo();
+            sendDataToServerResponseNo();
         }
       });
 
@@ -536,6 +536,37 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Data sent successfully');
+                    // Clear local storage after successful submission
+                    // localStorage.removeItem('formdata');
+                } else {
+                    console.error('Error sending data to server');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        } else {
+            console.log('No data to send');
+            // Optionally display a message to the user indicating no data to send
+        }
+    }
+
+    function sendDataToServerResponseNo(){
+      const NoUser = JSON.parse(localStorage.getItem('NoUser'));
+
+        // Check if formData exists and is not empty
+        if (NoUser && NoUser.length > 0) {
+            // Send the data to server using fetch
+            fetch('submitNoResponse.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(NoUser)
             })
             .then(response => {
                 if (response.ok) {
