@@ -31,17 +31,17 @@ $stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $
 
 
 // // // Prepare and bind SQL statement for column_b
-$stmt_mode_choice_question = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(a_1)`, `Q10(a_2)`, `Q10(a_3)`, `Q10(a_4)`, `Q10(a_5)`, `Q10(a_6)`, `Q10(a_7)`, `Q10(a_8)`, `Q10(a_9)`, `Q10(a)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_mode_choice_question->bind_param("ssssssssss", $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $Q10aOR);
+$stmt_mode_choice_question = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(a_1)`, `Q10(a_2)`, `Q10(a_3)`, `Q10(a_4)`, `Q10(a_5)`, `Q10(a_6)`, `Q10(a_7)`, `Q10(a_8)`, `Q10(a_9)`, `Q10(a)OR`, `Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_mode_choice_question->bind_param("ssssssssssssssssssss", $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $Q10aOR, $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
 
 // // Prepare and bind SQL statement for column_f it insert into mode_choice_question
-$stmt_column_f = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_column_f->bind_param("ssssssssss", $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
+// $stmt_column_f = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+// $stmt_column_f->bind_param("ssssssssss", $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
 
 
 // // Prepare and bind SQL statement for section_c
-// $stmt_section_c = $conn->prepare("INSERT INTO section_c (Smart_Phone, Data_Package, Q41, Q42, Q43, Q44, Q45) VALUES (?, ?, ?, ?, ?, ?, ?)");
-// $stmt_section_c->bind_param("sssssss", $smartPhone, $dataPackage, $q41, $q42, $q43, $q44, $q45);
+$stmt_section_c = $conn->prepare("INSERT INTO section_c (Q13, `Q13(a)`, `Q13(b_1)`, `Q13(b_2)`, `Q13(b_3)`, `Q13(b_4)`, `Q13(b_5)`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_c->bind_param("sssssss", $smartPhone, $dataPackage, $q41, $q42, $q43, $q44, $q45);
 
 // // Prepare and bind SQL statement for section_c
 // $stmt_section_mode = $conn->prepare("INSERT INTO mode_choice (m1walk, m2walk, m3walk, m4walk, m21walk, m22walk, m23walk, m24walk, m31walk, m32walk, m33walk, m34walk, m41walk, m42walk, m43walk, m44walk, m51walk, m52walk, m53walk, m54walk, m61walk, m62walk, m63walk, m64walk, r1walk, r2walk, r3walk, r4walk, r21walk, r22walk, r23walk, r24walk, r31walk, r32walk, r33walk, r34walk, r41walk, r42walk, r43walk, r44walk, r51walk, r52walk, r53walk, r54walk, r61walk, r62walk, r63walk, r64walk) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -123,7 +123,7 @@ foreach ($data as $row) {
     for ($i = 13; $i <= 33; $i++) {
         ${"q$i" . "s"} = isset($row["Q{$i}s"]) ? $row["Q{$i}s"] : '';
     }
-    $stmt_mode_choice_question->execute();
+    
 
     // // Column F
     // Assuming you have fields fQ13i through fQ33s in your JSON data and in your database table
@@ -131,18 +131,18 @@ foreach ($data as $row) {
     for ($i = 13; $i <= 33; $i++) {
         ${"fQ$i" . "s"} = isset($row["fQ{$i}s"]) ? $row["fQ{$i}s"] : '';
     }
-    $stmt_column_f->execute();
+    $stmt_mode_choice_question->execute();
 
     // // Section C
     // // Assuming you have fields Smart_Phone through o7s in your JSON data and in your database table
-    // $smartPhone = isset($row['smartphone']) ? $row['smartphone'] : '';
-    // $dataPackage = isset($row['data_package']) ? $row['data_package'] : '';
-    // $q41 = isset($row['Q41']) ? $row['Q41'] : '';
-    // $q42 = isset($row['Q42']) ? $row['Q42'] : '';
-    // $q43 = isset($row['Q43']) ? $row['Q43'] : '';
-    // $q44 = isset($row['Q44']) ? $row['Q44'] : '';
-    // $q45 = isset($row['Q45']) ? $row['Q45'] : '';
-    // $stmt_section_c->execute();
+    $smartPhone = isset($row['smartphone']) ? $row['smartphone'] : '';
+    $dataPackage = isset($row['data_package']) ? $row['data_package'] : '';
+    $q41 = isset($row['Q41']) ? $row['Q41'] : '';
+    $q42 = isset($row['Q42']) ? $row['Q42'] : '';
+    $q43 = isset($row['Q43']) ? $row['Q43'] : '';
+    $q44 = isset($row['Q44']) ? $row['Q44'] : '';
+    $q45 = isset($row['Q45']) ? $row['Q45'] : '';
+    $stmt_section_c->execute();
 
 
     // //section mode-chice
@@ -161,8 +161,8 @@ foreach ($data as $row) {
 $stmt_section_a->close();
 $stmt_section_b->close();
 $stmt_mode_choice_question->close();
-$stmt_column_f->close();
-// $stmt_section_c->close();
+// $stmt_column_f->close();
+$stmt_section_c->close();
 // $stmt_section_mode->close();
 
 // Close database connection
