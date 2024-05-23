@@ -438,12 +438,12 @@
             };
 
             // Push the form data to local storage
-            if (localStorage.formdata) {
-              const existingData = JSON.parse(localStorage.formdata);
+            if (localStorage.NoUser) {
+              const existingData = JSON.parse(localStorage.NoUser);
               existingData.push(formDataObject);
-              localStorage.formdata = JSON.stringify(existingData);
+              localStorage.NoUser = JSON.stringify(existingData);
             } else {
-              localStorage.formdata = JSON.stringify([formDataObject]);
+              localStorage.NoUser = JSON.stringify([formDataObject]);
             }
             alert("Location and time have been saved.");
           });
@@ -451,9 +451,9 @@
           alert("Check the internet connection");
         }
       }
-      window.oncontextmenu = function () {
-        return false; // Disable right-click context menu
-      };
+      // window.oncontextmenu = function () {
+      //   return false; // Disable right-click context menu
+      // };
 
       function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
