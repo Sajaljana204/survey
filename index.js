@@ -2031,52 +2031,25 @@ function getUserLocation() {
             DestinationType: destinationType,
             EndTime: endTime,
 
-            Q13s: Q13s,
+            Q13s: columnB === "walk" || columnB === "bicycle" ? Q13s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q22s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q29s : " ",
 
-            Q14s: Q14s,
+            Q14s: columnB === "walk" || columnB === "bicycle" ? Q14s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q23s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q30s : " ",
 
-            Q15s: Q15s,
+            Q15s: columnB === "walk" || columnB === "bicycle" ? Q15s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q24s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q31s : " ",
 
-            Q16s: Q16s,
+            Q16s: columnB === "walk" || columnB === "bicycle" ? Q16s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q25s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q32s : " ",
 
-            Q17s: Q17s,
+            Q17s: columnB === "walk" || columnB === "bicycle" ? Q17s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q26s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q33s : " ",
 
-            Q18s: Q18s,
+            Q18s: columnB === "walk" || columnB === "bicycle" ? Q18s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q27s : " ",
 
-            Q19s: Q19s,
+            Q19s: columnB === "walk" || columnB === "bicycle" ? Q19s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q28s : " ",
 
-            Q20s: Q20s,
+            Q20s: columnB === "walk" || columnB === "bicycle" ? Q20s : " ",
 
-            Q21s: Q21s,
-            overallFbnmt: overallFbnmt,
+            Q21s: columnB === "walk" || columnB === "bicycle" ? Q21s : " ",
 
-            Q22s: Q22s,
-
-            Q23s: Q23s,
-
-            Q24s: Q24s,
-
-            Q25s: Q25s,
-
-            Q26s: Q26s,
-
-            Q27s: Q27s,
-
-            Q28s: Q28s,
-            overallFbpara: overallFbpara,
-
-            Q29s: Q29s,
-
-            Q30s: Q30s,
-
-            Q30s: Q30s,
-
-            Q31s: Q31s,
-
-            Q32s: Q32s,
-
-            Q33s: Q33s,
-            overallFbpersonal: overallFbpersonal,
+            overallFbnmt: columnB === "walk" || columnB === "bicycle" ? overallFbnmt : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? overallFbpara : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? overallFbpersonal : " ",
 
             fQ13s: fQ13s,
 
