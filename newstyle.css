@@ -6,7 +6,7 @@ body {
 }
 .mainheader1 {
   font-size: large;
-  /* font-weight: bold; */
+  font-weight: bold;
   font-style: normal;
   font-synthesis: style;
   color: #000909;
@@ -844,6 +844,8 @@ form .backBtn i {
 .img_container {
   display: flex;
   justify-content: center;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .mode-choice {
@@ -873,16 +875,20 @@ p {
   width: 65%;
 }
 .third_column {
+  border: 4px solid rgb(195, 213, 228);
+  box-shadow: inset 0 0 7px rgb(127, 185, 234);
   border-radius: 13px;
 }
 .third_column .input_boxx {
-  padding-left: 15%;
+  padding-left: 13%;
+  margin-bottom: 13%;
 }
 .third_column img {
   width: 100%;
 }
 .fourth_column {
-  padding-top: 8%;
+  padding-left: 1%;
+  padding-top: 6%;
 }
 .mainmilemode {
   font-family: "Times New Roman";
@@ -2019,48 +2025,20 @@ p {
 }
 
 #spSurveyStarted {
+  margin-top: 19%;
+  margin-left: 4%;
   text-align: center;
-  margin-top: 46%;
+  width: 73%;
   background-color: rgba(
     255,
     255,
     255,
     0.2
   ); /* Slightly transparent white background */
-
-  border-radius: 10px;
-  box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
-}
-
-/* #spSurveyStarted {
-  margin-top: 19%;
-  margin-left: 4%;
-  text-align: center;
-  width: 100%;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); 
-  border-radius: 10px;
-  box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
-}
-
-#spSurveyStarted {
-  padding: 5px;
-  margin: 20px;
-  text-align: center;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-} */
+  box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
+}
 
 #spSurveyStarted h2 {
   font-size: xx-large;
@@ -2250,61 +2228,58 @@ input[type="number"] {
   width: 3%;
 }
 #question34sub2lavel {
-  margin-left: 8%;
+  margin-left: 7%;
   width: 3%;
 }
 
 #question34sub3lavel {
-  margin-left: 7%;
+  margin-left: 6.5%;
   width: 3%;
 }
 #question34sub4lavel {
-  margin-left: 7.1%;
+  margin-left: 7%;
   width: 3%;
 }
 #question34sub5lavel {
-  margin-left: 7.9%;
+  margin-left: 7%;
   width: 3%;
 }
+
+/* // this for 11 no of question  */
 
 #question11sub1lavel {
   margin-left: 8%;
   width: 3%;
 }
 #question11sub2lavel {
-  margin-left: 7.6%;
+  margin-left: 6.8%;
   width: 3%;
 }
 
 #question11sub3lavel {
-  margin-left: 7%;
+  margin-left: 6.7%;
   width: 3%;
 }
 #question11sub4lavel {
-  margin-left: 7.1%;
+  margin-left: 7.3%;
   width: 3%;
 }
 #question11sub5lavel {
-  margin-left: 7.1%;
+  margin-left: 6.5%;
   width: 3%;
 }
-
-.matrixorigintransport-category span {
-  margin-top: 0%;
-  padding-top: 0%;
-  margin-bottom: 0%;
-  padding-bottom: 0%;
-  width: 30%;
-}
+/* qustion 13 design is done here  */
 .matrixorigintransport-category {
   display: flex;
-  margin-bottom: 3%;
+  margin-top: 2%;
   margin-left: 1%;
 }
 .matrixorigintransport-category input {
-  margin-left: 8%;
+  margin-left: 7%;
 }
-
+.question13span {
+  /* background-color: #78dfd5; */
+}
 .question13division {
   border: 3px solid rgb(195, 213, 228);
   background-color: rgb(192, 216, 237);
@@ -2313,30 +2288,29 @@ input[type="number"] {
 }
 
 #question13spanlavel1 {
-  margin-left: 8%;
+  margin-left: 52%;
   width: 3%;
 }
 
 #question13spanlavel2 {
-  margin-left: 11%;
+  margin-left: 9%;
   width: 3%;
 }
 
 #question13spanlavel3 {
-  margin-left: 11%;
+  margin-left: 7%;
   width: 3%;
 }
 
 #question13spanlavel4 {
-  margin-left: 11%;
+  margin-left: 8%;
   width: 3%;
 }
 
 #question13spanlavel5 {
-  margin-left: 11%;
+  margin-left: 8%;
   width: 3%;
 }
-
 .Overallbox {
   margin-top: 2%;
   background-color: #15d8c1;
@@ -2350,8 +2324,4 @@ input[type="number"] {
 .Overallbox .gender-category {
   background-color: #15d8c1;
   border: none;
-}
-
-.Overallbox label {
-  padding-right: 6%;
 }
