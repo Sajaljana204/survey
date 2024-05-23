@@ -59,6 +59,7 @@
         <button class="button" id="noSurvey">No survey</button>
         <button class="button" id="download">Download data</button>
         <button class="button" id="sendDataBtn">Send Data to Server</button>
+        <button class="button" onclick="window.location.href='showData.php'">Show Database</button>
         <button class="button" id="clearData">Clear Data</button>
         <button class="button" id="backadmin">Back</button>
       </div>
@@ -519,7 +520,7 @@
         document.getElementById('sendDataBtn').addEventListener('click', function() {
       // Ask for confirmation before sending data
         if (confirm("Are you sure you want to send the data?")) {
-            //sendDataToServer();
+            sendDataToServer();
             sendDataToServerResponseNo();
         }
       });
