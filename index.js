@@ -1272,12 +1272,13 @@ function getUserLocation() {
             ? document.querySelector('input[name="travel_partner"]:checked')
                 .value
             : "";
-            const travel_purpose_yes_no = document.querySelector(
-              'input[name="travel_purpose_yes_no"]:checked'
-            )
-              ? document.querySelector('input[name="travel_purpose_yes_no"]:checked')
-                  .value
-              : "";
+          const travel_purpose_yes_no = document.querySelector(
+            'input[name="travel_purpose_yes_no"]:checked'
+          )
+            ? document.querySelector(
+                'input[name="travel_purpose_yes_no"]:checked'
+              ).value
+            : "";
           // const travel_purpose = document.querySelector(
           //   'input[name="travel_purpose"]:checked'
           // )
@@ -1988,6 +1989,11 @@ function getUserLocation() {
             ? document.querySelector('input[name="activityr64"]:checked').value
             : "";
 
+          const genderrnotlisted =
+            document.getElementById("GenderNotSpecified").value;
+          const otherEmployment =
+            document.getElementById("otherEmployment").value;
+
           // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
           // Get the currenQ13
@@ -1996,10 +2002,13 @@ function getUserLocation() {
           // Create an object with the form data, including geolocation data
           const formDataObject = {
             Ename: ename,
-            Gender: gender,
+            // Gender: gender,
+            Gender: gender === "4" ? genderrnotlisted : gender,
             Age: age,
             Income: income,
-            Employment: employment,
+            // Employment: employment,
+
+            Employment: employment === "4" ? otherEmployment : employment,
             Education: education,
             OriginArea: origin_area,
             OriginPin: origin_pin,
@@ -2031,45 +2040,269 @@ function getUserLocation() {
             DestinationType: destinationType,
             EndTime: endTime,
 
-            Q13s: columnB === "walk" || columnB === "bicycle" ? Q13s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q22s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q29s : " ",
+            Q13s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q13s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q22s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? Q29s
+                : " ",
 
-            Q14s: columnB === "walk" || columnB === "bicycle" ? Q14s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q23s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q30s : " ",
+            Q14s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q14s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q23s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? Q30s
+                : " ",
 
-            Q15s: columnB === "walk" || columnB === "bicycle" ? Q15s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q24s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q31s : " ",
+            Q15s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q15s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q24s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? Q31s
+                : " ",
 
-            Q16s: columnB === "walk" || columnB === "bicycle" ? Q16s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q25s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q32s : " ",
+            Q16s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q16s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q25s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? Q32s
+                : " ",
 
-            Q17s: columnB === "walk" || columnB === "bicycle" ? Q17s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q26s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? Q33s : " ",
+            Q17s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q17s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q26s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? Q33s
+                : " ",
 
-            Q18s: columnB === "walk" || columnB === "bicycle" ? Q18s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q27s : " ",
+            Q18s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q18s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q27s
+                : " ",
 
-            Q19s: columnB === "walk" || columnB === "bicycle" ? Q19s : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? Q28s : " ",
+            Q19s:
+              columnB === "walk" || columnB === "bicycle"
+                ? Q19s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? Q28s
+                : " ",
 
             Q20s: columnB === "walk" || columnB === "bicycle" ? Q20s : " ",
 
             Q21s: columnB === "walk" || columnB === "bicycle" ? Q21s : " ",
 
-            overallFbRating: columnB === "walk" || columnB === "bicycle" ? overallFbnmt : ["auto", "auto_app", "cab", "cab(app)", "2-Wheeler(app)"].includes(columnB) ? overallFbpara : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? overallFbpersonal : " ",
+            overallFbRating:
+              columnB === "walk" || columnB === "bicycle"
+                ? overallFbnmt
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-Wheeler(app)",
+                  ].includes(columnB)
+                ? overallFbpara
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnB
+                  )
+                ? overallFbpersonal
+                : " ",
 
-            fQ13s: columnF === "walk" || columnF === "bicycle" ? fQ13s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ22s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? fQ29s : " ",
+            fQ13s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ13s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ22s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? fQ29s
+                : " ",
 
-            fQ14s: columnF === "walk" || columnF === "bicycle" ? fQ14s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ23s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? fQ30s : " ",
+            fQ14s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ14s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ23s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? fQ30s
+                : " ",
 
-            fQ15s: columnF === "walk" || columnF === "bicycle" ? fQ15s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ24s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? fQ31s : " ",
+            fQ15s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ15s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ24s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? fQ31s
+                : " ",
 
-            fQ16s: columnF === "walk" || columnF === "bicycle" ? fQ16s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ25s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? fQ32s : " ",
+            fQ16s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ16s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ25s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? fQ32s
+                : " ",
 
-            fQ17s: columnF === "walk" || columnF === "bicycle" ? fQ17s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ26s : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? fQ33s : " ",
+            fQ17s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ17s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ26s
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? fQ33s
+                : " ",
 
-            fQ18s: columnF === "walk" || columnF === "bicycle" ? fQ18s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ27s :  " ",
+            fQ18s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ18s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ27s
+                : " ",
 
-            fQ19s: columnF === "walk" || columnF === "bicycle" ? fQ19s : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? fQ28s :  " ",
+            fQ19s:
+              columnF === "walk" || columnF === "bicycle"
+                ? fQ19s
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? fQ28s
+                : " ",
 
             fQ20s: columnF === "walk" || columnF === "bicycle" ? fQ20s : " ",
 
             fQ21s: columnF === "walk" || columnF === "bicycle" ? fQ21s : " ",
 
-            overallFfRating: columnF === "walk" || columnF === "bicycle" ? overallFfnmt : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? overallFfpara : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? overallFfpersonal : " ",
+            overallFfRating:
+              columnF === "walk" || columnF === "bicycle"
+                ? overallFfnmt
+                : [
+                    "auto",
+                    "auto_app",
+                    "cab",
+                    "cab(app)",
+                    "2-wheeler(app)",
+                  ].includes(columnF)
+                ? overallFfpara
+                : ["personal_car", "personal_2-wheeler", "drop-off"].includes(
+                    columnF
+                  )
+                ? overallFfpersonal
+                : " ",
             Q34: Q34,
             Q35: Q35,
             Q36: Q36,
