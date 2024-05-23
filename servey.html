@@ -15,13 +15,11 @@
       }
       .f_hidden {
         display: none;
-        border: 1px solid #000;
       }
       /* llllllllllllll */
 
       .question-section {
-        border: 1px solid #000;
-        /* Add a border to question sections */
+        border: 1px double #000;
         padding: 10px;
         margin-top: 10px;
       }
@@ -29,7 +27,6 @@
       /* This is for boarder and side by side output*/
       .radio-dropDownSection {
         display: flex;
-        width: calc(100% / 2 - 15px);
       }
 
       .for_b,
@@ -166,7 +163,8 @@
                 <input
                   type="radio"
                   name="gender"
-                  value="Gender not listed here ( please specify)"
+                  id="GenderNotlisted"
+                  value="4"
                   onclick="onclickGenderNotSpecified()"
                   required
                 />
@@ -175,7 +173,6 @@
                 >
                 <input
                   type="text"
-                  name="gender"
                   id="GenderNotSpecified"
                   class="hidden"
                   placeholder="Please specify"
@@ -186,7 +183,7 @@
                 <input
                   type="radio"
                   name="gender"
-                  value="4"
+                  value="5"
                   required
                   onclick="offtextFieldofGendernotListed()"
                 />
@@ -199,19 +196,19 @@
                 >2. Age (years)<span class="required">*</span></span
               >
               <div>
-                <input type="radio" name="age" value="1" required />
+                <input type="radio" name="age" value="15-24" required />
                 <label for="gender">15-24</label>
               </div>
               <div>
-                <input type="radio" name="age" value="2" required />
+                <input type="radio" name="age" value="25-44" required />
                 <label for="gender">25-44</label>
               </div>
               <div>
-                <input type="radio" name="age" value="3" required />
+                <input type="radio" name="age" value="45-59" required />
                 <label for="gender">45-59</label>
               </div>
               <div>
-                <input type="radio" name="age" value="4" required />
+                <input type="radio" name="age" value="60+" required />
                 <label for="gender">60+</label>
               </div>
 
@@ -226,22 +223,22 @@
                 ></span
               >
               <div>
-                <input type="radio" name="income" value="1" required />
+                <input type="radio" name="income" value="0-2.5lakhs" required />
                 <label for="income">0-2.5 lakhs</label>
               </div>
               <div>
-                <input type="radio" name="income" value="2" required />
+                <input type="radio" name="income" value="2.5-5lakhs" required />
                 <label for="income">2.5-5 lakhs</label>
               </div>
               <div>
-                <input type="radio" name="income" value="3" required />
+                <input type="radio" name="income" value="5-10lakhs" required />
                 <label for="income">5-10 lakhs</label>
               </div>
               <div>
                 <input
                   type="radio"
                   name="income"
-                  value="4"
+                  value="above 10lakhs"
                   required
                 />
                 <label for="income">Above 10 lakhs</label>
@@ -266,7 +263,7 @@
                 <input
                   type="radio"
                   name="employment"
-                  value="2"
+                  value="Government"
                   required
                   onclick="noOtheremp()"
                 />
@@ -276,7 +273,7 @@
                 <input
                   type="radio"
                   name="employment"
-                  value="3"
+                  value="2"
                   required
                   onclick="noOtheremp()"
                 />
@@ -286,7 +283,7 @@
                 <input
                   type="radio"
                   name="employment"
-                  value="4"
+                  value="3"
                   required
                   onclick="noOtheremp()"
                 />
@@ -296,7 +293,7 @@
                 <input
                   type="radio"
                   name="employment"
-                  value="Other"
+                  value="4"
                   required
                   onclick="otheremp()"
                 />
@@ -319,7 +316,7 @@
                 <input
                   type="radio"
                   name="education"
-                  value="1"
+                  value="Grade 10 or below"
                   required
                 />
                 <label for="Education">Grade 10 or below</label>
@@ -328,7 +325,7 @@
                 <input
                   type="radio"
                   name="education"
-                  value="2"
+                  value="Intermediate(Grade 12)"
                   required
                 />
                 <label for="Education">Intermediate (Grade 12)</label>
@@ -337,7 +334,7 @@
                 <input
                   type="radio"
                   name="education"
-                  value="3"
+                  value="Graduate"
                   required
                 />
                 <label for="Education">Graduate</label>
@@ -346,7 +343,7 @@
                 <input
                   type="radio"
                   name="education"
-                  value="4"
+                  value="Post Graduate and above"
                   required
                 />
                 <label for="Education">Post Graduate and above</label>
@@ -360,11 +357,11 @@
               >6. Residents of the city<span class="required">*</span></span
             >
             <div>
-              <input type="radio" name="city" value="1" required />
+              <input type="radio" name="city" value="Yes" required />
               <label for="">Yes</label>
             </div>
             <div>
-              <input type="radio" name="city" value="0" required />
+              <input type="radio" name="city" value="No" required />
               <label for="">No</label>
             </div>
           </div>
@@ -719,11 +716,6 @@
             class="required"
             >*</span
           ></span
-        >
-        <br />
-        <span class="required" style="padding-left: 2%"
-          >If you don't know the origin pin code or destination pin code, then
-          enter 000000.</span
         >
         <div class="img_container">
           <!--first column-->
@@ -1089,30 +1081,38 @@
           <!--third column-->
           <div class="third_column">
             <img src="bus_stop.png" alt="Your Image" />
-            <div class="text-container">
-              <div class="input_boxx">
-                <input
-                  type="number"
-                  name="waitingTime"
-                  required
-                  list="waitingtime2"
-                />
-                <datalist id="waitingtime2">
-                  <option value="5"></option>
-                  <option value="10"></option>
-                  <option value="15"></option>
-                  <option value="20"></option>
-                  <option value="25"></option>
-                  <option value="30"></option>
-                  <option value="35"></option>
-                  <option value="40"></option>
-                  <option value="45"></option>
-                  <option value="50"></option>
-                  <option value="55"></option>
-                  <option value="60"></option>
-                </datalist>
-              </div>
-            </div>
+            <p style="text-align: center">
+              Waiting time (in min)
+              <input
+                style="
+                  box-shadow: inset 0 0 7px rgb(127, 185, 234);
+                  border: 1px solid rgb(150, 190, 222);
+                  border-radius: 5px;
+                  padding: 10px;
+                  margin-top: 5%;
+                  width: 70%;
+                "
+                type="number"
+                name="waitingTime"
+                required
+                list="waitingtime2"
+              />
+            </p>
+
+            <datalist id="waitingtime2">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+              <option value="25"></option>
+              <option value="30"></option>
+              <option value="35"></option>
+              <option value="40"></option>
+              <option value="45"></option>
+              <option value="50"></option>
+              <option value="55"></option>
+              <option value="60"></option>
+            </datalist>
           </div>
           <!--Fourth column-->
           <div class="fourth_column">
@@ -1165,30 +1165,38 @@
           <!--fifth column-->
           <div class="third_column">
             <img src="bus_stop.png" alt="Your Image" />
-            <div class="text-container">
-              <div class="input_boxx">
-                <input
-                  type="number"
-                  name="waitingTimeE"
-                  required
-                  list="waitingtime1"
-                />
-                <datalist id="waitingtime1">
-                  <option value="5"></option>
-                  <option value="10"></option>
-                  <option value="15"></option>
-                  <option value="20"></option>
-                  <option value="25"></option>
-                  <option value="30"></option>
-                  <option value="35"></option>
-                  <option value="40"></option>
-                  <option value="45"></option>
-                  <option value="50"></option>
-                  <option value="55"></option>
-                  <option value="60"></option>
-                </datalist>
-              </div>
-            </div>
+            <p style="text-align: center">
+              Waiting time (in min)
+              <input
+                style="
+                  box-shadow: inset 0 0 7px rgb(127, 185, 234);
+                  border: 1px solid rgb(150, 190, 222);
+                  border-radius: 5px;
+                  padding: 10px;
+                  margin-top: 5%;
+                  width: 70%;
+                "
+                type="number"
+                name="waitingTimeE"
+                required
+                list="waitingtime1"
+              />
+            </p>
+
+            <datalist id="waitingtime1">
+              <option value="5"></option>
+              <option value="10"></option>
+              <option value="15"></option>
+              <option value="20"></option>
+              <option value="25"></option>
+              <option value="30"></option>
+              <option value="35"></option>
+              <option value="40"></option>
+              <option value="45"></option>
+              <option value="50"></option>
+              <option value="55"></option>
+              <option value="60"></option>
+            </datalist>
           </div>
           <!--six column-->
           <div class="after-left-column">
@@ -1586,7 +1594,6 @@
                   <input type="radio" name="Q13s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1603,7 +1610,6 @@
                   <input type="radio" name="Q14s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title">Presence of CCTV cameras</span>
@@ -1618,7 +1624,6 @@
                   <input type="radio" name="Q15s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1635,7 +1640,6 @@
                   <input type="radio" name="Q16s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1652,7 +1656,6 @@
                   <input type="radio" name="Q17s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1669,7 +1672,6 @@
                   <input type="radio" name="Q18s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1686,7 +1688,6 @@
                   <input type="radio" name="Q19s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1704,7 +1705,6 @@
                   <input type="radio" name="Q20s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1793,7 +1793,6 @@
                   <input type="radio" name="Q22s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1811,7 +1810,6 @@
                   <input type="radio" name="Q23s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1829,7 +1827,6 @@
                   <input type="radio" name="Q24s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1847,7 +1844,6 @@
                   <input type="radio" name="Q25s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1864,7 +1860,6 @@
                   <input type="radio" name="Q26s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1881,7 +1876,6 @@
                   <input type="radio" name="Q27s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1968,7 +1962,6 @@
                   <input type="radio" name="Q29s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -1985,7 +1978,6 @@
                   <input type="radio" name="Q30s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2002,7 +1994,6 @@
                   <input type="radio" name="Q31s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2020,7 +2011,6 @@
                   <input type="radio" name="Q32s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2090,9 +2080,7 @@
                   <!-- <input type="radio" name="Q13s" value="5" /> -->
                   <label id="question13spanlavel5">5</label>
                 </div>
-              </div>
 
-              <div class="question13division">
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
                     >Presence of police patrolling van 24X7</span
@@ -2124,7 +2112,6 @@
                   <input type="radio" name="fQ14s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title">Presence of CCTV cameras</span>
@@ -2139,7 +2126,6 @@
                   <input type="radio" name="fQ15s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2156,7 +2142,6 @@
                   <input type="radio" name="fQ16s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2173,7 +2158,6 @@
                   <input type="radio" name="fQ17s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2190,7 +2174,6 @@
                   <input type="radio" name="fQ18s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2207,7 +2190,6 @@
                   <input type="radio" name="fQ19s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2225,7 +2207,6 @@
                   <input type="radio" name="fQ20s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2311,7 +2292,6 @@
                   <input type="radio" name="fQ22s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2329,7 +2309,6 @@
                   <input type="radio" name="fQ23s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2347,7 +2326,6 @@
                   <input type="radio" name="fQ24s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2365,7 +2343,6 @@
                   <input type="radio" name="fQ25s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2382,7 +2359,6 @@
                   <input type="radio" name="fQ26s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2399,7 +2375,6 @@
                   <input type="radio" name="fQ27s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2485,7 +2460,6 @@
                   <input type="radio" name="fQ29s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2502,7 +2476,6 @@
                   <input type="radio" name="fQ30s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2519,7 +2492,6 @@
                   <input type="radio" name="fQ31s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2537,7 +2509,6 @@
                   <input type="radio" name="fQ32s" value="5" />
                   <!-- <label for="">5</label> -->
                 </div>
-                <br />
 
                 <div class="matrixorigintransport-category">
                   <span class="gender-title"
@@ -2576,17 +2547,17 @@
             </div>
           </div>
         </div>
-        <br />
+
         <!--start from 34-->
         <div class="security">
           <br />
           <div class="question34" id="secure-div">
             <span class="gender-title"
               >11. How safe/secure do you feel while travelling at night versus
-              daytime (1 – very unsafe to 3 – same to 5 – very safe)<span
-                class="required"
-                >*</span
-              ></span
+              daytime<span class="required">*</span> <br />
+              <p class="required" style="margin-left: 3.5%">
+                (1 - very unsafe to 3 - same to 5 - very safe)
+              </p></span
             >
             <div id="matrix-category">
               <span class="question34span"></span>
@@ -2636,7 +2607,7 @@
 
             <div id="matrix-category">
               <span class="question34span"
-                >By shared shuttle,cab or minibus</span
+                >By shared shuttle, cab or minibus</span
               >
               <input type="radio" name="Q36" value="1" required />
               <!-- <label for="">1</label> -->
@@ -2807,7 +2778,7 @@
           <input
             type="radio"
             name="smartPhone"
-            value="0"
+            value="2"
             id="no_phone"
             onclick="toggleSmartphone()"
           />
@@ -2823,14 +2794,14 @@
               <input
                 type="radio"
                 name="data_package"
-                value="1"
+                value="Yes"
                 id="yes_data_package"
               />
               <label for="">Yes</label>
               <input
                 type="radio"
                 name="data_package"
-                value="0"
+                value="No"
                 id="no_data_package"
               />
               <label for="">No</label>
@@ -2840,11 +2811,11 @@
             <br />
             <div class="question34" id="question34">
               <span class="gender-title"
-                >10(b). How often do you use any of the following apps (1-Never,
-                2-Rarely, 3-Sometimes, 4-Very Often, 5-Always)?<span
-                  class="required"
-                  >*</span
-                ></span
+                >13(b). How often do you use any of the following apps?
+                <span class="required" style="mar-left: 8%">*</span><br />
+                <p class="required" style="margin-left: 6%">
+                  (1-Never, 2-Rarely, 3-Sometimes, 4-Very Often, 5-Always)
+                </p></span
               >
               <div id="matrix-category">
                 <span class="question34span"></span>

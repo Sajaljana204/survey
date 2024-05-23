@@ -6,7 +6,7 @@ body {
 }
 .mainheader1 {
   font-size: large;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-style: normal;
   font-synthesis: style;
   color: #000909;
@@ -522,10 +522,10 @@ input[type="radio"] {
 }
 .container button {
   /* font-family: "Times New Roman";
-      font-size: 16px;
-      font-weight: 400;
-      color: #121313;
-      transition: 0.25s; */
+        font-size: 16px;
+        font-weight: 400;
+        color: #121313;
+        transition: 0.25s; */
 
   align-items: center;
   justify-content: center;
@@ -749,8 +749,8 @@ button:hover {
   box-shadow: rgb(36, 35, 35);
 }
 /* .gender-category > div {
-  flex: 1 1 1;
-} */
+    flex: 1 1 1;
+  } */
 
 .gender-category > div:nth-child(even) {
   background-color: lightgray;
@@ -836,16 +836,14 @@ form .backBtn i {
   transform: rotate(180deg);
 }
 /* form .buttons button,
-    .backBtn {
-      margin-right: 14px;
-    } */
+      .backBtn {
+        margin-right: 14px;
+      } */
 
 /* for image */
 .img_container {
   display: flex;
   justify-content: center;
-  padding-left: 10px;
-  padding-top: 10px;
 }
 
 .mode-choice {
@@ -875,20 +873,16 @@ p {
   width: 65%;
 }
 .third_column {
-  border: 4px solid rgb(195, 213, 228);
-  box-shadow: inset 0 0 7px rgb(127, 185, 234);
   border-radius: 13px;
 }
 .third_column .input_boxx {
-  padding-left: 13%;
-  margin-bottom: 13%;
+  padding-left: 15%;
 }
 .third_column img {
   width: 100%;
 }
 .fourth_column {
-  padding-left: 1%;
-  padding-top: 6%;
+  padding-top: 8%;
 }
 .mainmilemode {
   font-family: "Times New Roman";
@@ -949,21 +943,21 @@ p {
   color: white;
 }
 /* .form-first button {
-      margin-right: 2%;
-      align-items: center;
-      justify-content: center;
-      height: 45px;
-      width: 90px;
-      border: none;
-      outline: none;
-      border-radius: 5px;
-      margin: 25px 0;
-      background-color: #4070f4;
-    
-      transition: all 0.3s linear;
-      cursor: pointer;
-      color: white;
-    } */
+        margin-right: 2%;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 90px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        margin: 25px 0;
+        background-color: #4070f4;
+      
+        transition: all 0.3s linear;
+        cursor: pointer;
+        color: white;
+      } */
 
 /* second form  */
 
@@ -1033,13 +1027,13 @@ p {
   color: white;
 }
 /* .form-second .third_column {
-      width: 10%;
-    }
-    
-    .text-container .input_boxx {
-      width: 9%;
-      background-color: #5bdbae;
-    } */
+        width: 10%;
+      }
+      
+      .text-container .input_boxx {
+        width: 9%;
+        background-color: #5bdbae;
+      } */
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #m1 {
   display: flex;
@@ -1947,18 +1941,18 @@ p {
 }
 
 /* .container input {
-      margin-left: 3%;
-    }
-    .container label {
-      margin-right: 0%;
-      padding-top: 1%;
-      color: #181716;
-      font-weight: 900;
-      text-align: left;
-      font-style: oblique 40deg;
-      font-family: "Times New Roman";
-      font-size: 19px;
-    } */
+        margin-left: 3%;
+      }
+      .container label {
+        margin-right: 0%;
+        padding-top: 1%;
+        color: #181716;
+        font-weight: 900;
+        text-align: left;
+        font-style: oblique 40deg;
+        font-family: "Times New Roman";
+        font-size: 19px;
+      } */
 
 .buttonmange {
   align-content: center;
@@ -1968,17 +1962,17 @@ p {
 
 #prepaid {
   /* background-color: #3494e6;
-      width: auto;
-      height: 52%;
-      margin-left: 1%;
-      padding-left: 4%;
-      padding-right: 4%;
-      padding-top: 1%;
-      padding-bottom: 1%;
-    
-      border: 1px solid #d01414;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        width: auto;
+        height: 52%;
+        margin-left: 1%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+      
+        border: 1px solid #d01414;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   align-items: center;
   justify-content: center;
   height: 45px;
@@ -1996,16 +1990,16 @@ p {
 
 #saveAndNext {
   /* background-color: #3494e6;
-      width: auto;
-      height: 52%;
-      margin-left: 0%;
-      padding-left: 4%;
-      padding-right: 4%;
-      padding-top: 1%;
-      padding-bottom: 1%;
-      border: 1px solid #bc1717;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+        width: auto;
+        height: 52%;
+        margin-left: 0%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: 1px solid #bc1717;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   align-items: center;
   justify-content: center;
   height: 45px;
@@ -2025,20 +2019,48 @@ p {
 }
 
 #spSurveyStarted {
-  margin-top: 19%;
-  margin-left: 4%;
   text-align: center;
-  width: 73%;
+  margin-top: 46%;
   background-color: rgba(
     255,
     255,
     255,
     0.2
   ); /* Slightly transparent white background */
-  padding: 20px;
+
   border-radius: 10px;
   box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
 }
+
+/* #spSurveyStarted {
+  margin-top: 19%;
+  margin-left: 4%;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); 
+  border-radius: 10px;
+  box-shadow: 0 -4px 10px rgba(6, 175, 26, 0.5);
+}
+
+#spSurveyStarted {
+  padding: 5px;
+  margin: 20px;
+  text-align: center;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
 
 #spSurveyStarted h2 {
   font-size: xx-large;
@@ -2186,8 +2208,8 @@ li {
 }
 
 /*end popup section
-
-/* +++++++++++this section is for the hide the arrow in nuber box +++++++++++ */
+  
+  /* +++++++++++this section is for the hide the arrow in nuber box +++++++++++ */
 /* For Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -2228,58 +2250,61 @@ input[type="number"] {
   width: 3%;
 }
 #question34sub2lavel {
-  margin-left: 7%;
+  margin-left: 8%;
   width: 3%;
 }
 
 #question34sub3lavel {
-  margin-left: 6.5%;
+  margin-left: 7%;
   width: 3%;
 }
 #question34sub4lavel {
-  margin-left: 7%;
+  margin-left: 7.1%;
   width: 3%;
 }
 #question34sub5lavel {
-  margin-left: 7%;
+  margin-left: 7.9%;
   width: 3%;
 }
-
-/* // this for 11 no of question  */
 
 #question11sub1lavel {
   margin-left: 8%;
   width: 3%;
 }
 #question11sub2lavel {
-  margin-left: 2%;
+  margin-left: 7.6%;
   width: 3%;
 }
 
 #question11sub3lavel {
-  margin-left: 6.7%;
+  margin-left: 7%;
   width: 3%;
 }
 #question11sub4lavel {
-  margin-left: 7.3%;
+  margin-left: 7.1%;
   width: 3%;
 }
 #question11sub5lavel {
-  margin-left: 6.5%;
+  margin-left: 7.1%;
   width: 3%;
 }
-/* qustion 13 design is done here  */
+
+.matrixorigintransport-category span {
+  margin-top: 0%;
+  padding-top: 0%;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  width: 30%;
+}
 .matrixorigintransport-category {
   display: flex;
-  margin-top: 2%;
+  margin-bottom: 3%;
   margin-left: 1%;
 }
 .matrixorigintransport-category input {
-  margin-left: 7%;
+  margin-left: 8%;
 }
-.question13span {
-  /* background-color: #78dfd5; */
-}
+
 .question13division {
   border: 3px solid rgb(195, 213, 228);
   background-color: rgb(192, 216, 237);
@@ -2288,29 +2313,30 @@ input[type="number"] {
 }
 
 #question13spanlavel1 {
-  margin-left: 52%;
+  margin-left: 8%;
   width: 3%;
 }
 
 #question13spanlavel2 {
-  margin-left: 9%;
+  margin-left: 11%;
   width: 3%;
 }
 
 #question13spanlavel3 {
-  margin-left: 7%;
+  margin-left: 11%;
   width: 3%;
 }
 
 #question13spanlavel4 {
-  margin-left: 8%;
+  margin-left: 11%;
   width: 3%;
 }
 
 #question13spanlavel5 {
-  margin-left: 8%;
+  margin-left: 11%;
   width: 3%;
 }
+
 .Overallbox {
   margin-top: 2%;
   background-color: #15d8c1;
@@ -2324,4 +2350,8 @@ input[type="number"] {
 .Overallbox .gender-category {
   background-color: #15d8c1;
   border: none;
+}
+
+.Overallbox label {
+  padding-right: 6%;
 }
