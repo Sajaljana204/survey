@@ -44,8 +44,8 @@ $stmt_section_c = $conn->prepare("INSERT INTO section_c (Q13, `Q13(a)`, `Q13(b_1
 $stmt_section_c->bind_param("sssssss", $smartPhone, $dataPackage, $q41, $q42, $q43, $q44, $q45);
 
 // // Prepare and bind SQL statement for section_c
-// $stmt_section_mode = $conn->prepare("INSERT INTO mode_choice (m1walk, m2walk, m3walk, m4walk, m21walk, m22walk, m23walk, m24walk, m31walk, m32walk, m33walk, m34walk, m41walk, m42walk, m43walk, m44walk, m51walk, m52walk, m53walk, m54walk, m61walk, m62walk, m63walk, m64walk, r1walk, r2walk, r3walk, r4walk, r21walk, r22walk, r23walk, r24walk, r31walk, r32walk, r33walk, r34walk, r41walk, r42walk, r43walk, r44walk, r51walk, r52walk, r53walk, r54walk, r61walk, r62walk, r63walk, r64walk) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-// $stmt_section_mode->bind_param("ssssssssssssssssssssssssssssssssssssssssssssssss", $m1walk, $m2walk, $m3walk, $m4walk, $m21walk, $m22walk, $m23walk, $m24walk, $m31walk, $m32walk, $m33walk, $m34walk, $m41walk, $m42walk, $m43walk, $m44walk, $m51walk, $m52walk, $m53walk, $m54walk, $m61walk, $m62walk, $m63walk, $m64walk, $r1walk, $r2walk, $r3walk, $r4walk, $r21walk, $r22walk, $r23walk, $r24walk, $r31walk, $r32walk, $r33walk, $r34walk, $r41walk, $r42walk, $r43walk, $r44walk, $r51walk, $r52walk, $r53walk, $r54walk, $r61walk, $r62walk, $r63walk, $r64walk);
+$stmt_section_mode = $conn->prepare("INSERT INTO sp_survey (m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44, m51, m52, m53, m54, m61, m62, m63, m64, r11, r12, r13, r14, r21, r22, r23, r24, r31, r32, r33, r34, r41, r42, r43, r44, r51, r52, r53, r54, r61, r62, r63, r64) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_mode->bind_param("ssssssssssssssssssssssssssssssssssssssssssssssss", $m11, $m12, $m13, $m14, $m21, $m22, $m23, $m24, $m31, $m32, $m33, $m34, $m41, $m42, $m43, $m44, $m51, $m52, $m53, $m54, $m61, $m62, $m63, $m64, $r11, $r12, $r13, $r14, $r21, $r22, $r23, $r24, $r31, $r32, $r33, $r34, $r41, $r42, $r43, $r44, $r51, $r52, $r53, $r54, $r61, $r62, $r63, $r64);
 
 // Set parameters and execute statement for each data entry
 foreach ($data as $row) {
@@ -146,14 +146,15 @@ foreach ($data as $row) {
 
 
     // //section mode-chice
-    // $keys = array(
-    //     'm1walk', 'm2walk', 'm3walk', 'm4walk', 'm21walk', 'm22walk', 'm23walk', 'm24walk', 'm31walk', 'm32walk', 'm33walk', 'm34walk', 'm41walk', 'm42walk', 'm43walk', 'm44walk', 'm51walk', 'm52walk', 'm53walk', 'm54walk', 'm61walk', 'm62walk', 'm63walk', 'm64walk', 'r1walk', 'r2walk', 'r3walk', 'r4walk', 'r21walk', 'r22walk', 'r23walk', 'r24walk', 'r31walk', 'r32walk', 'r33walk', 'r34walk', 'r41walk', 'r42walk', 'r43walk', 'r44walk', 'r51walk', 'r52walk', 'r53walk', 'r54walk', 'r61walk', 'r62walk', 'r63walk', 'r64walk'
-    // );
-    // // Loop through keys and assign values to variables
-    // foreach ($keys as $key) {
-    //     ${$key} = isset($row[$key]) ? $row[$key] : '';
-    // }
-    // $stmt_section_mode->execute();
+    $keys = array(
+        'm11', 'm12', 'm13', 'm14', 'm21', 'm22', 'm23', 'm24', 'm31', 'm32', 'm33', 'm34', 'm41', 'm42', 'm43', 'm44', 'm51', 'm52', 'm53', 'm54', 'm61', 'm62', 'm63', 'm64', 'r11', 'r12', 'r13', 'r14', 'r21', 'r22', 'r23', 'r24', 'r31', 'r32', 'r33', 'r34', 'r41', 'r42', 'r43', 'r44', 'r51', 'r52', 'r53', 'r54', 'r61', 'r62', 'r63', 'r64'
+
+    );
+    // Loop through keys and assign values to variables
+    foreach ($keys as $key) {
+        ${$key} = isset($row[$key]) ? $row[$key] : '';
+    }
+    $stmt_section_mode->execute();
 
 }
 
@@ -163,7 +164,7 @@ $stmt_section_b->close();
 $stmt_mode_choice_question->close();
 // $stmt_column_f->close();
 $stmt_section_c->close();
-// $stmt_section_mode->close();
+$stmt_section_mode->close();
 
 // Close database connection
 $conn->close();
