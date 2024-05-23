@@ -154,7 +154,7 @@ $conn->close();
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <button id="downloadBtn">Download CSV</button>
-        <button type="submit" name="delete">Delete Selected Rows</button>
+        <!-- <button type="submit" name="delete">Delete Selected Rows</button> -->
 
         <table>
             <?php
