@@ -2069,7 +2069,7 @@ function getUserLocation() {
 
             fQ21s: columnF === "walk" || columnF === "bicycle" ? fQ21s : " ",
 
-            overallFfnmt: columnB === "walk" || columnB === "bicycle" ? overallFfnmt : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnB) ? overallFfpara : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnB) ? overallFfpersonal : " ",
+            overallFfnmt: columnF === "walk" || columnF === "bicycle" ? overallFfnmt : ["auto", "auto_app", "cab", "cab(app)", "2-wheeler(app)"].includes(columnF) ? overallFfpara : ["personal_car", "personal_2-wheeler", "drop-off"].includes(columnF) ? overallFfpersonal : " ",
             Q34: Q34,
             Q35: Q35,
             Q36: Q36,
