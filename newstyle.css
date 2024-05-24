@@ -2283,3 +2283,60 @@ input[type="number"] {
   background-color: #d46edf;
   border: none;
 }
+
+.matrix-container {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.matrix-table {
+  border: 3px solid rgb(195, 213, 228);
+  background-color: rgb(192, 216, 237);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.matrix-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.heading {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.matrix-table tbody th.left-align {
+  text-align: start;
+}
+.matrix-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.matrix-table th {
+  background-color: rgb(192, 216, 237);
+  font-weight: bold;
+}
+
+.matrix-table thead th:first-child,
+.matrix-table tbody th {
+  background-color: rgb(192, 216, 237);
+}
+
+.required {
+  color: red;
+}

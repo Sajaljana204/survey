@@ -2551,6 +2551,9 @@
         <!--start from 34-->
         <div class="security">
           <br />
+
+          <!-- /// -->
+
           <div class="question34" id="secure-div">
             <span class="gender-title"
               >11. How safe/secure do you feel while travelling at night versus
@@ -2559,109 +2562,73 @@
                 (1 - very unsafe to 3 - same to 5 - very safe)
               </p></span
             >
-            <div id="matrix-category">
-              <span class="question34span"></span>
-              <!-- <input type="radio" name="Q34" value="1" required /> -->
-              <label id="question11sub1lavel">1</label>
-              <!-- <input type="radio" name="Q34" value="2" required /> -->
-              <label id="question11sub2lavel">2</label>
-              <!-- <input type="radio" name="Q34" value="3" required /> -->
-              <label id="question11sub3lavel">3</label>
-              <!-- <input type="radio" name="Q34" value="4" required /> -->
-              <label id="question11sub4lavel">4</label>
-              <!-- <input type="radio" name="Q34" value="5" required /> -->
-              <label id="question11sub5lavel">5</label>
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span">Alone in personal vehicle</span>
-
-              <input type="radio" name="Q34" value="1" required />
-              <!-- <label for="">1</label> -->
-
-              <input type="radio" name="Q34" value="2" required />
-              <!-- <label for="">2</label> -->
-              <input type="radio" name="Q34" value="3" required />
-              <!-- <label for="">3</label> -->
-              <input type="radio" name="Q34" value="4" required />
-              <!-- <label for="">4</label> -->
-              <input type="radio" name="Q34" value="5" required />
-              <!-- <label for="">5</label> -->
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span"
-                >With friend or drop off in personal vehicle</span
-              >
-              <input type="radio" name="Q35" value="1" required />
-              <!-- <label for="">1</label> -->
-              <input type="radio" name="Q35" value="2" required />
-              <!-- <label for="">2</label> -->
-              <input type="radio" name="Q35" value="3" required />
-              <!-- <label for="">3</label> -->
-              <input type="radio" name="Q35" value="4" required />
-              <!-- <label for="">4</label> -->
-              <input type="radio" name="Q35" value="5" required />
-              <!-- <label for="">5</label> -->
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span"
-                >By shared shuttle, cab or minibus</span
-              >
-              <input type="radio" name="Q36" value="1" required />
-              <!-- <label for="">1</label> -->
-              <input type="radio" name="Q36" value="2" required />
-              <!-- <label for="">2</label> -->
-              <input type="radio" name="Q36" value="3" required />
-              <!-- <label for="">3</label> -->
-              <input type="radio" name="Q36" value="4" required />
-              <!-- <label for="">4</label> -->
-              <input type="radio" name="Q36" value="5" required />
-              <!-- <label for="">5</label> -->
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span">Alone in Ola, Uber or Rapido</span>
-              <input type="radio" name="Q37" value="1" required />
-              <!-- <label for="">1</label> -->
-              <input type="radio" name="Q37" value="2" required />
-              <!-- <label for="">2</label> -->
-              <input type="radio" name="Q37" value="3" required />
-              <!-- <label for="">3</label> -->
-              <input type="radio" name="Q37" value="4" required />
-              <!-- <label for="">4</label> -->
-              <input type="radio" name="Q37" value="5" required />
-              <!-- <label for="">5</label> -->
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span">Walking or bicycling alone</span>
-              <input type="radio" name="Q38" value="1" required />
-              <!-- <label for="">1</label> -->
-              <input type="radio" name="Q38" value="2" required />
-              <!-- <label for="">2</label> -->
-              <input type="radio" name="Q38" value="3" required />
-              <!-- <label for="">3</label> -->
-              <input type="radio" name="Q38" value="4" required />
-              <!-- <label for="">4</label> -->
-              <input type="radio" name="Q38" value="5" required />
-              <!-- <label for="">5</label> -->
-            </div>
-
-            <div id="matrix-category">
-              <span class="question34span">Walking or cycling in a group</span>
-              <input type="radio" name="Q39" value="1" required />
-
-              <input type="radio" name="Q39" value="2" required />
-
-              <input type="radio" name="Q39" value="3" required />
-
-              <input type="radio" name="Q39" value="4" required />
-
-              <input type="radio" name="Q39" value="5" required />
-            </div>
+            <table class="matrix-table" id="secure-div">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="left-align">Alone in personal vehicle</th>
+                  <td><input type="radio" name="Q34" value="1" required /></td>
+                  <td><input type="radio" name="Q34" value="2" required /></td>
+                  <td><input type="radio" name="Q34" value="3" required /></td>
+                  <td><input type="radio" name="Q34" value="4" required /></td>
+                  <td><input type="radio" name="Q34" value="5" required /></td>
+                </tr>
+                <tr>
+                  <th class="left-align">
+                    With friend or drop off in personal vehicle
+                  </th>
+                  <td><input type="radio" name="Q35" value="1" required /></td>
+                  <td><input type="radio" name="Q35" value="2" required /></td>
+                  <td><input type="radio" name="Q35" value="3" required /></td>
+                  <td><input type="radio" name="Q35" value="4" required /></td>
+                  <td><input type="radio" name="Q35" value="5" required /></td>
+                </tr>
+                <tr>
+                  <th class="left-align">By shared shuttle, cab or minibus</th>
+                  <td><input type="radio" name="Q36" value="1" required /></td>
+                  <td><input type="radio" name="Q36" value="2" required /></td>
+                  <td><input type="radio" name="Q36" value="3" required /></td>
+                  <td><input type="radio" name="Q36" value="4" required /></td>
+                  <td><input type="radio" name="Q36" value="5" required /></td>
+                </tr>
+                <tr>
+                  <th class="left-align">Alone in Ola, Uber or Rapido</th>
+                  <td><input type="radio" name="Q37" value="1" required /></td>
+                  <td><input type="radio" name="Q37" value="2" required /></td>
+                  <td><input type="radio" name="Q37" value="3" required /></td>
+                  <td><input type="radio" name="Q37" value="4" required /></td>
+                  <td><input type="radio" name="Q37" value="5" required /></td>
+                </tr>
+                <tr>
+                  <th class="left-align">Walking or bicycling alone</th>
+                  <td><input type="radio" name="Q38" value="1" required /></td>
+                  <td><input type="radio" name="Q38" value="2" required /></td>
+                  <td><input type="radio" name="Q38" value="3" required /></td>
+                  <td><input type="radio" name="Q38" value="4" required /></td>
+                  <td><input type="radio" name="Q38" value="5" required /></td>
+                </tr>
+                <tr>
+                  <th class="left-align">Walking or cycling in a group</th>
+                  <td><input type="radio" name="Q39" value="1" required /></td>
+                  <td><input type="radio" name="Q39" value="2" required /></td>
+                  <td><input type="radio" name="Q39" value="3" required /></td>
+                  <td><input type="radio" name="Q39" value="4" required /></td>
+                  <td><input type="radio" name="Q39" value="5" required /></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
+          <!-- /// -->
 
           <div class="gender-category" id="Q40_div">
             <span class="gender-title"
