@@ -22,8 +22,8 @@ if (!is_array($data) || empty($data)) {
 }
 
 // Prepare and bind SQL statement to insert data into MySQL database
-$stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3Inc, Q4Emp, Q5Edu, Q6City, Latitude, Longitude, StartSurveyTime, SPSurveyStartingtime, SurveyEndingTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_section_a->bind_param("ssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime);
+$stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3Inc, Q4Emp, Q5Edu, Q6City, Latitude, Longitude, StartSurveyTime, SPSurveyStartingtime, SurveyEndingTime, Email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_a->bind_param("sssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime, $Requestedemil);
 
 // Prepare and bind SQL statement for section_b
 $stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OR`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -71,6 +71,7 @@ foreach ($data as $row) {
     $StartDateTime = isset($row['StartdateTime']) ? $row['StartdateTime'] : '';
     $SPSurveyStartingtime = isset($row['SPSurveyStartingtime']) ? $row['SPSurveyStartingtime'] : '';
     $EndDateTime = isset($row['EndDateTime']) ? $row['EndDateTime'] : '';
+    $Requestedemil = isset($row['Requestedemil']) ? $row['Requestedemil'] : '';
 
     // Execute the query for 'section_a'
     if (!$stmt_section_a->execute()) {
