@@ -71,7 +71,14 @@
       /* // logo  */
 
       .tutemlogo img {
-        height: 222px;
+        height: 324px;
+
+        width: auto;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         width: auto;
         overflow: hidden;
@@ -203,13 +210,13 @@
   <body>
     <div class="container">
       <div class="tutemlogo">
-        <img src="tutemlogo.jpg" alt="" />
+        <img src="rplogo.png" alt="" />
       </div>
       <br />
       <h3
         style="
           color: black;
-          font-style: italic;
+          font-style: normal;
           font-weight: 700;
           width: 100%;
           align-items: center;
@@ -217,25 +224,39 @@
           /* margin-left: 28%; */
           color: #333;
           box-sizing: border-box;
-          background-color: rgba(255, 255, 255, 0.5);
+
           padding: 10px;
           border-radius: 12px;
-          box-shadow: #4caf50;
-          border: 2px double green;
         "
       >
         The TUTEM project team from IIT Bombay, BITS Pilani Hyderabad campus,
-        IIT Kharagpur, and Location Mind is working to improve the safety and
+        IIT Kharagpur, and Locationmind is working to improve the safety and
         security of users who are accessing public transit stops. In this
-        regard, the team is collecting data regarding this daily travel habit
-        and perceptions of safety and security along the access route.
+        regard, the team is collecting on this daily travel habit and
+        perceptions of safety and security along the access route.
         <br />
         <br />
         <br />
         We invite you to participate in the survey which will take about 10-12
         minutes.
-        <br />
-        <br />
+      </h3>
+      <h3
+        style="
+          color: rgb(20, 9, 27);
+          font-style: italic;
+
+          width: 95%;
+          align-items: center;
+          justify-self: auto;
+
+          color: #333;
+          box-sizing: border-box;
+          /* background-color: rgba(255, 255, 255, 0.5); */
+          padding: 10px;
+        "
+      >
+        <span class="required">*</span> Please note no personal information
+        would be requested.<span class="required">*</span>
       </h3>
       <!-- <h1>
         <span class="required">*</span> Please note no personal information
@@ -249,31 +270,11 @@
       <button class="user-button" id="yesButton">Yes</button>
       <button class="admin-button" id="noButton">No</button>
 
-      <div>
-        <h2
-          style="
-            color: black;
-            font-style: italic;
-            font-weight: 700;
-            width: 95%;
-            align-items: center;
-            justify-self: auto;
-
-            color: #333;
-            box-sizing: border-box;
-            /* background-color: rgba(255, 255, 255, 0.5); */
-            padding: 10px;
-            border-radius: 12px;
-          "
-        >
-          <span class="required">*</span> Please note no personal information
-          would be requested.<span class="required">*</span>
-        </h2>
-      </div>
-
-      <div class="thank-you-message"><h2>Survey is Starting</h2></div>
+      <label id="entryadminButton">Admin Login</label>
     </div>
-    <label id="entryadminButton">Admin Login</label>
+    <div class="thank-you-message" style="text-align: center">
+      <h2>Survey is Starting</h2>
+    </div>
 
     <!-- Popup HTML -->
     <div id="popup">
@@ -320,7 +321,7 @@
 
         setTimeout(() => {
           message.classList.remove("show");
-        }, 3000); //
+        }, 2000); //
 
         setTimeout(() => {
           window.location.href = "servey.html";
@@ -381,7 +382,7 @@
 
           // Store the array in sessionStorage
           sessionStorage.setItem("route", JSON.stringify(connectedarray));
-        }, 3000);
+        }, 2000);
       });
 
       adminButton.addEventListener("click", function () {
@@ -438,12 +439,12 @@
             };
 
             // Push the form data to local storage
-            if (localStorage.NoUser) {
-              const existingData = JSON.parse(localStorage.NoUser);
+            if (localStorage.formdata) {
+              const existingData = JSON.parse(localStorage.formdata);
               existingData.push(formDataObject);
-              localStorage.NoUser = JSON.stringify(existingData);
+              localStorage.formdata = JSON.stringify(existingData);
             } else {
-              localStorage.NoUser = JSON.stringify([formDataObject]);
+              localStorage.formdata = JSON.stringify([formDataObject]);
             }
             alert("Location and time have been saved.");
           });
@@ -451,9 +452,9 @@
           alert("Check the internet connection");
         }
       }
-      // window.oncontextmenu = function () {
-      //   return false; // Disable right-click context menu
-      // };
+      window.oncontextmenu = function () {
+        return false; // Disable right-click context menu
+      };
 
       function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
