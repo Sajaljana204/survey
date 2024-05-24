@@ -573,17 +573,26 @@ document.getElementById("next2").addEventListener("click", function () {
   const checkboxes = document.querySelectorAll(
     'input[name="travel_purpose"]:checked'
   );
+
+  let isCheckbox5 = 0;
+ 
   checkboxes.forEach((checkbox) => {
     if (checkbox.value != "5") {
       selectedValues.push(checkbox.value);
+    }else {
+      isCheckbox5=1;
     }
   });
+
+  
 
   const otherPurposeCheckbox = document.getElementById("OtherPurpose");
   const otherPurposeInput = document.getElementById("OtherTravelPurpose");
 
+  
   if (otherPurposeCheckbox.checked && otherPurposeInput.value.trim() !== "") {
     selectedValues.push(otherPurposeInput.value.trim());
+  
   } else if (
     otherPurposeCheckbox.checked &&
     otherPurposeInput.value.trim() === ""
@@ -593,6 +602,10 @@ document.getElementById("next2").addEventListener("click", function () {
     alert("Please specify 'Other' purpose.");
   }
 
+  if(isCheckbox5!=0 && otherPurposeInput.value.trim() !== ""){
+    travelPurposeDiv.style.border="";
+  }
+  
   document.querySelectorAll(`input[name="travel_purpose"]`).forEach(checkbox => {
     checkbox.addEventListener('change', () => {
       if(document.querySelector(`input[name="travel_purpose"]:checked`)){
