@@ -568,6 +568,8 @@ document.getElementById("next2").addEventListener("click", function () {
 
   // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
 
+  const travelPurposeDiv = document.getElementById("travel-purpose-div");
+
   const checkboxes = document.querySelectorAll(
     'input[name="travel_purpose"]:checked'
   );
@@ -587,14 +589,23 @@ document.getElementById("next2").addEventListener("click", function () {
     otherPurposeInput.value.trim() === ""
   ) {
     isValid = false;
+    travelPurposeDiv.style.border="2px solid red";
     alert("Please specify 'Other' purpose.");
   }
+
+  document.querySelectorAll(`input[name="travel_purpose"]`).forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      if(document.querySelector(`input[name="travel_purpose"]:checked`)){
+        travelPurposeDiv.style.border="";
+      }
+    });
+  });
 
   //+++++++++++++++++++++++++++++++++++++End checkbox +++++++++++++++++++++++++++++++
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
-  const travelPurposeDiv = document.getElementById("travel-purpose-div");
+  
   const travelPurposeYesNoDiv = document.getElementById(
     "travel_purpose_yes_no-div"
   );
