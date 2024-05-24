@@ -2033,7 +2033,7 @@ function getUserLocation() {
             Income: income,
             // Employment: employment,
 
-            Employment: employment === "4" ? otherEmployment : employment,
+            Employment: employment === "5" ? otherEmployment : employment,
             Education: education,
             OriginArea: origin_area,
             OriginPin: origin_pin,
