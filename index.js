@@ -672,7 +672,7 @@ document.getElementById("next2").addEventListener("click", function () {
           isValid=false;
           travel11bdiv.style.border = "2px solid red";
         }
-        if ((fieldName = "travel_purpose")) {
+        if ((fieldName === "travel_purpose")) {
           isValid=false;
           travelPurposeDiv.style.border = "2px solid red";
         }
