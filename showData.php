@@ -50,6 +50,9 @@ FROM
 
 $result_all_data = $conn->query($sql_select_all_data);
 
+// Check if data is available
+$hasData = ($result_all_data && $result_all_data->num_rows > 0);
+
 
 
 // Close connection
@@ -154,10 +157,11 @@ $conn->close();
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <button id="downloadBtn">Download CSV</button>
-        <!-- <button type="submit" name="delete">Delete Selected Rows</button> -->
+        <button type="submit" name="delete">Delete Selected Rows</button>
 
         <table>
             <?php
+            if ($hasData) {
             if ($result_all_data !== null) {
                 // Display header row with checkbox column
                 echo "<tr><th>Delete</th>";
@@ -183,6 +187,9 @@ $conn->close();
                 echo 'window.location.href = window.location.href;';
                 echo '</script>';
             }
+        }else{
+            echo '<tr><td colspan="100%">No Data in here.</td></tr>';
+        }
             ?>
         </table>
     </form>

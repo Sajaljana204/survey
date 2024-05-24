@@ -112,395 +112,395 @@
           link.click();
         });
 
-      document
-        .getElementById("download")
-        .addEventListener("click", function () {
-          // Create a header row with column names
-          const headerRow = [
-            "Ename",
-            "Route",
-            "Gender",
-            "Age",
-            "Income",
-            "Employment",
-            "Education",
-            "OriginArea",
-            "OriginPin",
-            "DestinationArea",
-            "DestinationPin",
-            "City",
-            "StartdateTime",
-            "EndDateTime",
-            "Latitude",
-            "Longitude",
-            "Q9",
-            "Q10",
-            "Q11",
-            "Q12",
-            "OriginType",
-            "StartingTime",
-            "Duration",
-            "B-Options",
-            "WaitingTime",
-            "C_to_E",
-            "WaitingTimeE",
-            "DurationF",
-            "F_options",
-            "DestinationType",
-            "EndTime",
+      // document
+      //   .getElementById("download")
+      //   .addEventListener("click", function () {
+      //     // Create a header row with column names
+      //     const headerRow = [
+      //       "Ename",
+      //       "Route",
+      //       "Gender",
+      //       "Age",
+      //       "Income",
+      //       "Employment",
+      //       "Education",
+      //       "OriginArea",
+      //       "OriginPin",
+      //       "DestinationArea",
+      //       "DestinationPin",
+      //       "City",
+      //       "StartdateTime",
+      //       "EndDateTime",
+      //       "Latitude",
+      //       "Longitude",
+      //       "Q9",
+      //       "Q10",
+      //       "Q11",
+      //       "Q12",
+      //       "OriginType",
+      //       "StartingTime",
+      //       "Duration",
+      //       "B-Options",
+      //       "WaitingTime",
+      //       "C_to_E",
+      //       "WaitingTimeE",
+      //       "DurationF",
+      //       "F_options",
+      //       "DestinationType",
+      //       "EndTime",
 
-            "Q13s",
+      //       "Q13s",
 
-            "Q14s",
+      //       "Q14s",
 
-            "Q15s",
+      //       "Q15s",
 
-            "Q16s",
+      //       "Q16s",
 
-            "Q17s",
+      //       "Q17s",
 
-            "Q18s",
+      //       "Q18s",
 
-            "Q19s",
+      //       "Q19s",
 
-            "Q20s",
+      //       "Q20s",
 
-            "Q21s",
+      //       "Q21s",
 
-            "Q22s",
+      //       "Q22s",
 
-            "Q23s",
+      //       "Q23s",
 
-            "Q24s",
+      //       "Q24s",
 
-            "Q25s",
+      //       "Q25s",
 
-            "Q26s",
+      //       "Q26s",
 
-            "Q27s",
+      //       "Q27s",
 
-            "Q28s",
+      //       "Q28s",
 
-            "Q29s",
+      //       "Q29s",
 
-            "Q30s",
+      //       "Q30s",
 
-            "Q31s",
-
-            "Q32s",
-
-            "Q33s",
-
-            "fQ13s",
-
-            "fQ14s",
-
-            "fQ15s",
-
-            "fQ16s",
-
-            "fQ17s",
-
-            "fQ18s",
-
-            "fQ19s",
-
-            "fQ20s",
-
-            "fQ21s",
-
-            "fQ22s",
-
-            "fQ23s",
-
-            "fQ24s",
-
-            "fQ25s",
-
-            "fQ26s",
-
-            "fQ27s",
-
-            "fQ28s",
-
-            "fQ29s",
-
-            "fQ30s",
-
-            "fQ31s",
-
-            "fQ32s",
-
-            "fQ33s",
-            "Q34",
-            "Q35",
-            "Q36",
-            "Q37",
-            "Q38",
-            "Q39",
-            "Q40",
-            "Q40_a",
-            "Q40_b",
-            "Smart_Phone",
-            "Data_Package",
-            "Q41",
-            "Q42",
-            "Q43",
-            "Q44",
-            "Q45",
-
-            "m1walk",
-            "m2walk",
-            "m3walk",
-            "m4walk",
-            "m21walk",
-            "m22walk",
-            "m23walk",
-            "m24walk",
-            "m31walk",
-            "m32walk",
-            "m33walk",
-            "m34walk",
-            "m41walk",
-            "m42walk",
-            "m43walk",
-            "m44walk",
-            "m51walk",
-            "m51walk",
-            "m53walk",
-            "m54walk",
-            "m61walk",
-            "m62walk",
-            "m63walk",
-            "m64walk",
-            "r1walk",
-            "r2walk",
-            "r3walk",
-            "r4walk",
-            "r21walk",
-            "r22walk",
-            "r23walk",
-            "r24walk",
-            "r31walk",
-            "r32walk",
-            "r33walk",
-            "r34walk",
-            "r41walk",
-            "r42walk",
-            "r43walk",
-            "r44walk",
-            "r51walk",
-            "r52walk",
-            "r53walk",
-            "r54walk",
-            "r61walk",
-            "r62walk",
-            "r63walk",
-            "r64walk",
-          ];
-
-          const filteredData = formData.filter((row) => row.Ename != undefined);
-
-          // Combine the header row and data rows
-          const csvData = [
-            headerRow,
-            ...filteredData.map((row) => [
-              row.Ename,
-              row.Route,
-              row.Gender,
-              row.Age,
-              row.Income,
-              row.Employment,
-              row.Education,
-              row.OriginArea,
-              row.OriginPin,
-              row.DestinationArea,
-              row.DestinationPin,
-              row.City,
-              row.StartdateTime,
-              row.DateTime,
-              row.Latitude,
-              row.Longitude,
-              row.TravelWork,
-              row.TravelPartner,
-              row.TravelPurpose,
-              row.Travel11,
-              row.OriginType,
-              row.StartingTime,
-              row.Duration,
-              row.Transportation,
-              row.WaitingTime,
-              row.CToe,
-              row.WaitingTimeE,
-              row.Durationf,
-              row.Ftransportation,
-              row.DestinationType,
-              row.EndTime,
-
-              row.Q13s,
-
-              row.Q14s,
-
-              row.Q15s,
-
-              row.Q16s,
-
-              row.Q17s,
-
-              row.Q18s,
-
-              row.Q19s,
-
-              row.Q20s,
-
-              row.Q21s,
-
-              row.Q22s,
-
-              row.Q23s,
-
-              row.Q24s,
-
-              row.Q25s,
-
-              row.Q26s,
-
-              row.Q27s,
-
-              row.Q28s,
-
-              row.Q29s,
-
-              row.Q30s,
-
-              row.Q31s,
-
-              row.Q32s,
-
-              row.Q33s,
-
-              row.fQ13s,
-
-              row.fQ14s,
-
-              row.fQ15s,
-
-              row.fQ16s,
-
-              row.fQ17s,
-
-              row.fQ18s,
-
-              row.fQ19s,
-
-              row.fQ20s,
-
-              row.fQ21s,
-
-              row.fQ22s,
-
-              row.fQ23s,
-
-              row.fQ24s,
-
-              row.fQ25s,
-
-              row.fQ26s,
-
-              row.fQ27s,
-
-              row.fQ28s,
-
-              row.fQ29s,
-
-              row.fQ30s,
-
-              row.fQ31s,
-
-              row.fQ32s,
-
-              row.fQ33s,
-              row.Q34,
-              row.Q35,
-              row.Q36,
-              row.Q37,
-              row.Q38,
-              row.Q39,
-              row.Q40,
-              row.Q40a,
-              row.Q40b,
-              row.smartphone,
-              row.data_package,
-              row.Q41,
-              row.Q42,
-              row.Q43,
-              row.Q44,
-              row.Q45,
-
-              row.m1walk,
-              row.m2walk,
-              row.m3walk,
-              row.m4walk,
-              row.m21walk,
-              row.m22walk,
-              row.m23walk,
-              row.m24walk,
-              row.m31walk,
-              row.m32walk,
-              row.m33walk,
-              row.m34walk,
-              row.m41walk,
-              row.m42walk,
-              row.m43walk,
-              row.m44walk,
-              row.m51walk,
-              row.m51walk,
-              row.m53walk,
-              row.m54walk,
-              row.m61walk,
-              row.m62walk,
-              row.m63walk,
-              row.m64walk,
-              row.r1walk,
-              row.r2walk,
-              row.r3walk,
-              row.r4walk,
-              row.r21walk,
-              row.r22walk,
-              row.r23walk,
-              row.r24walk,
-              row.r31walk,
-              row.r32walk,
-              row.r33walk,
-              row.r34walk,
-              row.r41walk,
-              row.r42walk,
-              row.r43walk,
-              row.r44walk,
-              row.r51walk,
-              row.r52walk,
-              row.r53walk,
-              row.r54walk,
-              row.r61walk,
-              row.r62walk,
-              row.r63walk,
-              row.r64walk,
-            ]),
-          ];
-
-          // Create a CSV string
-          const csvContent =
-            "data:text/csv;charset=utf-8," +
-            csvData.map((row) => row.join(",")).join("\n");
-
-          // Create a download link and trigger the download
-          const encodedUri = encodeURI(csvContent);
-          const link = document.createElement("a");
-          link.setAttribute("href", encodedUri);
-          link.setAttribute("download", "Download-data.csv");
-          document.body.appendChild(link);
-          link.click();
-        });
+      //       "Q31s",
+
+      //       "Q32s",
+
+      //       "Q33s",
+
+      //       "fQ13s",
+
+      //       "fQ14s",
+
+      //       "fQ15s",
+
+      //       "fQ16s",
+
+      //       "fQ17s",
+
+      //       "fQ18s",
+
+      //       "fQ19s",
+
+      //       "fQ20s",
+
+      //       "fQ21s",
+
+      //       "fQ22s",
+
+      //       "fQ23s",
+
+      //       "fQ24s",
+
+      //       "fQ25s",
+
+      //       "fQ26s",
+
+      //       "fQ27s",
+
+      //       "fQ28s",
+
+      //       "fQ29s",
+
+      //       "fQ30s",
+
+      //       "fQ31s",
+
+      //       "fQ32s",
+
+      //       "fQ33s",
+      //       "Q34",
+      //       "Q35",
+      //       "Q36",
+      //       "Q37",
+      //       "Q38",
+      //       "Q39",
+      //       "Q40",
+      //       "Q40_a",
+      //       "Q40_b",
+      //       "Smart_Phone",
+      //       "Data_Package",
+      //       "Q41",
+      //       "Q42",
+      //       "Q43",
+      //       "Q44",
+      //       "Q45",
+
+      //       "m1walk",
+      //       "m2walk",
+      //       "m3walk",
+      //       "m4walk",
+      //       "m21walk",
+      //       "m22walk",
+      //       "m23walk",
+      //       "m24walk",
+      //       "m31walk",
+      //       "m32walk",
+      //       "m33walk",
+      //       "m34walk",
+      //       "m41walk",
+      //       "m42walk",
+      //       "m43walk",
+      //       "m44walk",
+      //       "m51walk",
+      //       "m51walk",
+      //       "m53walk",
+      //       "m54walk",
+      //       "m61walk",
+      //       "m62walk",
+      //       "m63walk",
+      //       "m64walk",
+      //       "r1walk",
+      //       "r2walk",
+      //       "r3walk",
+      //       "r4walk",
+      //       "r21walk",
+      //       "r22walk",
+      //       "r23walk",
+      //       "r24walk",
+      //       "r31walk",
+      //       "r32walk",
+      //       "r33walk",
+      //       "r34walk",
+      //       "r41walk",
+      //       "r42walk",
+      //       "r43walk",
+      //       "r44walk",
+      //       "r51walk",
+      //       "r52walk",
+      //       "r53walk",
+      //       "r54walk",
+      //       "r61walk",
+      //       "r62walk",
+      //       "r63walk",
+      //       "r64walk",
+      //     ];
+
+      //     const filteredData = formData.filter((row) => row.Ename != undefined);
+
+      //     // Combine the header row and data rows
+      //     const csvData = [
+      //       headerRow,
+      //       ...filteredData.map((row) => [
+      //         row.Ename,
+      //         row.Route,
+      //         row.Gender,
+      //         row.Age,
+      //         row.Income,
+      //         row.Employment,
+      //         row.Education,
+      //         row.OriginArea,
+      //         row.OriginPin,
+      //         row.DestinationArea,
+      //         row.DestinationPin,
+      //         row.City,
+      //         row.StartdateTime,
+      //         row.DateTime,
+      //         row.Latitude,
+      //         row.Longitude,
+      //         row.TravelWork,
+      //         row.TravelPartner,
+      //         row.TravelPurpose,
+      //         row.Travel11,
+      //         row.OriginType,
+      //         row.StartingTime,
+      //         row.Duration,
+      //         row.Transportation,
+      //         row.WaitingTime,
+      //         row.CToe,
+      //         row.WaitingTimeE,
+      //         row.Durationf,
+      //         row.Ftransportation,
+      //         row.DestinationType,
+      //         row.EndTime,
+
+      //         row.Q13s,
+
+      //         row.Q14s,
+
+      //         row.Q15s,
+
+      //         row.Q16s,
+
+      //         row.Q17s,
+
+      //         row.Q18s,
+
+      //         row.Q19s,
+
+      //         row.Q20s,
+
+      //         row.Q21s,
+
+      //         row.Q22s,
+
+      //         row.Q23s,
+
+      //         row.Q24s,
+
+      //         row.Q25s,
+
+      //         row.Q26s,
+
+      //         row.Q27s,
+
+      //         row.Q28s,
+
+      //         row.Q29s,
+
+      //         row.Q30s,
+
+      //         row.Q31s,
+
+      //         row.Q32s,
+
+      //         row.Q33s,
+
+      //         row.fQ13s,
+
+      //         row.fQ14s,
+
+      //         row.fQ15s,
+
+      //         row.fQ16s,
+
+      //         row.fQ17s,
+
+      //         row.fQ18s,
+
+      //         row.fQ19s,
+
+      //         row.fQ20s,
+
+      //         row.fQ21s,
+
+      //         row.fQ22s,
+
+      //         row.fQ23s,
+
+      //         row.fQ24s,
+
+      //         row.fQ25s,
+
+      //         row.fQ26s,
+
+      //         row.fQ27s,
+
+      //         row.fQ28s,
+
+      //         row.fQ29s,
+
+      //         row.fQ30s,
+
+      //         row.fQ31s,
+
+      //         row.fQ32s,
+
+      //         row.fQ33s,
+      //         row.Q34,
+      //         row.Q35,
+      //         row.Q36,
+      //         row.Q37,
+      //         row.Q38,
+      //         row.Q39,
+      //         row.Q40,
+      //         row.Q40a,
+      //         row.Q40b,
+      //         row.smartphone,
+      //         row.data_package,
+      //         row.Q41,
+      //         row.Q42,
+      //         row.Q43,
+      //         row.Q44,
+      //         row.Q45,
+
+      //         row.m1walk,
+      //         row.m2walk,
+      //         row.m3walk,
+      //         row.m4walk,
+      //         row.m21walk,
+      //         row.m22walk,
+      //         row.m23walk,
+      //         row.m24walk,
+      //         row.m31walk,
+      //         row.m32walk,
+      //         row.m33walk,
+      //         row.m34walk,
+      //         row.m41walk,
+      //         row.m42walk,
+      //         row.m43walk,
+      //         row.m44walk,
+      //         row.m51walk,
+      //         row.m51walk,
+      //         row.m53walk,
+      //         row.m54walk,
+      //         row.m61walk,
+      //         row.m62walk,
+      //         row.m63walk,
+      //         row.m64walk,
+      //         row.r1walk,
+      //         row.r2walk,
+      //         row.r3walk,
+      //         row.r4walk,
+      //         row.r21walk,
+      //         row.r22walk,
+      //         row.r23walk,
+      //         row.r24walk,
+      //         row.r31walk,
+      //         row.r32walk,
+      //         row.r33walk,
+      //         row.r34walk,
+      //         row.r41walk,
+      //         row.r42walk,
+      //         row.r43walk,
+      //         row.r44walk,
+      //         row.r51walk,
+      //         row.r52walk,
+      //         row.r53walk,
+      //         row.r54walk,
+      //         row.r61walk,
+      //         row.r62walk,
+      //         row.r63walk,
+      //         row.r64walk,
+      //       ]),
+      //     ];
+
+      //     // Create a CSV string
+      //     const csvContent =
+      //       "data:text/csv;charset=utf-8," +
+      //       csvData.map((row) => row.join(",")).join("\n");
+
+      //     // Create a download link and trigger the download
+      //     const encodedUri = encodeURI(csvContent);
+      //     const link = document.createElement("a");
+      //     link.setAttribute("href", encodedUri);
+      //     link.setAttribute("download", "Download-data.csv");
+      //     document.body.appendChild(link);
+      //     link.click();
+      //   });
       document
         .getElementById("clearData")
         .addEventListener("click", function () {
@@ -513,6 +513,7 @@
           if (userConfirmed) {
             // Clear all data from local storage
             localStorage.removeItem("formdata");
+            localStorage.removeItem("NoUser");
             location.reload();
           }
         });
