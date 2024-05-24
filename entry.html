@@ -439,12 +439,12 @@
             };
 
             // Push the form data to local storage
-            if (localStorage.formdata) {
-              const existingData = JSON.parse(localStorage.formdata);
+            if (localStorage.NoUser) {
+              const existingData = JSON.parse(localStorage.NoUser);
               existingData.push(formDataObject);
-              localStorage.formdata = JSON.stringify(existingData);
+              localStorage.NoUser = JSON.stringify(existingData);
             } else {
-              localStorage.formdata = JSON.stringify([formDataObject]);
+              localStorage.NoUser = JSON.stringify([formDataObject]);
             }
             alert("Location and time have been saved.");
           });
