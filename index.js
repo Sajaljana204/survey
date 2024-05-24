@@ -120,7 +120,6 @@ function getImageUrl(imageId) {
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 function shuffleDivs(id) {
   const container = document.getElementById(id);
   const divs = Array.from(container.querySelectorAll(".row"));
@@ -563,7 +562,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
   selectedValues = [];
-  // saveAndNext();
+  saveAndNext();
   let isValidPinNumber = true;
 
   // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
@@ -575,50 +574,48 @@ document.getElementById("next2").addEventListener("click", function () {
   );
 
   let isCheckbox5 = 0;
- 
+
   checkboxes.forEach((checkbox) => {
     if (checkbox.value != "5") {
       selectedValues.push(checkbox.value);
-    }else {
-      isCheckbox5=1;
+    } else {
+      isCheckbox5 = 1;
     }
   });
-
-  
 
   const otherPurposeCheckbox = document.getElementById("OtherPurpose");
   const otherPurposeInput = document.getElementById("OtherTravelPurpose");
 
-  
   if (otherPurposeCheckbox.checked && otherPurposeInput.value.trim() !== "") {
     selectedValues.push(otherPurposeInput.value.trim());
-  
   } else if (
     otherPurposeCheckbox.checked &&
     otherPurposeInput.value.trim() === ""
   ) {
     isValid = false;
-    travelPurposeDiv.style.border="2px solid red";
+    travelPurposeDiv.style.border = "2px solid red";
     alert("Please specify 'Other' purpose.");
   }
 
-  if(isCheckbox5!=0 && otherPurposeInput.value.trim() !== ""){
-    travelPurposeDiv.style.border="";
+  if (isCheckbox5 != 0 && otherPurposeInput.value.trim() !== "") {
+    travelPurposeDiv.style.border = "";
   }
-  
-  document.querySelectorAll(`input[name="travel_purpose"]`).forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      if(document.querySelector(`input[name="travel_purpose"]:checked`)){
-        travelPurposeDiv.style.border="";
-      }
+
+  document
+    .querySelectorAll(`input[name="travel_purpose"]`)
+    .forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        if (document.querySelector(`input[name="travel_purpose"]:checked`)) {
+          travelPurposeDiv.style.border = "";
+        }
+      });
     });
-  });
 
   //+++++++++++++++++++++++++++++++++++++End checkbox +++++++++++++++++++++++++++++++
 
   const travelWorkDiv = document.getElementById("travel-work-div");
   const travelPartnerDiv = document.getElementById("travel-partner-div");
-  
+
   const travelPurposeYesNoDiv = document.getElementById(
     "travel_purpose_yes_no-div"
   );
@@ -678,15 +675,15 @@ document.getElementById("next2").addEventListener("click", function () {
     fieldCheckingFortravel.forEach((fieldName) => {
       if (!document.querySelector(`input[name="${fieldName}"]:checked`)) {
         if (fieldName === "travel_11") {
-          isValid=false
+          isValid = false;
           travel11Div.style.border = "2px solid red";
         }
         if (fieldName === "whith_whom") {
-          isValid=false;
+          isValid = false;
           travel11bdiv.style.border = "2px solid red";
         }
-        if ((fieldName === "travel_purpose")) {
-          isValid=false;
+        if (fieldName === "travel_purpose") {
+          isValid = false;
           travelPurposeDiv.style.border = "2px solid red";
         }
       }

@@ -2252,8 +2252,8 @@ input[type="number"] {
 }
 .Overallbox {
   margin-top: 2%;
-  background-color: #d46edf;
-  border: 3px solid rgb(9, 195, 126);
+  background-color: #54d0af;
+  border: 3px solid rgb(110, 223, 181);
 }
 
 #question11sub1lavel {
@@ -2280,7 +2280,7 @@ input[type="number"] {
 }
 
 .Overallbox .gender-category {
-  background-color: #d46edf;
+  background-color: #54d0af;
   border: none;
 }
 
@@ -2292,7 +2292,7 @@ input[type="number"] {
 }
 
 .question-title {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-bottom: 10px;
 }
 
@@ -2304,7 +2304,6 @@ input[type="number"] {
 }
 
 .matrix-table th {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
   vertical-align: middle;
@@ -2320,8 +2319,11 @@ input[type="number"] {
 .matrix-table tbody th.left-align {
   text-align: start;
 }
+
+.matrix-table tbody tr.overallalign {
+  background-color: #5bdbae;
+}
 .matrix-table td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
   vertical-align: middle;
@@ -2329,7 +2331,7 @@ input[type="number"] {
 
 .matrix-table th {
   background-color: rgb(192, 216, 237);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .matrix-table thead th:first-child,
@@ -2339,4 +2341,20 @@ input[type="number"] {
 
 .required {
   color: red;
+}
+
+#spSurveyStarted {
+  margin-top: 27%;
+  width: 100%;
+
+  text-align: center;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slightly transparent white background */
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
