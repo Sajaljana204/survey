@@ -120,6 +120,7 @@ function getImageUrl(imageId) {
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
 function shuffleDivs(id) {
   const container = document.getElementById(id);
   const divs = Array.from(container.querySelectorAll(".row"));
@@ -2473,3 +2474,5 @@ document
 //   requestedemil = document.querySelector('input[name="requested_Email"]').value;
 //   console.log9("this is user given email" + requestedemil);
 // }
+
+//hi
