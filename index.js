@@ -2483,6 +2483,15 @@ function onclickClose11a() {
   document.getElementById("travel-purpose-div").style.display = "none";
   document.getElementById("travel-11-div").style.display = "none";
   document.getElementById("travel-11b-div").style.display = "none";
+  var radios11 = document.querySelectorAll('#travel-11-div input[type=radio]');
+  radios11.forEach(radio => radio.checked = false);
+  var radios11b = document.querySelectorAll('#travel-11b-div input[type=radio]');
+  radios11b.forEach(radio => radio.checked = false);
+  var checkboxesPurpose = document.querySelectorAll('#travel-purpose-div input[type=checkbox]');
+  checkboxesPurpose.forEach(checkboxesPurpose => checkboxesPurpose.checked = false);
+  var textBox=document.getElementById("OtherTravelPurpose");
+  textBox.value="";
+  // textBox.style.display="none";
 }
 
 // to record location
