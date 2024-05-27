@@ -562,7 +562,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
   selectedValues = [];
-  // saveAndNext();
+   saveAndNext();
   let isValidPinNumber = true;
 
   // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
@@ -956,6 +956,8 @@ function updateModeChoice(mode) {
   changeBtnText(btn, mode);
   updateButtonValueAndStyle("modeChoiceBtn", mode);
   btn.dispatchEvent(new CustomEvent("modeChange", { detail: mode }));
+  var for_b = document.querySelectorAll('#for_b input[type=radio]');
+  for_b.forEach(radio => radio.checked = false);
   closePopup();
 }
 
@@ -2431,6 +2433,8 @@ function togglenootherpurpose() {
 
 function togglenoworkorscool() {
   document.getElementById("travel-partner-div").style.display = "none";
+  var radiosPartner = document.querySelectorAll('#travel-partner-div input[type=radio]');
+  radiosPartner.forEach(radio => radio.checked = false);
 }
 
 function toggleworkorscool() {
