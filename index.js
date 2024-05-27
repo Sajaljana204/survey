@@ -562,7 +562,7 @@ document.getElementById("OtherPartner").addEventListener("change", function () {
 document.getElementById("next2").addEventListener("click", function () {
   let isValid = true;
   selectedValues = [];
-  saveAndNext();
+  // saveAndNext();
   let isValidPinNumber = true;
 
   // +++++++++++++++++++++++++++++ This is only for checkbox question++++++++++++++++++++++++++++
@@ -649,7 +649,7 @@ document.getElementById("next2").addEventListener("click", function () {
     : "";
 
   if (istravel_work != "") {
-    if (istravel_work !== "1") {
+    if (istravel_work !== "0") {
       if (!document.querySelector(`input[name="travel_partner"]:checked`)) {
         travelPartnerDiv.style.border = "2px solid red";
         isValid = false;
