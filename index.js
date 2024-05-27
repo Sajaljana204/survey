@@ -1242,7 +1242,7 @@ function getUserLocation() {
         );
 
         if (userConfirmation) {
-          window.location.href = "entry.html";
+          window.location.href = "index.html";
 
           // Collect form data
 
@@ -2018,6 +2018,7 @@ function getUserLocation() {
             document.getElementById("GenderNotSpecified").value;
           const otherEmployment =
             document.getElementById("otherEmployment").value;
+            const whithwhom = document.getElementById("whithwhom").value;
 
           // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -2050,7 +2051,7 @@ function getUserLocation() {
             //   travel_purpose === "5" ? otherPurposeText : travel_purpose,
             TravelPurpose: selectedValues.join(","),
             Travel11: travel_11,
-            Withwhom: whith_whom,
+            Withwhom: whith_whom ===  "5" ? whithwhom : whith_whom,
             /*This is for image*/
             OriginType: originType,
             StartingTime: startingTime,
@@ -2412,7 +2413,7 @@ function getUserLocation() {
           // document.querySelector("form").reset();
 
           location.reload();
-          window.location.href = "entry.html";
+          window.location.href = "index.html";
         }
       });
     });
