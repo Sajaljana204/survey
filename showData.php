@@ -39,13 +39,11 @@ $sql_select_all_data = "SELECT
     section_a.*, 
     section_b.*, 
     section_c.*, 
-    mode_choice_ans.*, 
     sp_survey.*
 FROM 
     section_a
     JOIN section_b ON section_a.id = section_b.id
     JOIN section_c ON section_a.id = section_c.id
-    JOIN mode_choice_ans ON section_a.id = mode_choice_ans.id
     JOIN sp_survey ON section_a.id = sp_survey.id";
 
 $result_all_data = $conn->query($sql_select_all_data);
