@@ -26,24 +26,16 @@ $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3In
 $stmt_section_a->bind_param("sssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime, $Requestedemil);
 
 // Prepare and bind SQL statement for section_b
-$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OA`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q9aOT, $Q9aOA, $Q9aOP, $Q9aST, $Q9aAT, $Q9aMC, $Q9aWT, $Q9bDT, $Q9bDA, $Q9bDP, $Q9bET, $Q9bAT, $Q9bMC, $Q9bWT, $Q9MMM, $Q9TT, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OA`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q10(a_1)`, `Q10(a_2)`, `Q10(a_3)`, `Q10(a_4)`, `Q10(a_5)`, `Q10(a_6)`, `Q10(a_7)`, `Q10(a_8)`, `Q10(a_9)`, `Q10(a)OR`, `Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("sssssssssssssssssssssssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q9aOT, $Q9aOA, $Q9aOP, $Q9aST, $Q9aAT, $Q9aMC, $Q9aWT, $Q9bDT, $Q9bDA, $Q9bDP, $Q9bET, $Q9bAT, $Q9bMC, $Q9bWT, $Q9MMM, $Q9TT, $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $Q10aOR, $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
 
-
-// // // Prepare and bind SQL statement for column_b
-$stmt_mode_choice_question = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(a_1)`, `Q10(a_2)`, `Q10(a_3)`, `Q10(a_4)`, `Q10(a_5)`, `Q10(a_6)`, `Q10(a_7)`, `Q10(a_8)`, `Q10(a_9)`, `Q10(a)OR`, `Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_mode_choice_question->bind_param("ssssssssssssssssssss", $q13s, $q14s, $q15s, $q16s, $q17s, $q18s, $q19s, $q20s, $q21s, $Q10aOR, $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
-
-// // Prepare and bind SQL statement for column_f it insert into mode_choice_question
-// $stmt_column_f = $conn->prepare("INSERT INTO mode_choice_ans (`Q10(b_1)`, `Q10(b_2)`, `Q10(b_3)`, `Q10(b_4)`, `Q10(b_5)`, `Q10(b_6)`, `Q10(b_7)`, `Q10(b_8)`, `Q10(b_9)`, `Q10(b)OR`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-// $stmt_column_f->bind_param("ssssssssss", $fQ13s, $fQ14s, $fQ15s, $fQ16s, $fQ17s, $fQ18s, $fQ19s, $fQ20s, $fQ21s, $Q10bOR);
 
 
 // // Prepare and bind SQL statement for section_c
 $stmt_section_c = $conn->prepare("INSERT INTO section_c (Q13, `Q13(a)`, `Q13(b_1)`, `Q13(b_2)`, `Q13(b_3)`, `Q13(b_4)`, `Q13(b_5)`) VALUES (?, ?, ?, ?, ?, ?, ?)");
 $stmt_section_c->bind_param("sssssss", $smartPhone, $dataPackage, $q41, $q42, $q43, $q44, $q45);
 
-// // Prepare and bind SQL statement for section_c
+// // // Prepare and bind SQL statement for section_c
 $stmt_section_mode = $conn->prepare("INSERT INTO sp_survey (m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44, m51, m52, m53, m54, m61, m62, m63, m64, r11, r12, r13, r14, r21, r22, r23, r24, r31, r32, r33, r34, r41, r42, r43, r44, r51, r52, r53, r54, r61, r62, r63, r64) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt_section_mode->bind_param("ssssssssssssssssssssssssssssssssssssssssssssssss", $m11, $m12, $m13, $m14, $m21, $m22, $m23, $m24, $m31, $m32, $m33, $m34, $m41, $m42, $m43, $m44, $m51, $m52, $m53, $m54, $m61, $m62, $m63, $m64, $r11, $r12, $r13, $r14, $r21, $r22, $r23, $r24, $r31, $r32, $r33, $r34, $r41, $r42, $r43, $r44, $r51, $r52, $r53, $r54, $r61, $r62, $r63, $r64);
 
@@ -116,26 +108,25 @@ foreach ($data as $row) {
     $Q12 = isset($row['Q40']) ? $row['Q40'] : '';
     $Q12a = isset($row['Q40a']) ? $row['Q40a'] : '';
     $Q12b = isset($row['Q40b']) ? $row['Q40b'] : '';
-    $stmt_section_b->execute();
+   
 
-    // // Column B
+    
     //Assuming you have fields Q13i through Q33s in your JSON data and in your database table
     $Q10aOR= isset($row['overallFbRating']) ? $row['overallFbRating'] : '';
     for ($i = 13; $i <= 33; $i++) {
         ${"q$i" . "s"} = isset($row["Q{$i}s"]) ? $row["Q{$i}s"] : '';
     }
     
-
-    // // Column F
     // Assuming you have fields fQ13i through fQ33s in your JSON data and in your database table
     $Q10bOR = isset($row['overallFfRating']) ? $row['overallFfRating'] : '';
     for ($i = 13; $i <= 33; $i++) {
         ${"fQ$i" . "s"} = isset($row["fQ{$i}s"]) ? $row["fQ{$i}s"] : '';
     }
-    $stmt_mode_choice_question->execute();
+    $stmt_section_b->execute();
+    
 
-    // // Section C
-    // // Assuming you have fields Smart_Phone through o7s in your JSON data and in your database table
+    // Section C
+    // Assuming you have fields Smart_Phone through o7s in your JSON data and in your database table
     $smartPhone = isset($row['smartphone']) ? $row['smartphone'] : '';
     $dataPackage = isset($row['data_package']) ? $row['data_package'] : '';
     $q41 = isset($row['Q41']) ? $row['Q41'] : '';
@@ -162,8 +153,6 @@ foreach ($data as $row) {
 // Close statement
 $stmt_section_a->close();
 $stmt_section_b->close();
-$stmt_mode_choice_question->close();
-// $stmt_column_f->close();
 $stmt_section_c->close();
 $stmt_section_mode->close();
 

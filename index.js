@@ -7,6 +7,7 @@ let columnB = "";
 let columnF = "";
 let selectedValues = [];
 let spsurveystartingtime = "";
+
 startservey();
 //hi
 // Function to shuffle array in place (Fisher-Yates shuffle algorithm)
@@ -980,6 +981,8 @@ function updateModeChoicef(mode) {
   changeBtnText(btn, mode);
   updateButtonValueAndStyle("modeChoiceBtnf", mode);
   btn.dispatchEvent(new CustomEvent("modeChange", { detail: mode }));
+  var for_f = document.querySelectorAll('#for_f input[type=radio]');
+  for_f.forEach(radio => radio.checked = false);
   closePopupf();
 }
 
@@ -1183,6 +1186,8 @@ function toggleCrimeOptions() {
     crimeOptions.style.display = "block";
   } else {
     crimeOptions.style.display = "none";
+    var crime_options = document.querySelectorAll('#crime_options input[type=radio]');
+    crime_options.forEach(radio => radio.checked = false);
   }
 }
 
@@ -1196,6 +1201,8 @@ function toggleSmartphone() {
     crimeOptions.style.display = "block";
   } else {
     crimeOptions.style.display = "none";
+    var smartphone_options = document.querySelectorAll('#smartphone_options input[type=radio]');
+    smartphone_options.forEach(radio => radio.checked = false);
   }
 }
 
@@ -1228,6 +1235,8 @@ function getUserLocation() {
     navigator.geolocation.getCurrentPosition(function (position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+
+       isSubmit=true;
 
       // Handle form submission when user clicks the submit button
       document.getElementById("submit").addEventListener("click", function (e) {
@@ -2506,6 +2515,14 @@ document
     spsurveystartingtime = getCurrentDateTime();
     console.log("sp survey starting date time" + spsurveystartingtime);
   });
+
+//   window.addEventListener('beforeunload', function (e) {
+//     var confirmationMessage = 'Do you really want to refresh this page?';
+//     e.returnValue = confirmationMessage; // For most browsers
+//     return confirmationMessage;          // For some older browsers
+// });
+ 
+  
 
 // function submit() {
 //   // requestedemil = document.getElementById("feedbackRecordEmail").value;
