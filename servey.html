@@ -368,7 +368,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="1"
+                  value="0"
                   required
                   onclick="togglenoworkorscool()"
                 />
@@ -382,7 +382,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="2"
+                  value="1"
                   required
                   onclick="toggleworkorscool()"
                 />
@@ -393,7 +393,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="3"
+                  value="2"
                   required
                   onclick="toggleworkorscool()"
                 />
@@ -404,7 +404,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="4"
+                  value="3"
                   required
                   onclick="toggleworkorscool()"
                 />
@@ -415,7 +415,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="5"
+                  value="4"
                   required
                   onclick="toggleworkorscool()"
                 />
@@ -426,7 +426,7 @@
                 <input
                   type="radio"
                   name="travel_work"
-                  value="6"
+                  value="5"
                   required
                   onclick="toggleworkorscool()"
                 />
@@ -434,11 +434,7 @@
               </div>
             </div>
 
-            <div
-              class="gender-category"
-              id="travel-partner-div"
-              style="display: none"
-            >
+            <div class="gender-category" id="travel-partner-div">
               <span class="gender-title"
                 >7(a). With whom do you usually travel to public transport
                 stop?<span class="required">*</span></span
@@ -666,15 +662,16 @@
                 />
                 <label for="">With family </label>
               </div>
-              <div style="display: flex">
-                <input
-                  type="radio"
-                  name="whith_whom"
-                  value="5"
-                  required
-                  onclick="onclickwhithwhom()"
-                />
-                <label for="" style="padding-left: 0.9%">Others</label>
+
+              <input
+                type="radio"
+                name="whith_whom"
+                value="5"
+                required
+                onclick="onclickwhithwhom()"
+              />
+              <div style="display: inline-flex">
+                <label for="">Others</label>
                 <input
                   type="text"
                   name="whith_whom"
@@ -2673,14 +2670,14 @@
               <input
                 type="radio"
                 name="data_package"
-                value="Yes"
+                value="1"
                 id="yes_data_package"
               />
               <label for="">Yes</label>
               <input
                 type="radio"
                 name="data_package"
-                value="No"
+                value="0"
                 id="no_data_package"
               />
               <label for="">No</label>
