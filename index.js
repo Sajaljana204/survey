@@ -536,7 +536,7 @@ document.getElementById("back1").addEventListener("click", function () {
 });
 
 entryBack.addEventListener("click", function () {
-  window.location.href = "entry.html";
+  window.location.href = "index.html";
 });
 
 document.getElementById("OtherPurpose").addEventListener("change", function () {

@@ -26,8 +26,8 @@ $stmt_section_a = $conn->prepare("INSERT INTO section_a (QEn, Q1Gen, Q2Age, Q3In
 $stmt_section_a->bind_param("sssssssssssss", $ename, $gender, $age, $income, $employment, $education, $city, $latitude, $longitude, $StartDateTime, $SPSurveyStartingtime, $EndDateTime, $Requestedemil);
 
 // Prepare and bind SQL statement for section_b
-$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OR`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q9aOT, $Q9aOR, $Q9aOP, $Q9aST, $Q9aAT, $Q9aMC, $Q9aWT, $Q9bDT, $Q9bDA, $Q9bDP, $Q9bET, $Q9bAT, $Q9bMC, $Q9bWT, $Q9MMM, $Q9TT, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
+$stmt_section_b = $conn->prepare("INSERT INTO section_b (Q7, `Q7(a)`, Q8, `Q8(a)`, `Q8(b)`, `Q8(c)`, `Q9(a)OT`, `Q9(a)OA`, `Q9(a)OP`, `Q9(a)ST`, `Q9(a)AT`, `Q9(a)MC`, `Q9(a)WT`, `Q9(b)DT`, `Q9(b)DA`, `Q9(b)DP`, `Q9(b)ET`, `Q9(b)AT`, `Q9(b)MC`, `Q9(b)WT`, `Q9(c)MMM`, Q9TT, `Q11(1)`, `Q11(2)`, `Q11(3)`, `Q11(4)`, `Q11(5)`, `Q11(6)`, `Q12`, `Q12(a)`, `Q12(b)`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt_section_b->bind_param("sssssssssssssssssssssssssssssss", $Q7, $Q7a, $Q8, $Q8a, $Q8b, $Q8c, $Q9aOT, $Q9aOA, $Q9aOP, $Q9aST, $Q9aAT, $Q9aMC, $Q9aWT, $Q9bDT, $Q9bDA, $Q9bDP, $Q9bET, $Q9bAT, $Q9bMC, $Q9bWT, $Q9MMM, $Q9TT, $Q11_1, $Q11_2, $Q11_3, $Q11_4, $Q11_5, $Q11_6, $Q12, $Q12a, $Q12b);
 
 
 // // // Prepare and bind SQL statement for column_b
@@ -87,7 +87,7 @@ foreach ($data as $row) {
     $Q8c = isset($row['Withwhom']) ? $row['Withwhom'] : '';
 
     $Q9aOT = isset($row['OriginType']) ? $row['OriginType'] : '';
-    $Q9aOR = isset($row['OriginArea']) ? $row['OriginArea'] : '';
+    $Q9aOA = isset($row['OriginArea']) ? $row['OriginArea'] : '';
     $Q9aOP = isset($row['OriginPin']) ? $row['OriginPin'] : '';
     $Q9aST = isset($row['StartingTime']) ? $row['StartingTime'] : '';
 
